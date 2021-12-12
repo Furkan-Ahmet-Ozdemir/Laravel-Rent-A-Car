@@ -20,7 +20,7 @@
         <div class="col-md-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <form class="forms-sample" action="{{route('admin_car_create')}}" method="post">
+                    <form class="forms-sample" action="{{route('admin_car_create')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label >Parent</label>
@@ -47,15 +47,10 @@
                             <input type="text" class="form-control"name="description"  placeholder="Description">
                         </div>
 
-{{--                        <div class="form-group">--}}
-{{--                            <label >Category Id</label>--}}
-{{--                            <input type="number" class="form-control"name="category_id"  placeholder="Category Id">--}}
-{{--                        </div>--}}
-
-{{--                        <div class="form-group">--}}
-{{--                            <label >Detail</label>--}}
-{{--                            <input type="image" class="form-control"name="image"  placeholder="Image">--}}
-{{--                        </div>--}}
+                        <div class="form-group">
+                            <label >Image</label>
+                            <input type="file" class="form-control"name="image">
+                        </div>
 
 
                         <div class="form-group">

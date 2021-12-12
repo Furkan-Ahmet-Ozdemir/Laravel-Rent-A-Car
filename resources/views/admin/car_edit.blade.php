@@ -72,18 +72,27 @@
 
                         <div class="form-group">
                             <label >Car Type</label>
-                            <input type="text" class="form-control"name="car_type"  value="{{$data->car_type}}">
+                            <input type="text" class="form-control" name="car_type"  value="{{$data->car_type}}">
                         </div>
 
                         <div class="form-group">
                             <label >Brand Name</label>
-                            <input type="text" class="form-control"name="brand_name"  value="{{$data->brand_name}}">
+                            <input type="text" class="form-control" name="brand_name"  value="{{$data->brand_name}}">
                         </div>
 
                         <div class="form-group">
                             <label >Model Name</label>
-                            <input type="text" class="form-control"name="model_name"  value="{{$data->model_name}}">
+                            <input type="text" class="form-control" name="model_name"  value="{{$data->model_name}}">
                         </div>
+
+                        <div class="form-group">
+                            <label >Image</label>
+                            <input type="file" name="image" class="form-control" value="{{$data->image}}">
+                            @if($data->image)
+                                <img src="{{Storage::url($data->image)}}" height="100" alt="">
+                            @endif
+                        </div>
+
 
                         <div class="form-group">
                             <label >Status</label>

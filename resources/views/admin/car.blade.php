@@ -17,10 +17,10 @@
                         <th>Title</th>
                         <th>Image</th>
                         <th>Price</th>
-                        <th>Baggage</th>
-                        <th>Passenger</th>
-                        <th>Car Type</th>
-                        <th>Brand Name</th>
+{{--                        <th>Baggage</th>--}}
+{{--                        <th>Passenger</th>--}}
+{{--                        <th>Car Type</th>--}}
+{{--                        <th>Brand Name</th>--}}
                         <th>Model Name</th>
                         <th>Status</th>
                         <th>Edit</th>
@@ -33,12 +33,16 @@
                             <td>{{$rs->id}}</td>
                             <td>{{$rs->category_id}}</td>
                             <td>{{$rs->title}}</td>
-                            <td>{{$rs->image}}</td>
+                            <td>
+                                @if($rs->image)
+                                    <img src="{{Storage::url($rs->image)}}" width="100" height="100" alt="">
+                                @endif
+                            </td>
                             <td>{{$rs->price}}</td>
-                            <td>{{$rs->baggage}}</td>
-                            <td>{{$rs->passenger}}</td>
-                            <td>{{$rs->car_type}}</td>
-                            <td>{{$rs->brand_name}}</td>
+{{--                            <td>{{$rs->baggage}}</td>--}}
+{{--                            <td>{{$rs->passenger}}</td>--}}
+{{--                            <td>{{$rs->car_type}}</td>--}}
+{{--                            <td>{{$rs->brand_name}}</td>--}}
                             <td>{{$rs->model_name}}</td>
 
 
