@@ -16,8 +16,8 @@
                         <th>PARENT</th>
                         <th>TITLE</th>
                         <th>STATUS</th>
+                        <th>EDIT</th>
                         <th>DELETE</th>
-                        <th>>DELETE</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,8 +27,9 @@
                             <td>{{$rs->parent_id}}</td>
                             <td>{{$rs->title}}</td>
                             <td>{{$rs->status}}</td>
+                            <td><label class="badge badge-warning"><a href="{{route('admin_category_edit',['id'=> $rs->id])}}" >EDIT</a></label></td>
+
                             <td><label class="badge badge-danger"><a href="{{route('admin_category_delete',['id'=> $rs->id])}}" onclick="return confirm('Delete ! Are you sure ?')">DELETE</a></label></td>
-                            <td><label class="badge badge-warning">EDIT</label></td>
                         </tr>
                     @endforeach
                 </tbody>

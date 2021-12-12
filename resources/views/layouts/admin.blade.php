@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{ asset('assets/admin') }}/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('assets/admin') }}/assets/images/favicon.png" />
+    @yield('boostrap_js')
     <title>@yield('baslik')</title>
 </head>
 <body>
@@ -39,6 +40,7 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
+    @yield('scripts')
     <script src="{{ asset('assets/admin') }}/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
