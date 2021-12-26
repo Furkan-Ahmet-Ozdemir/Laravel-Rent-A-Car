@@ -19,18 +19,19 @@
         </li>
         <li class="nav-item sidebar-user-actions">
             <div class="sidebar-user-menu">
-                <a href="#" class="nav-link"><i ></i>
-                    <span class="menu-title">Dashboard</span>
+                <a href="{{route('admin_setting')}}" class="nav-link"><i ></i>
+                    <span class="menu-title">Settings</span>
                 </a>
             </div>
         </li>
         <li class="nav-item sidebar-user-actions">
             <div class="sidebar-user-menu">
                 <a href="#" class="nav-link"><i ></i>
-                    <span class="menu-title">Settings</span>
+                    <span class="menu-title">Dashboard</span>
                 </a>
             </div>
         </li>
+
         <li class="nav-item sidebar-user-actions">
             <div class="sidebar-user-menu">
                 <a href="{{route('admin_logout')}}" class="nav-link"><i class="mdi mdi-logout menu-icon"></i>
