@@ -16,11 +16,9 @@
                         <th>Category Id</th>
                         <th>Title</th>
                         <th>Image</th>
+                        <th>Image Gallery</th>
                         <th>Price</th>
-{{--                        <th>Baggage</th>--}}
-{{--                        <th>Passenger</th>--}}
-{{--                        <th>Car Type</th>--}}
-{{--                        <th>Brand Name</th>--}}
+
                         <th>Model Name</th>
                         <th>Status</th>
                         <th>Edit</th>
@@ -38,17 +36,13 @@
                                     <img src="{{Storage::url($rs->image)}}" width="100" height="100" alt="">
                                 @endif
                             </td>
+                            <td><a href="{{route('admin_image_add',['car_id'=>$rs->id])}}" ONCLICK="return !window.open(this.href,'','  width=500,height=700')"> Gallery</a> </td>
                             <td>{{$rs->price}}</td>
-{{--                            <td>{{$rs->baggage}}</td>--}}
-{{--                            <td>{{$rs->passenger}}</td>--}}
-{{--                            <td>{{$rs->car_type}}</td>--}}
-{{--                            <td>{{$rs->brand_name}}</td>--}}
                             <td>{{$rs->model_name}}</td>
-
-
                             <td>{{$rs->status}}</td>
                             <td><label class="badge badge-warning"><a href="{{route('admin_car_edit',['id'=> $rs->id])}}" >EDIT</a></label></td>
                             <td><label class="badge badge-danger"><a href="{{route('admin_car_delete',['id'=> $rs->id])}}"
+
                                                                      onclick="return confirm('Delete ! Are you sure ?')">DELETE</a></label></td>
                         </tr>
                     @endforeach
