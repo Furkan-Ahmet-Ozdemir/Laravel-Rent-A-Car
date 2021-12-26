@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 
-@section('title','Car ')
+@section('title','Car')
 
 @section('content')
     <div class="content-wrapper">
-
+{{--{{dd($datalist)}}--}}
         <div class="page-header">
             <h3 class="page-title"> Cars </h3>
             <a href="{{route('admin_car_add')}}"   type="button" class="btn btn-primary btn-rounded btn-fw"> ADD </a>
@@ -13,12 +13,11 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Category Id</th>
+                        <th>Category</th>
                         <th>Title</th>
                         <th>Image</th>
                         <th>Image Gallery</th>
                         <th>Price</th>
-
                         <th>Model Name</th>
                         <th>Status</th>
                         <th>Edit</th>
@@ -29,7 +28,7 @@
                     @foreach(  $datalist as $rs)
                         <tr>
                             <td>{{$rs->id}}</td>
-                            <td>{{$rs->category_id}}</td>
+                            <td>{{$rs->category->title}}</td>
                             <td>{{$rs->title}}</td>
                             <td>
                                 @if($rs->image)
@@ -42,7 +41,6 @@
                             <td>{{$rs->status}}</td>
                             <td><label class="badge badge-warning"><a href="{{route('admin_car_edit',['id'=> $rs->id])}}" >EDIT</a></label></td>
                             <td><label class="badge badge-danger"><a href="{{route('admin_car_delete',['id'=> $rs->id])}}"
-
                                                                      onclick="return confirm('Delete ! Are you sure ?')">DELETE</a></label></td>
                         </tr>
                     @endforeach
