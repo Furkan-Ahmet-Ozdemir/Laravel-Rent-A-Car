@@ -16,6 +16,7 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('title',150);
+            $table->string('slug',100);
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
             $table->string('image',75)->nullable();

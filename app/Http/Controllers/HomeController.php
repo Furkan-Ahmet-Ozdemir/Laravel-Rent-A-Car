@@ -3,18 +3,40 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    public static function categorylist(){
+        return Category::where('parent_id','=',0)->with('children')->get();
+    }
     public function index(){
-        return view('home.index');
+        $categories = DB::table('categories')->where('status','True')->pluck('title')->toArray();
+        return view('home.index')->with('categories',$categories);
     }
     public function home(){
-        return view('home.home');
+        $categories = DB::table('categories')->where('status','True')->pluck('title')->toArray();
+        return view('home.home')->with('categories',$categories);
     }
-    public function test($id){
-        echo "Id Number :",$id;
+    public function contact(){
+        $categories = DB::table('categories')->where('status','True')->pluck('title')->toArray();
+        return view('home.contact')->with('categories',$categories);
     }
+
+    public function about(){
+        $categories = DB::table('categories')->where('status','True')->pluck('title')->toArray();
+        return view('home.about')->with('categories',$categories);
+    }
+
+    public function faq(){
+        $categories = DB::table('categories')->where('status','True')->pluck('title')->toArray();
+        return view('home.faq')->with('categories',$categories);
+    }
+
+    public function cars(){
+        return view('home.cars');
+    }
+
 
     public function login(){
         return view('admin.login');

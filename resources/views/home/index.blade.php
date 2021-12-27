@@ -6,4 +6,8 @@
     Türkiyenin en iyi Araba Kiralama Sitesi
 @endsection
 
+@section('content')
+    @include('home._content')
+@endsection
+
 @section('keywords','Araba,SUV,')

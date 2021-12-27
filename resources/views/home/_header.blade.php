@@ -38,36 +38,42 @@
             </div>
         </div>
     </div>
-
     <div class="navigation-wrapper">
         <div class="container"><div class="row">
-                <div class="col-12"><nav><div class="main-navigation">
+                <div class="col-12">
+
+                    <nav>
+                        <div class="main-navigation">
                             <div class="logo">
                                 <a href="index.html">
                                     <img src="assets/images/logo.png" class="img-fluid" alt="logo"></a>
+                        </div>
+                        <div class="main-menu">
+                            <ul class="custom-flex">
+                                <li class="menu-item active"><a href="{{route('home')}}">Home</a></li>
+                                <li class="menu-item menu-item-has-children"><a href="{{route('home_cars')}}">Categories</a>
+                                    <ul class="submenu custom">
+
+                                        @for($i = 0; $i < count($categories); $i++)
+                                            <li class="menu-item"><a href="#">{{$categories[$i]}}</a></li>
+                                        @endfor
+                                    </ul>
+                                </li>
+
+                                <li class="menu-item"><a href="{{route('home_about')}}">About</a></li>
+                                <li class="menu-item"><a href="{{route('home_contact')}}">Contact Us</a></li>
+                                <li class="menu-item"><a href="{{route('home_faq')}}">Faq</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="hamburger-menu"><div class="menu-btn"
+                            ><span></span><span></span><span></span>
                             </div>
-                <div class="main-menu">
-                                <ul class="custom-flex">
-                                    <li class="menu-item active"><a href="index.html">Home</a></li>
-                                    <li class="menu-item menu-item-has-children">
-                                        <a href="#">Inventory</a>
-                                        <ul class="submenu custom">
-                                            <li class="menu-item"><a href="cars.html">Full Width</a></li>
-                                            <li class="menu-item"><a href="cars-left-sidebar.html">Left Sidebar</a></li>
-                                            <li class="menu-item"><a href="cars-right-sidebar.html">Right Sidebar</a></li>
-                                            <li class="menu-item"><a href="car-detail.html">Car Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item menu-item-has-children"><a href="#">Blog</a>
-                                        <ul class="submenu custom"><li class="menu-item"><a href="blog.html">Blog Grid</a></li>
-                                            <li class="menu-item"><a href="blog-left-sidebar.html">Blog Left</a></li>
-                                            <li class="menu-item"><a href="blog-right-sidebar.html">Blog right</a></li>
-                                            <li class="menu-item"><a href="blog-details.html">Blog Detail</a></li>
-                                            <li class="menu-item"><a href="blog-details-left-sidebar.html">Blog Detail Left</a></li>
-                                            <li class="menu-item"><a href="blog-details-right-sidebar.html">Blog Detail Right</a></li>
-                                        </ul></li><li class="menu-item"><a href="about.html">About</a></li>
-                                    <li class="menu-item menu-item-has-children"><a href="#">Pages</a><ul class="submenu custom">
-                                            <li class="menu-item"><a href="booking.html">Booking</a></li><li class="menu-item"><a href="faqs.html">Faq</a></li>
-                                            <li class="menu-item"><a href="gallery.html">Gallery</a></li><li class="menu-item"><a href="404.html">404</a></li>
-                                            <li class="menu-item"><a href="coming-soon.html">Coming Soon</a></li></ul></li><li class="menu-item"><a href="contact.html">Contact</a></li></ul></div><div class="hamburger-menu"><div class="menu-btn"><span></span><span></span><span></span></div></div></div></nav></div></div></div></div>
+                        </div>
+                    </div>
+                </nav>
+                </div>
+            </div>
+        </div>
+    </div>
 </header><!-- End Topbar --><!-- Header -->

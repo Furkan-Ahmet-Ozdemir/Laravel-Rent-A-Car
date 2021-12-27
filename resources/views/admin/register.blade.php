@@ -31,18 +31,24 @@
                         </div>
                         <h4>Hello! let's get started</h4>
                         <h6 class="font-weight-light">Sign in to continue.</h6>
-                        <form class="pt-3" action="{{ route('admin_logincheck') }}" method="POST">
+                        <form class="pt-3" action="{{ route('admin_registercheck') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                                <input type="text" name="name" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Name" required>
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                                <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" required>
                             </div>
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" name="password1" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Confirm Password" required>
+                            </div>
+
                             <div class="mt-3">
-                         <!--       <input type="submit" name="kaydet">
-                                <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN IN</a>
-                             !-->
+
                                 <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
                             </div>
                          <!--   <div class="my-2 d-flex justify-content-between align-items-center">

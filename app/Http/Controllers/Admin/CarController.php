@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class CarController extends Controller
 {
@@ -31,7 +32,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        $datalist = Category::all();
+        $datalist = Category::with('children')->get();
         return view('admin.car_add',['datalist'=> $datalist]);
     }
 
@@ -46,10 +47,11 @@ class CarController extends Controller
         $data = new Car;
         $data->category_id   = $request->input('category_id');
         $data->title       = $request->input('title');
+        $data->slug        = Str::slug($request->input('title'));
         $data->keywords    = $request->input('keywords');
         $data->description = $request->input('description');
         $data->status      = $request->input('status');
-        $data->image = Storage::putFile('images',$request->file('image')); /*File upload*/
+
         $data->detail = $request->input('detail');
         $data->price = $request->input('price');
         $data->baggage = $request->input('baggage');
@@ -60,6 +62,9 @@ class CarController extends Controller
         $data->transmission_type = $request->input('transmission_type');
         $data->fuel_type = $request->input('fuel_type');
         $data->user_id = Auth::id();
+        if ($request->file('image')!=null){
+            $data->image = Storage::putFile('images',$request->file('image')); /*File upload*/
+        }
         $data->save();
         return redirect()->route('admin_cars');
 
@@ -85,7 +90,7 @@ class CarController extends Controller
     public function edit(Car $car,$id)
     {
         $data = Car::find($id);
-        $datalist =Category::all();
+        $datalist =Category::with('children')->get();
 
         return view('admin.car_edit',['data'=>$data,'datalist'=> $datalist]);
 
@@ -129,7 +134,9 @@ class CarController extends Controller
      */
     public function destroy(Car $car,$id)
     {
-        DB::table('cars')->where('id','=',$id)->delete();
+        //DB::table('cars')->where('id','=',$id)->delete();
+        $data = Car::find($id);
+        $data->delete();
         return redirect()->route('admin_cars');
     }
 }

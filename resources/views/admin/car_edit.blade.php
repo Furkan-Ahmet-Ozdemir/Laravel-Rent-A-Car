@@ -23,11 +23,13 @@
                         @csrf
 
                         <div class="form-group">
-                            <label >Parent</label>
+                            <label >Category</label>
                             <select class="form-control select2" name="category_id" style="width: 100%">
 
                                 @foreach(  $datalist as $rs)
-                                    <option value="{{$rs->id}}" @if($rs->id == $data->category_id) selected="selected" @endif >{{$rs->title}}</option>
+                                    <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif >
+                                        {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>

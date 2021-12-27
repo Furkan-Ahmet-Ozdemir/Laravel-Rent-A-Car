@@ -47,27 +47,3 @@
     </div>
 </footer>
 
-<!-- Place all Scripts Here -->
-<!-- jQuery -->
-<script src="assets/js/jquery.min.js"></script>
-<!-- Popper -->
-<script src="assets/js/popper.min.js"></script>
-<!-- Bootstrap -->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- Range Slider -->
-<script src="assets/js/ion.rangeSlider.min.js"></script>
-<!-- Slick Slider -->
-<script src="assets/js/slick.min.js"></script>
-<!-- Datepicker -->
-<script src="assets/js/datepicker.js"></script>
-<script src="assets/js/datepicker.en.js"></script>
-<!-- Isotope Gallery -->
-<script src="assets/js/isotope.pkgd.min.js"></script>
-<!-- Nice Select -->
-<script src="assets/js/jquery.nice-select.js"></script>
-<!-- magnific popup -->
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<!-- Maps -->
-<script src="http://www.google.cn/maps/api/js?key=AIzaSyDnd9JwZvXty-1gHZihMoFhJtCXmHfeRQg"></script>
-<!-- Custom Js -->
-<script src="assets/js/custom.js"></script><!-- /Place all Scripts Here -->

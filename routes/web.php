@@ -16,12 +16,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',function (){
     return view('home.index');
-});
+})->name('home');
 
-Route::get("/home",[HomeController::class,'home']);
-Route::get("/test/{id}",[HomeController::class,'test'])->where('id','[0-10]+');
+
+
+Route::get("/contact",[HomeController::class,'contact'])->name('home_contact');
+Route::get("/about",[HomeController::class,'about'])->name('home_about');
+Route::get("/faq",[App\Http\Controllers\HomeController::class,'faq'])->name('home_faq');
+Route::get("/cars",[HomeController::class,'cars'])->name('home_cars');
+
+
 
 Route::middleware('auth')->prefix('admin')->group(function (){
+
+
+
     Route::get("category",[App\Http\Controllers\Admin\CategoryController::class,'index'])               ->name('admin_category');
     Route::get("category/add",[App\Http\Controllers\Admin\CategoryController::class,'add'])             ->name('admin_category_add');
     Route::post("category/create",[App\Http\Controllers\Admin\CategoryController::class,'create'])      ->name('admin_category_create');
@@ -52,11 +61,15 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
 });
 
-Route::middleware('auth')->prefix('admin')->group(function (){
-    Route::get("/",[App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin_home');
+Route::prefix('admin')->group(function (){
+    Route::get("/",[App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin_home')->middleware('auth');
     Route::get("/login",[App\Http\Controllers\Admin\HomeController::class,'login'])->name('admin_login');
     Route::post("/logincheck",[App\Http\Controllers\Admin\HomeController::class,'logincheck'])->name('admin_logincheck');
     Route::get("/logout",[App\Http\Controllers\Admin\HomeController::class,'logout'])->name('admin_logout');
+
+    Route::get("/register",[App\Http\Controllers\Admin\HomeController::class,'register'])->name('admin_register');
+    Route::post("/registercheck",[App\Http\Controllers\Admin\HomeController::class,'registercheck'])->name('admin_registercheck');
+
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
