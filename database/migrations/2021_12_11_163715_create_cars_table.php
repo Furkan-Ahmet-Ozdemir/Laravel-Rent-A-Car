@@ -31,7 +31,7 @@ class CreateCarsTable extends Migration
             $table->string('fuel_type')->nullable();
             $table->string('transmission_type')->nullable();
             $table->integer('user_id')->nullable();
-            $table->string('status',5)->nullable()->nullable()->default('False');
+            $table->string('status',5)->nullable()->default('False');
             $table->timestamps();
         });
     }
