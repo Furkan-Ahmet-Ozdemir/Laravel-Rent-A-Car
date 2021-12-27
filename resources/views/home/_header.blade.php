@@ -45,7 +45,7 @@
                     <nav>
                         <div class="main-navigation">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="{{route('home.index')}}">
                                     <img src="assets/images/logo.png" class="img-fluid" alt="logo"></a>
                         </div>
                         <div class="main-menu">
