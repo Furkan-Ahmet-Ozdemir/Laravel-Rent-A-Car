@@ -9,28 +9,28 @@
     <meta name="description" content="#">
     <title>Rumble - Car Rental Booking HTML Template | Homepage</title>
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" href="assets/images/favicon.ico">
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{url('assets/images/favicon.ico')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{url('assets/images/favicon.ico')}}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{url('assets/images/favicon.ico')}}">
+    <link rel="apple-touch-icon-precomposed" href="{{url('assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{url('assets/images/favicon.ico')}}">
     <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{url('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Fontawesome -->
-    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link href="{{url('assets/css/font-awesome.css')}}" rel="stylesheet">
     <!-- Flaticons -->
-    <link href="assets/css/font/flaticon.css" rel="stylesheet">
+    <link href="{{url('assets/css/font/flaticon.css')}}" rel="stylesheet">
     <!-- Slick Slider -->
-    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="{{url('assets/css/slick.css')}}" rel="stylesheet">
     <!-- Range Slider -->
-    <link href="assets/css/ion.rangeSlider.min.css" rel="stylesheet">
-    <!-- Datepicker --><link href="assets/css/datepicker.css" rel="stylesheet">
+    <link href="{{url('assets/css/ion.rangeSlider.min.css')}}" rel="stylesheet">
+    <!-- Datepicker --><link href="{{url('assets/css/datepicker.css')}}" rel="stylesheet">
     <!-- magnific popup -->
-    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link href="{{url('assets/css/magnific-popup.css')}}" rel="stylesheet">
     <!-- Nice Select -->
-    <link href="assets/css/nice-select.css" rel="stylesheet">
-    <!-- Custom Stylesheet --><link href="assets/css/style.css" rel="stylesheet">
-    <!-- Custom Responsive --><link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="{{url('assets/css/nice-select.css')}}" rel="stylesheet">
+    <!-- Custom Stylesheet --><link href="{{url('assets/css/style.css')}}" rel="stylesheet">
+    <!-- Custom Responsive --><link href="{{url('assets/css/responsive.css')}}" rel="stylesheet">
     <!-- CSS for IE --><!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]--><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]><script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script><![endif]--><!-- place -->
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">

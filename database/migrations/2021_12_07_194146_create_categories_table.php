@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id()->autoIncrement();
             $table->integer('parent_id')->default(0);
             $table->string('title',150);
+            $table->string('slug',150);
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
             $table->string('image',100)->nullable();

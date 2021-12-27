@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="listing-top-heading mb-xl-20">
-                        <h6 class="no-margin text-custom-black">Showing 8 Results</h6>
+                        <h6 class="no-margin text-custom-black">Showing {{count($cars)}} Results</h6>
                         <div class="sort-by"><span class="text-custom-black fs-14 fw-600">Sort by</span>
                             <div class="group-form"><select class="form-control form-control-custom custom-select">
                                     <option>A to Z</option>
@@ -32,186 +32,26 @@
                         </div>
                     </div>
                 </div>
-                <div class=" col-lg-4 col-md-6">
-                    <div class="car-grid mb-xl-30">
-                        <div class="car-grid-wrapper car-grid bx-wrapper">
-                            <div class="image-sec animate-img"><a href="#"><img src="assets/images/cars/1.png" class="full-width"
-                                                                                alt="img"></a></div>
-                            <div class="car-grid-caption padding-20 bg-custom-white p-relative">
-                                <h4 class="title fs-16"><a href="#" class="text-custom-black">Economy<small class="text-light-dark">Per
-                                            Day</small></a></h4><span class="price"><small>From</small>$18</span>
-                                <p>Grate explorer of tha truth tha master-bulder of human happines.</p>
-                                <div class="action"><a class="btn-second btn-small" href="#">View</a><a class="btn-first btn-submit"
-                                                                                                        href="#">Book</a></div>
+                @isset($cars)
+                    @foreach($cars as $car)
+                        <div class=" col-lg-4 col-md-6">
+                            <div class="car-grid mb-xl-30">
+                                <div class="car-grid-wrapper car-grid bx-wrapper">
+                                    <div class="image-sec animate-img"><a href="#"><img src="{{url('storage/',$car->image)}}" class="full-width"
+                                                                                        alt="img"></a></div>
+                                    <div class="car-grid-caption padding-20 bg-custom-white p-relative">
+                                        <h4 class="title fs-16"><a href="#" class="text-custom-black">{{$car->title}}<small class="text-light-dark">Per
+                                                    Day</small></a></h4><span class="price"><small>From</small>{{$car->price}} ₺</span>
+                                        <p>{{$car->description}}</p>
+                                        <div class="action"><a class="btn-first btn-submit" href="{{route('home_carDetail',$car->slug)}}">Book</a></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class=" col-lg-4 col-md-6">
-                    <div class="car-grid mb-xl-30">
-                        <div class="car-grid-wrapper car-grid bx-wrapper">
-                            <div class="image-sec animate-img"><a href="#"><img src="assets/images/cars/2.png" class="full-width"
-                                                                                alt="img"></a></div>
-                            <div class="car-grid-caption padding-20 bg-custom-white p-relative">
-                                <h4 class="title fs-16"><a href="#" class="text-custom-black">Delux<small class="text-light-dark">2
-                                            Day</small></a></h4><span class="price"><small>From</small>$58</span>
-                                <p>Grate explorer of tha truth tha master-bulder of human happines.</p>
-                                <div class="action"><a class="btn-second btn-small" href="#">View</a><a class="btn-first btn-submit"
-                                                                                                        href="#">Book</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-4 col-md-6">
-                    <div class="car-grid mb-xl-30">
-                        <div class="car-grid-wrapper car-grid bx-wrapper">
-                            <div class="image-sec animate-img"><a href="#"><img src="assets/images/cars/3.png" class="full-width"
-                                                                                alt="img"></a></div>
-                            <div class="car-grid-caption padding-20 bg-custom-white p-relative">
-                                <h4 class="title fs-16"><a href="#" class="text-custom-black">Special offer<small
-                                            class="text-light-dark">Per Day</small></a></h4><span class="price"><small>From</small>$28</span>
-                                <p>Grate explorer of tha truth tha master-bulder of human happines.</p>
-                                <div class="action"><a class="btn-second btn-small" href="#">View</a><a class="btn-first btn-submit"
-                                                                                                        href="#">Book</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-lg-4 col-md-6">
-                    <div class="car-grid mb-xl-30">
-                        <div class="car-grid-wrapper car-grid bx-wrapper">
-                            <div class="image-sec animate-img"><a href="#"><img src="assets/images/cars/4.png" class="full-width"
-                                                                                alt="img"></a></div>
-                            <div class="car-grid-caption padding-20 bg-custom-white p-relative">
-                                <h4 class="title fs-16"><a href="#" class="text-custom-black">Economy<small class="text-light-dark">Per
-                                            Day</small></a></h4><span class="price"><small>From</small>$58</span>
-                                <p>Grate explorer of tha truth tha master-bulder of human happines.</p>
-                                <div class="action"><a class="btn-second btn-small" href="#">View</a><a class="btn-first btn-submit"
-                                                                                                        href="#">Book</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="car-grid mb-xl-30">
-                        <div class="car-grid-wrapper car-grid bx-wrapper">
-                            <div class="image-sec animate-img"><a href="#"><img src="assets/images/cars/5.png" class="full-width"
-                                                                                alt="img"></a></div>
-                            <div class="car-grid-caption padding-20 bg-custom-white p-relative">
-                                <h4 class="title fs-16"><a href="#" class="text-custom-black">Platinum<small class="text-light-dark">Per
-                                            Day</small></a></h4><span class="price"><small>From</small>$58</span>
-                                <p>Grate explorer of tha truth tha master-bulder of human happines.</p>
-                                <div class="action"><a class="btn-second btn-small" href="#">View</a><a class="btn-first btn-submit"
-                                                                                                        href="#">Book</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="car-grid mb-xl-30">
-                        <div class="car-grid-wrapper car-grid bx-wrapper">
-                            <div class="image-sec animate-img"><a href="#"><img src="assets/images/cars/6.png" class="full-width"
-                                                                                alt="img"></a></div>
-                            <div class="car-grid-caption padding-20 bg-custom-white p-relative">
-                                <h4 class="title fs-16"><a href="#" class="text-custom-black">Super Gold<small
-                                            class="text-light-dark">Per Day</small></a></h4><span class="price"><small>From</small>$158</span>
-                                <p>Grate explorer of tha truth tha master-bulder of human happines.</p>
-                                <div class="action"><a class="btn-second btn-small" href="#">View</a><a class="btn-first btn-submit"
-                                                                                                        href="#">Book</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="car-grid mb-xl-30">
-                        <div class="car-grid-wrapper car-grid bx-wrapper">
-                            <div class="image-sec animate-img"><a href="#"><img src="assets/images/cars/7.png" class="full-width"
-                                                                                alt="img"></a></div>
-                            <div class="car-grid-caption padding-20 bg-custom-white p-relative">
-                                <h4 class="title fs-16"><a href="#" class="text-custom-black">Economy<small class="text-light-dark">Per
-                                            Day</small></a></h4><span class="price"><small>From</small>$58</span>
-                                <p>Grate explorer of tha truth tha master-bulder of human happines.</p>
-                                <div class="action"><a class="btn-second btn-small" href="#">View</a><a class="btn-first btn-submit"
-                                                                                                        href="#">Book</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="car-grid mb-xl-30">
-                        <div class="car-grid-wrapper car-grid bx-wrapper">
-                            <div class="image-sec animate-img"><a href="#"><img src="assets/images/cars/8.png" class="full-width"
-                                                                                alt="img"></a></div>
-                            <div class="car-grid-caption padding-20 bg-custom-white p-relative">
-                                <h4 class="title fs-16"><a href="#" class="text-custom-black">Duplex<small class="text-light-dark">Per
-                                            Day</small></a></h4><span class="price"><small>From</small>$58</span>
-                                <p>Grate explorer of tha truth tha master-bulder of human happines.</p>
-                                <div class="action"><a class="btn-second btn-small" href="#">View</a><a class="btn-first btn-submit"
-                                                                                                        href="#">Book</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="car-grid mb-md-30">
-                        <div class="car-grid-wrapper car-grid bx-wrapper">
-                            <div class="image-sec animate-img"><a href="#"><img src="assets/images/cars/9.png" class="full-width"
-                                                                                alt="img"></a></div>
-                            <div class="car-grid-caption padding-20 bg-custom-white p-relative">
-                                <h4 class="title fs-16"><a href="#" class="text-custom-black">Economy<small class="text-light-dark">Per
-                                            Day</small></a></h4><span class="price"><small>From</small>$58</span>
-                                <p>Grate explorer of tha truth tha master-bulder of human happines.</p>
-                                <div class="action"><a class="btn-second btn-small" href="#">View</a><a class="btn-first btn-submit"
-                                                                                                        href="#">Book</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="car-grid mb-xl-30">
-                        <div class="car-grid-wrapper car-grid bx-wrapper">
-                            <div class="image-sec animate-img"><a href="#"><img src="assets/images/cars/10.png" class="full-width"
-                                                                                alt="img"></a></div>
-                            <div class="car-grid-caption padding-20 bg-custom-white p-relative">
-                                <h4 class="title fs-16"><a href="#" class="text-custom-black">Gold<small class="text-light-dark">Per
-                                            Day</small></a></h4><span class="price"><small>From</small>$58</span>
-                                <p>Grate explorer of tha truth tha master-bulder of human happines.</p>
-                                <div class="action"><a class="btn-second btn-small" href="#">View</a><a class="btn-first btn-submit"
-                                                                                                        href="#">Book</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="car-grid mb-xl-30">
-                        <div class="car-grid-wrapper car-grid bx-wrapper">
-                            <div class="image-sec animate-img"><a href="#"><img src="assets/images/cars/11.png" class="full-width"
-                                                                                alt="img"></a></div>
-                            <div class="car-grid-caption padding-20 bg-custom-white p-relative">
-                                <h4 class="title fs-16"><a href="#" class="text-custom-black">Platinum<small class="text-light-dark">Per
-                                            Day</small></a></h4><span class="price"><small>From</small>$58</span>
-                                <p>Grate explorer of tha truth tha master-bulder of human happines.</p>
-                                <div class="action"><a class="btn-second btn-small" href="#">View</a><a class="btn-first btn-submit"
-                                                                                                        href="#">Book</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="car-grid mb-xl-30">
-                        <div class="car-grid-wrapper car-grid bx-wrapper">
-                            <div class="image-sec animate-img"><a href="#"><img src="assets/images/cars/12.png" class="full-width"
-                                                                                alt="img"></a></div>
-                            <div class="car-grid-caption padding-20 bg-custom-white p-relative">
-                                <h4 class="title fs-16"><a href="#" class="text-custom-black">Duplex<small class="text-light-dark">2
-                                            Day</small></a></h4><span class="price"><small>From</small>$18</span>
-                                <p>Grate explorer of tha truth tha master-bulder of human happines.</p>
-                                <div class="action"><a class="btn-second btn-small" href="#">View</a><a class="btn-first btn-submit"
-                                                                                                        href="#">Book</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endisset
+
+
             </div>
             <div class="row">
                 <div class="col-12">

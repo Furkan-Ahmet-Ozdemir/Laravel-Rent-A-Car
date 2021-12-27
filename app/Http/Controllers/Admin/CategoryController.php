@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -55,6 +56,7 @@ class CategoryController extends Controller
         DB::table('categories')->insert([
             'parent_id' => $request->input('parent_id'),
             'title' => $request->input('title'),
+            'slug'  => Str::slug($request->input('title')),
             'keywords' => $request->input('keywords'),
             'description' => $request->input('description'),
             'status' => $request->input('status')

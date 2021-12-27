@@ -14,18 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',function (){
-    return view('home.index');
-})->name('home');
+//Route::get('/',function (){
+//    return view('home.index');
+//})->name('home');
 
-
-
+Route::get("/",[HomeController::class,'index'])->name('home.index');
 Route::get("/contact",[HomeController::class,'contact'])->name('home_contact');
 Route::get("/about",[HomeController::class,'about'])->name('home_about');
 Route::get("/faq",[App\Http\Controllers\HomeController::class,'faq'])->name('home_faq');
 Route::get("/cars",[HomeController::class,'cars'])->name('home_cars');
-
-
+Route::get("/cars/{slug}",[HomeController::class,'carType'])->name('home_carType');
+Route::get("/carDetail/{slug}",[HomeController::class,'carDetail'])->name('home_carDetail');
 
 Route::middleware('auth')->prefix('admin')->group(function (){
 

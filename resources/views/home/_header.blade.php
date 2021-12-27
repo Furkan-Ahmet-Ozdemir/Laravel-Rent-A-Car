@@ -50,12 +50,12 @@
                         </div>
                         <div class="main-menu">
                             <ul class="custom-flex">
-                                <li class="menu-item active"><a href="{{route('home')}}">Home</a></li>
+                                <li class="menu-item active"><a href="{{route('home.index')}}">Home</a></li>
                                 <li class="menu-item menu-item-has-children"><a href="{{route('home_cars')}}">Categories</a>
                                     <ul class="submenu custom">
-
+                                        <li class="menu-item"><a href="{{route('home_cars')}}">All</a></li>
                                         @for($i = 0; $i < count($categories); $i++)
-                                            <li class="menu-item"><a href="#">{{$categories[$i]}}</a></li>
+                                            <li class="menu-item"><a href="{{route('home_carType',$categories[$i]->id)}}">{{$categories[$i]->title}}</a></li>
                                         @endfor
                                     </ul>
                                 </li>
