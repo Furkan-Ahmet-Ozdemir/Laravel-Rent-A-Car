@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <h1 class="text-custom-white">Contact Us</h1>
                     <ul class="custom-flex justify-content-center">
-                        <li class="fw-500"><a href="index.html" class="text-custom-white">Home</a></li>
+                        <li class="fw-500"><a href="{{route('home.index')}}" class="text-custom-white">Home</a></li>
                         <li class="active fw-500">Contact Us </li>
                     </ul>
                 </div>
@@ -29,35 +29,38 @@
                             </div>
                         </div>
                     </div>
-                    <form class="mb-md-80">
+                    <form class="mb-md-80" action="{{route('contact_store')}}" method="post" >
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="#" class="form-control form-control-custom" placeholder="Name" required="">
+                                    <input type="text" name="name" class="form-control form-control-custom" placeholder="Name" required="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="email" name="#" class="form-control form-control-custom" placeholder="Email I'd"
-                                           required="">
+                                    <input type="email" name="email" class="form-control form-control-custom" placeholder="Email" required="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="#" class="form-control form-control-custom" placeholder="Subject"
-                                           required="">
+                                    <input type="text" name="subject" class="form-control form-control-custom" placeholder="Subject" required="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="#" class="form-control form-control-custom" placeholder="Phone No."
+                                    <input type="text" name="phone" class="form-control form-control-custom" placeholder="Phone No."
                                            required="">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                      <textarea name="message" rows="5" class="form-control form-control-custom" placeholder="Message"
-                                required=""></textarea>
+                                  <textarea name="message" rows="5" class="form-control form-control-custom" placeholder="Message"
+                                            required=""></textarea>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input hidden   type="text" name="ip" value="123365456">
+                                    </div>
                                 </div>
                                 <button type="submit" class="btn-first btn-submit">Submit</button>
                             </div>

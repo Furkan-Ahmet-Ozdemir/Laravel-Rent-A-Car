@@ -20,15 +20,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/",[HomeController::class,'index'])->name('home.index');
 Route::get("/contact",[HomeController::class,'contact'])->name('home_contact');
+Route::post("/contact/create",[\App\Http\Controllers\MessageController::class,'store'])->name('contact_store');
 Route::get("/about",[HomeController::class,'about'])->name('home_about');
 Route::get("/faq",[App\Http\Controllers\HomeController::class,'faq'])->name('home_faq');
 Route::get("/cars",[HomeController::class,'cars'])->name('home_cars');
 Route::get("/cars/{slug}",[HomeController::class,'carType'])->name('home_carType');
 Route::get("/carDetail/{slug}",[HomeController::class,'carDetail'])->name('home_carDetail');
 
+
+
 Route::middleware('auth')->prefix('admin')->group(function (){
 
+    Route::get("faq",[App\Http\Controllers\Admin\FaqController::class,'index'])               ->name('admin_faq');
+    Route::get("faq/store",[App\Http\Controllers\Admin\FaqController::class,'store'])               ->name('admin_faq_store');
+    Route::post("faq/create",[App\Http\Controllers\Admin\FaqController::class,'create'])               ->name('admin_faq_create');
+    Route::post("faq/update/{id}",[App\Http\Controllers\Admin\FaqController::class,'update'])->name('admin_faq_update');
+    Route::get("faq/edit/{id}",[App\Http\Controllers\Admin\FaqController::class,'edit'])->name('admin_faq_edit');
+    Route::get("faq/delete/{id}",[App\Http\Controllers\Admin\FaqController::class,'destroy'])->name('admin_faq_delete');
 
+    Route::get("message",[App\Http\Controllers\Admin\MessageController::class,'message'])               ->name('admin_message');
 
     Route::get("category",[App\Http\Controllers\Admin\CategoryController::class,'index'])               ->name('admin_category');
     Route::get("category/add",[App\Http\Controllers\Admin\CategoryController::class,'add'])             ->name('admin_category_add');

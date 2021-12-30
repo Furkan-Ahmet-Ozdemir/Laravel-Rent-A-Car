@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Message;
 use Illuminate\Http\Request;
+//use App\Http\Controllers\DB;
+use Illuminate\Support\Facades\DB;
 
 class MessageController extends Controller
 {
@@ -35,7 +37,30 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        dd($request);
+//        DB::table('messages')->insert([
+//            'name' => $request->input('name'),
+//            'email' => $request->input('email'),
+//            'phone'  => $request->input('phone'),
+//            'subject'  => $request->input('subject'),
+//            'message'  => $request->input('message'),
+//            'status'  => $request->input('status'),
+//            'ip'  => $request->input('ip'),
+//
+//
+//        ]);
+
+        $data = new Message();
+        $data->name     = $request->input('name');
+        $data->email    = $request->input('email');
+        $data->phone    = $request->input('phone');
+        $data->subject  = $request->input('subject');
+        $data->message  = $request->input('message');
+        $data->status   = $request->input('status');
+        $data->ip       = $request->input('ip');
+        $data->save();
+        return redirect()->route('home_contact');
+
     }
 
     /**

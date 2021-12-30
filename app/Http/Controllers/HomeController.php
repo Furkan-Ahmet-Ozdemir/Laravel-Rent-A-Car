@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-//    public static function categorylist(){
-//        return Category::where('parent_id','=',0)->with('children')->get();
-//    }
     public function index(){
         $categories = DB::table('categories')->where('status','True')->get();
         return view('home.index')->with('categories',$categories);
@@ -30,7 +29,8 @@ class HomeController extends Controller
 
     public function faq(){
         $categories = DB::table('categories')->where('status','True')->get();
-        return view('home.faq')->with('categories',$categories);
+        $datalist = Faq::get();
+        return view('home.faq',['categories'=> $categories,'datalist' => $datalist]);
     }
 
     public function cars(){
@@ -39,7 +39,6 @@ class HomeController extends Controller
         return view('home.cars',['categories'=> $categories,'cars'=>$cars]);
     }
     public function carType($slug){
-
         $categories = DB::table('categories')->where('status','True')->get();
         $cars = DB::table('cars')->where('category_id',$slug)->where('status','True')->get();
         return view('home.cars',['categories'=> $categories,'cars'=>$cars]);

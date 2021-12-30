@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Faq;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FaqController extends Controller
 {
@@ -14,7 +16,8 @@ class FaqController extends Controller
      */
     public function index()
     {
-        //
+        $datalist = Faq::get();
+        return view('admin.faq',['datalist' => $datalist]);
     }
 
     /**
@@ -22,9 +25,14 @@ class FaqController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        DB::table('faqs')->insert([
+            'question' => $request->input('question'),
+            'answer' => $request->input('answer'),
+            'status'  => $request->input('status'),
+        ]);
+        return redirect()->route('admin_faq');
     }
 
     /**
@@ -35,7 +43,7 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('admin.faq_store');
     }
 
     /**
@@ -55,9 +63,10 @@ class FaqController extends Controller
      * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit(Faq $faq)
+    public function edit($id)
     {
-        //
+        $data = DB::table('faqs')->find($id);
+        return view('admin.faq_edit',['faqdata'=>$data]);
     }
 
     /**
@@ -67,9 +76,14 @@ class FaqController extends Controller
      * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Faq $faq)
+    public function update(Request $request, Faq $faq,$id)
     {
-        //
+        $data = DB::table('faqs')->find($id);
+        $data->question   = $request->input('question');
+        $data->answer       = $request->input('answer');
+        $data->status    = $request->input('status');
+        $data->save();
+        return redirect()->route('admin_faq');
     }
 
     /**
@@ -78,8 +92,10 @@ class FaqController extends Controller
      * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faq $faq)
+    public function destroy(Faq $faq,$id)
     {
-        //
+        $data = Faq::find($id);
+        $data->delete();
+        return redirect()->route('admin_faq');
     }
 }
