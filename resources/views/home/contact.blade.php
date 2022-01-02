@@ -30,6 +30,7 @@
                         </div>
                     </div>
                     <form class="mb-md-80" action="{{route('contact_store')}}" method="post" >
+                        @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -56,11 +57,6 @@
                                 <div class="form-group">
                                   <textarea name="message" rows="5" class="form-control form-control-custom" placeholder="Message"
                                             required=""></textarea>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input hidden   type="text" name="ip" value="123365456">
-                                    </div>
                                 </div>
                                 <button type="submit" class="btn-first btn-submit">Submit</button>
                             </div>

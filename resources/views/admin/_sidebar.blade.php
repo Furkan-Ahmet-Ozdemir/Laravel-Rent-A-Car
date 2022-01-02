@@ -1,6 +1,6 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar" style="margin-right: fill;margin-left: auto">
     <ul class="nav" style="margin-right: fill;margin-left: fill;padding-left: 25px"
-        <li class="nav-item nav-category">Main</li>
+        <li class="nav-item nav-category">Menu</li>
 
         <li class="nav-item sidebar-user-actions">
             <div class="sidebar-user-menu">
@@ -47,8 +47,8 @@
         </li>
         <li class="nav-item sidebar-user-actions">
             <div class="sidebar-user-menu">
-                <a href="#" class="nav-link"><i ></i>
-                    <span class="menu-title">Dashboard</span>
+                <a href="{{route('admin_message')}}" class="nav-link"><i ></i>
+                    <span class="menu-title">Messages</span>
                 </a>
             </div>
         </li>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 //use App\Http\Controllers\DB;
 use Illuminate\Support\Facades\DB;
 
+
 class MessageController extends Controller
 {
     /**
@@ -37,18 +38,6 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request);
-//        DB::table('messages')->insert([
-//            'name' => $request->input('name'),
-//            'email' => $request->input('email'),
-//            'phone'  => $request->input('phone'),
-//            'subject'  => $request->input('subject'),
-//            'message'  => $request->input('message'),
-//            'status'  => $request->input('status'),
-//            'ip'  => $request->input('ip'),
-//
-//
-//        ]);
 
         $data = new Message();
         $data->name     = $request->input('name');
@@ -57,7 +46,7 @@ class MessageController extends Controller
         $data->subject  = $request->input('subject');
         $data->message  = $request->input('message');
         $data->status   = $request->input('status');
-        $data->ip       = $request->input('ip');
+        $data->ip       = $request->ip();
         $data->save();
         return redirect()->route('home_contact');
 
@@ -71,7 +60,8 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
-        //
+        $datalist = Message::get();
+        return view('admin.message',['datalist' => $datalist]);
     }
 
     /**
@@ -80,9 +70,10 @@ class MessageController extends Controller
      * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function edit(Message $message)
+    public function edit(Message $message,$id)
     {
-        //
+        $data = DB::table('messages')->find($id);
+        return view('admin.message_edit',['messagedata'=>$data]);
     }
 
     /**
@@ -92,9 +83,20 @@ class MessageController extends Controller
      * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Message $message)
+    public function update(Request $request, Message $message,$id)
     {
-        //
+        $data = DB::table('messages')->find($id);
+
+
+        $data->name     = $request->input('name');
+        $data->email    = $request->input('email');
+        $data->phone    = $request->input('phone');
+        $data->subject  = $request->input('subject');
+        $data->message  = $request->input('message');
+        $data->status   = $request->input('status');
+        $data->ip       = $request->ip();
+        $data->update();
+        return redirect()->route('admin_message');
     }
 
     /**
@@ -103,8 +105,10 @@ class MessageController extends Controller
      * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Message $message)
+    public function destroy(Message $message,$id)
     {
-        //
+        $data = Message::find($id);
+        $data->delete();
+        return redirect()->route('admin_message');
     }
 }

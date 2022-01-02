@@ -31,6 +31,16 @@ class SettingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function editAbout()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         //

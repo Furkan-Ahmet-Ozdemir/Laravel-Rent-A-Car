@@ -1,63 +1,161 @@
-<html class="login-pf">
-...
-<div class="login-pf-page">
+{{--<!DOCTYPE html>--}}
+{{--<html lang="en">--}}
+{{--<head>--}}
+{{--    <!-- Required meta tags -->--}}
+{{--    <meta charset="utf-8">--}}
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">--}}
+{{--    <title>Connect Plus</title>--}}
+{{--    <!-- plugins:css -->--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/admin') }}/vendors/mdi/css/materialdesignicons.min.css">--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/admin') }}/vendors/flag-icon-css/css/flag-icon.min.css">--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/admin') }}/vendors/css/vendor.bundle.base.css">--}}
+{{--    <!-- endinject -->--}}
+{{--    <!-- Plugin css for this page -->--}}
+{{--    <!-- End plugin css for this page -->--}}
+{{--    <!-- inject:css -->--}}
+{{--    <!-- endinject -->--}}
+{{--    <!-- Layout styles -->--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/admin') }}/assets/css/style.css">--}}
+{{--    <!-- End layout styles -->--}}
+{{--    <link rel="shortcut icon" href="{{ asset('assets/admin') }}/assets/images/favicon.png" />--}}
+{{--</head>--}}
+{{--<body>--}}
+{{--<div class="container-scroller">--}}
+{{--    <div class="container-fluid page-body-wrapper full-page-wrapper">--}}
+{{--        <div class="content-wrapper d-flex align-items-center auth">--}}
+{{--            <div class="row flex-grow">--}}
+{{--                <div class="col-lg-4 mx-auto">--}}
+{{--                    <div class="auth-form-light text-left p-5">--}}
+{{--                        <h4 CLASS="font-weight-bold">SIGN IN</h4>--}}
+{{--                        <h6 class="font-weight-light">Sign in to continue.</h6>--}}
+{{--                        <form class="pt-3" action="{{ route('admin_logincheck') }}" method="POST">--}}
+{{--                            @csrf--}}
+{{--                            <div class="form-group">--}}
+{{--                                <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">--}}
+{{--                            </div>--}}
+{{--                            <div class="form-group">--}}
+{{--                                <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">--}}
+{{--                            </div>--}}
+{{--                            <div class="mt-3">--}}
 
+{{--                                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>--}}
+{{--                                <button  class="btn btn-block btn-danger btn-lg font-weight-medium auth-form-btn">REGISTER</button>--}}
+{{--                            </div>--}}
 
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <!-- content-wrapper ends -->--}}
+{{--    </div>--}}
+{{--    <!-- page-body-wrapper ends -->--}}
+{{--</div>--}}
+{{--<!-- container-scroller -->--}}
+{{--<!-- plugins:js -->--}}
+{{--<script src="{{ asset('assets/admin') }}/vendors/js/vendor.bundle.base.js"></script>--}}
+{{--<!-- endinject -->--}}
+{{--<!-- Plugin js for this page -->--}}
+{{--<!-- End plugin js for this page -->--}}
+{{--<!-- inject:js -->--}}
+{{--<script src="{{ asset('assets/admin') }}/js/off-canvas.js"></script>--}}
+{{--<script src="{{ asset('assets/admin') }}/js/hoverable-collapse.js"></script>--}}
+{{--<script src="{{ asset('assets/admin') }}/js/misc.js"></script>--}}
+{{--<!-- endinject -->--}}
+{{--</body>--}}
+{{--</html>--}}
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-                <header class="login-pf-page-header">
-                    <img class="login-pf-brand" src="/assets/img/Logo_Horizontal_Reversed.svg" alt=" logo" />
-                    <p>
-                        This is placeholder text, only. Use this area to place any information or introductory message about your application that may be relevant for users.
-                    </p>
-                </header>
-                <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-                        <div class="card-pf">
-                            <header class="login-pf-header">
-                                <select class="selectpicker">
-                                    <option>English</option>
-                                    <option>French</option>
-                                    <option>Italian</option>
-                                </select>
-                                <h1>Log In to Your Account</h1>
-                            </header>
-                            <form>
-                                <div class="form-group">
-                                    <label class="sr-only" for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control  input-lg" id="exampleInputEmail1" placeholder="Email address">
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only"  for="exampleInputPassword1">Password
-                                    </label>
-                                    <input type="password" class="form-control input-lg" id="exampleInputPassword1" placeholder="Password">
-                                </div>
-                                <div class="form-group login-pf-settings">
-                                    <label class="checkbox-label">
-                                        <input type="checkbox"> Keep me logged in for 30 days
-                                    </label>
-                                    <a href="#">Forgot password?</a>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-block btn-lg">Log In</button>
-                            </form>
-                            <p class="login-pf-signup">Need an account?<a href="#">Sign up</a></p>
-                        </div><!-- card -->
+    <!DOCTYPE html>
+<html >
+<head>
+    <title>Login V1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                        <footer class="login-pf-page-footer">
-                            <ul class="login-pf-page-footer-links list-unstyled">
-                                <li><a class="login-pf-page-footer-link" href="#">Terms of Use</a></li>
-                                <li><a class="login-pf-page-footer-link" href="#">Help</a></li>
-                                <li><a class="login-pf-page-footer-link" href="#">Privacy Policy</a></li>
-                            </ul>
-                        </footer>
-                    </div><!-- col -->
-                </div><!-- row -->
-            </div><!-- col -->
-        </div><!-- row -->
-    </div><!-- container -->
-</div><!-- login-pf-page -->
+    <link rel="icon" type="image/png" href="{{url('login/images/icons/favicon.ico')}}" />
 
+    <link rel="stylesheet" type="text/css" href="{{url('login/vendor/bootstrap/css/bootstrap.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{url('login/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{url('login/vendor/animate/animate.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{url('login/vendor/css-hamburgers/hamburgers.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{url('login/vendor/select2/select2.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{url('login/css/util.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('login/css/main.css')}}">
+
+    <meta name="robots" content="noindex, follow">
+    <script>(function(w,d){!function(e,t,r,a,s){e[r]=e[r]||{},e[r].executed=[],e.zaraz={deferred:[]};var n=t.getElementsByTagName("title")[0];e[r].c=t.cookie,n&&(e[r].t=t.getElementsByTagName("title")[0].text),e[r].w=e.screen.width,e[r].h=e.screen.height,e[r].j=e.innerHeight,e[r].e=e.innerWidth,e[r].l=e.location.href,e[r].r=t.referrer,e[r].k=e.screen.colorDepth,e[r].n=t.characterSet,e[r].o=(new Date).getTimezoneOffset(),//
+            e[s]=e[s]||[],e.zaraz._preTrack=[],e.zaraz.track=(t,r)=>e.zaraz._preTrack.push([t,r]),e[s].push({"zaraz.start":(new Date).getTime()});var i=t.getElementsByTagName(a)[0],o=t.createElement(a);o.defer=!0,o.src="/cdn-cgi/zaraz/s.js?"+new URLSearchParams(e[r]).toString(),i.parentNode.insertBefore(o,i)}(w,d,"zarazData","script","dataLayer");})(window,document);</script></head>
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="{{url('login/images/img-01.png')}}" alt="IMG">
+            </div>
+            <form class="login100-form validate-form">
+<span class="login100-form-title">
+Member Login
+</span>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input100" type="text" name="email" placeholder="Email">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+<i class="fa fa-envelope" aria-hidden="true"></i>
+</span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+<i class="fa fa-lock" aria-hidden="true"></i>
+</span>
+                </div>
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        Login
+                    </button>
+                </div>
+
+                <div class="text-center p-t-136">
+                    <a class="txt2" href="{{route('home_register')}}">
+                        Create your Account
+                        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="{{url('login/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+
+<script src="{{url('login/vendor/bootstrap/js/popper.js')}}"></script>
+<script src="{{url('login/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+
+<script src="{{url('login/vendor/select2/select2.min.js')}}"></script>
+
+<script src="{{url('login/vendor/tilt/tilt.jquery.min.js')}}"></script>
+<script>
+    $('.js-tilt').tilt({
+        scale: 1.1
+    })
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+</script>
+
+<script src="{{url('js/main.js')}}"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6c6e2df4cda7724f","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
 </html>
-

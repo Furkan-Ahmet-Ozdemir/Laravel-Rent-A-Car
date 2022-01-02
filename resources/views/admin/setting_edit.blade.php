@@ -99,7 +99,7 @@
 
                         <div class="form-group">
                             <label >aboutus</label>
-                            <input  class="form-control" name="aboutus"  value="{{$data->aboutus}}">
+                            <textarea name="aboutus" class="form-control" rows="5">{{$data->aboutus}}</textarea>
                         </div>
 
                         <div class="form-group">

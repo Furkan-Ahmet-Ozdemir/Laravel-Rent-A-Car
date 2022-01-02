@@ -2,6 +2,48 @@
 
 @section('title','Laravel E-Ticaret dsfsdf')
 
+
+@section('boostrap_js1')
+    <style>
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center
+        }
+
+        .rating>input {
+            display: none
+        }
+
+        .rating>label {
+            position: relative;
+            width: 1em;
+            font-size: 3vw;
+            color: #FFD600;
+            cursor: pointer
+        }
+
+        .rating>label::before {
+            content: "\2605";
+            position: absolute;
+            opacity: 0
+        }
+
+        .rating>label:hover:before,
+        .rating>label:hover~label:before {
+            opacity: 1 !important
+        }
+
+        .rating>input:checked~label:before {
+            opacity: 1
+        }
+
+        .rating:hover>input:checked~label:before {
+            opacity: 0.4
+        }
+    </style>
+@endsection
+
 @section('content')
     <!-- Start Subheader -->
     <div class="subheader normal-bg section-padding">
@@ -56,53 +98,15 @@
                                                                     <li class="text-light-dark"><label class="no-margin text-custom-blue">Car
                                                                             Features</label>{{$car[0]->status == True ? 'Available' : 'Non-Available'}}</li>
                                                                     <li class="text-light-dark"><label class="no-margin text-custom-blue">Price
-                                                                            Per hour</label>{{$car[0]->price}} ₺</li>
+                                                                            Per day</label>{{$car[0]->price}} ₺</li>
                                                                 </ul>
                                                             </div>
                                                         </div>
-{{--                                                        <div class="col-md-7">--}}
-{{--                                                            <div class="listing-testimonial padding-20 bg-light-white mb-xl-20">--}}
-{{--                                                                <div class="testimonial-inner detail-testimonial">--}}
-{{--                                                                    <div class="tesimonial-item"><cite class="text-custom-blue fs-16">Always enjoyed my--}}
-{{--                                                                            stay with Hilton Hotel and Resorts,top class room service and rooms have great--}}
-{{--                                                                            outside views and luxury assessories.</cite>--}}
-{{--                                                                        <div class="testimonial-author">--}}
-{{--                                                                            <div class="author-img"><img src="assets/images/blog/comment_1.jpg"--}}
-{{--                                                                                                         class="rounded-circle" alt="img"></div>--}}
-{{--                                                                            <div class="author-name ml-2">--}}
-{{--                                                                                <h6 class="text-custom-black no-margin fs-14 fw-500">Jhon</h6>--}}
-{{--                                                                                <p class="no-margin text-light-dark">Passenger</p>--}}
-{{--                                                                            </div>--}}
-{{--                                                                        </div>--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="tesimonial-item"><cite class="text-custom-blue fs-16">Always enjoyed my--}}
-{{--                                                                            stay with Hilton Hotel and Resorts,top class room service and rooms have great--}}
-{{--                                                                            outside views and luxury assessories.</cite>--}}
-{{--                                                                        <div class="testimonial-author">--}}
-{{--                                                                            <div class="author-img"><img src="assets/images/blog/comment_2.jpg"--}}
-{{--                                                                                                         class="rounded-circle" alt="img"></div>--}}
-{{--                                                                            <div class="author-name ml-2">--}}
-{{--                                                                                <h6 class="text-custom-black no-margin fs-14 fw-500">Jhon</h6>--}}
-{{--                                                                                <p class="no-margin text-light-dark">Passenger</p>--}}
-{{--                                                                            </div>--}}
-{{--                                                                        </div>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
                                                         <div class="col-12">
                                                             <div class="information">
                                                                 <h4 class="text-custom-black">Car Rental Information</h4>
                                                                 <p class="text-light-dark">{{$car[0]->description}}</p>
-{{--                                                                <p class="text-light-dark no-margin">Sed aliquam nunc eget velit imperdiet,in rutrum--}}
-{{--                                                                    mauris malesuada. Quisque ullamcorper vulputate nisi,et fringilla ante convallis quis.--}}
-{{--                                                                    Nullam vel tellus non elit suscipit volutpat. Integer id felis et nibh rutrum--}}
-{{--                                                                    dignissim ut non risus. In tincidunt urna quis sem luctus,sed accumsan magna--}}
-{{--                                                                    pellentesque. Donec et iaculis tellus. Vestibulum ut iaculis justo,auctor sodales--}}
-{{--                                                                    lectus. Donec et tellus tempus,dignissim maurornare,consequat lacus. Integer dui--}}
-{{--                                                                    neque,scelerisque nec sollicitudin sit amet,sodales a erat. Duis vitae condimentum--}}
-{{--                                                                    ligula. Integer eu mi nisl. Donec massa dui,commodo id arcu quis,venenatis scelerisque--}}
-{{--                                                                    velit.</p>--}}
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -217,38 +221,13 @@
                                                     </div>
                                                 </div>
                                             </div><!-- tags & social -->
-{{--                                            <!-- post author -->--}}
-{{--                                            <div class="post-author bg-light-white padding-15 mb-xl-20">--}}
-{{--                                                <div class="author-img animate-img mb-sm-20"><a href="#"><img--}}
-{{--                                                            src="assets/images/blog/author-img.png" class="image-fit" alt="author-img"></a></div>--}}
-{{--                                                <div class="author-caption">--}}
-{{--                                                    <h5 class="fw-600"><a href="#" class="text-custom-black">Anna Wright</a><span--}}
-{{--                                                            class="text-custom-blue fs-16 ml-2"><i class="fab fa-twitter"></i></span></h5><a href="#"--}}
-{{--                                                                                                                                             class="authorpost text-custom-blue fw-600">Most article by this author</a>--}}
-{{--                                                    <p class="text-light-white">Lorem ipsum dolor sit amet,consectetur adipiscing elit,sed do--}}
-{{--                                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis--}}
-{{--                                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum--}}
-{{--                                                        dolor sit amet,consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et--}}
-{{--                                                        dolore magna aliqua.</p>--}}
-{{--                                                </div>--}}
-{{--                                            </div><!-- post author -->--}}
-{{--                                            <!-- post pagination -->--}}
-{{--                                            <div class="pagination-btn">--}}
-{{--                                                <nav>--}}
-{{--                                                    <ul class="pagination">--}}
-{{--                                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>--}}
-{{--                                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>--}}
-{{--                                                    </ul>--}}
-{{--                                                </nav>--}}
-{{--                                            </div><!-- post pagination -->--}}
-                                            <!-- comments -->
                                             <div class="comment-box section-padding-top p-relative">
                                                 <div id="comment-box">
-                                                    <h4 class="text-custom-black fw-600">Reviews [4]</h4>
+                                                    <h4 class="text-custom-black fw-600">Reviews </h4>
                                                     <ul class="comments custom">
                                                         <li class="comment">
                                                             <article>
-                                                                <div class="comment-avatar"><img src="assets/images/blog/comment_1.jpg"
+                                                                <div class="comment-avatar"><img src="{{url('assets/images/blog/comment_1.jpg')}}"
                                                                                                  class="rounded-circle" alt="comment"></div>
                                                                 <div class="comment-content">
                                                                     <div class="comment-meta">
@@ -256,11 +235,7 @@
                                                                             <h5 class="text-custom-black fw-600 author mb-3">Rosalina Pong</h5>
                                                                             <div class="post-date"><a href="blog-details.html"
                                                                                                       class="date bg-custom-blue text-custom-white">25 Dec 2019</a></div>
-                                                                        </div>
-{{--                                                                        <div class="comment-meta-reply"><a href="#"--}}
-{{--                                                                                                           class="comment-reply-link btn-first btn-submit"><i class="fas fa-reply"></i></a>--}}
-{{--                                                                        </div>--}}
-                                                                    </div>
+                                                                        </div></div>
                                                                     <div class="comment">
                                                                         <p class="text-light-dark">Lorem ipsum dolor sit amet,consectetur adipisicing
                                                                             elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -271,77 +246,27 @@
                                                             </article>
                                                         </li>
                                                         <li class="comment">
-{{--                                                            <article>--}}
-{{--                                                                <div class="comment-avatar"><img src="assets/images/blog/comment_2.jpg"--}}
-{{--                                                                                                 class="rounded-circle" alt="comment"></div>--}}
-{{--                                                                <div class="comment-content">--}}
-{{--                                                                    <div class="comment-meta">--}}
-{{--                                                                        <div class="comment-meta-header">--}}
-{{--                                                                            <h5 class="text-custom-black fw-600 author mb-3">Brian Wright</h5>--}}
-{{--                                                                            <div class="post-date"><a href="blog-details.html"--}}
-{{--                                                                                                      class="date bg-custom-blue text-custom-white">30 Nov 2019</a></div>--}}
-{{--                                                                        </div>--}}
-{{--                                                                        <div class="comment-meta-reply"><a href="#"--}}
-{{--                                                                                                           class="comment-reply-link btn-first btn-submit"><i class="fas fa-reply"></i></a>--}}
-{{--                                                                        </div>--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="comment">--}}
-{{--                                                                        <p class="text-light-dark">Lorem ipsum dolor sit amet,consectetur adipisicing--}}
-{{--                                                                            elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad--}}
-{{--                                                                            minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea--}}
-{{--                                                                            commodo consequat.</p>--}}
-{{--                                                                    </div>--}}
-{{--                                                                </div>--}}
-{{--                                                            </article>--}}
-{{--                                                            <ul class="children">--}}
-{{--                                                                <li class="comment">--}}
-{{--                                                                    <article>--}}
-{{--                                                                        <div class="comment-avatar"><img src="assets/images/blog/comment_3.jpg"--}}
-{{--                                                                                                         class="rounded-circle" alt="comment"></div>--}}
-{{--                                                                        <div class="comment-content">--}}
-{{--                                                                            <div class="comment-meta">--}}
-{{--                                                                                <div class="comment-meta-header">--}}
-{{--                                                                                    <h5 class="text-custom-black fw-600 author mb-3">Sarah Wright</h5>--}}
-{{--                                                                                    <div class="post-date"><a href="blog-details.html"--}}
-{{--                                                                                                              class="date bg-custom-blue text-custom-white">30 Nov 2019</a></div>--}}
-{{--                                                                                </div>--}}
-{{--                                                                                <div class="comment-meta-reply"><a href="#"--}}
-{{--                                                                                                                   class="comment-reply-link btn-first btn-submit"><i--}}
-{{--                                                                                            class="fas fa-reply"></i></a></div>--}}
-{{--                                                                            </div>--}}
-{{--                                                                            <div class="comment">--}}
-{{--                                                                                <p class="text-light-dark">Lorem ipsum dolor sit amet,consectetur adipisicing--}}
-{{--                                                                                    elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut--}}
-{{--                                                                                    enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip--}}
-{{--                                                                                    ex ea commodo consequat.</p>--}}
-{{--                                                                            </div>--}}
-{{--                                                                        </div>--}}
-{{--                                                                    </article>--}}
-{{--                                                                </li>--}}
-{{--                                                            </ul>--}}
                                                         </li>
                                                     </ul>
                                                     <div class="comment-respond" id="respond">
                                                         <h4 class="text-custom-black fw-600">Leave Comment</h4>
-                                                        <form>
+                                                        <form action="{{route("user_comment")}}" method="post">
+                                                            @csrf
                                                             <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group"><label class="text-custom-black fw-500 fs-14">Full
-                                                                            Name</label><input type="text" name="#" class="form-control form-control-custom"
-                                                                                               placeholder="Full Name"></div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group"><label class="text-custom-black fw-500 fs-14">Email
-                                                                            I'd</label>
-                                                                        <input type="email" name="#" class="form-control form-control-custom"
-                                                                               placeholder="Email I'd">
-                                                                    </div>
-                                                                </div>
                                                                 <div class="col-12">
                                                                     <div class="form-group">
                                                                         <label class="text-custom-black fw-500 fs-14">Comment</label>
-                                                                        <textarea rows="4" name="#" class="form-control form-control-custom"
+                                                                        <textarea rows="4" name="comment" class="form-control form-control-custom"
                                                                                   placeholder="Comment"></textarea>
+                                                                        <div class="rating" >
+                                                                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                                                                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                                                                            <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                                                                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                                                                            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+{{--                                                                            <label style="color: #0b0b0b;margin-right: 75px;font-size:xx-large" > Rating </label>--}}
+                                                                        </div>
+
                                                                     </div>
                                                                     <button type="submit" class="btn-first btn-submit">Leave Comment</button>
                                                                 </div>
@@ -360,42 +285,36 @@
                                     <div class="col-12">
                                         <div class="quick-quote bx-wrapper padding-20 mb-xl-30">
                                             <h5 class="text-custom-black">Enquiry Now</h5>
-                                            <form>
+                                            <form action="{{route('user_basket')}}" method="post">
+                                                @csrf
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form-group">
-                                                            <label class="fs-14 text-custom-black fw-500">Pick Up</label>
-                                                            <input type="text" name="#" class="form-control form-control-custom"
-                                                                   placeholder="city,distirct or specific airpot">
+                                                            <input type="text" name="car_id" value="{{$car[0]->id}}" hidden>
+                                                            <input type="text" name="price" value="{{$car[0]->price}}" hidden>
+                                                            <label class="fs-14 text-custom-black fw-500" >Pick Up</label>
+                                                            <input type="text" name="rezPickUp" class="form-control form-control-custom"
+                                                                   placeholder="city,distirct or specific airpot" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="fs-14 text-custom-black fw-500">Pick Up Date/Time</label>
                                                             <div class="input-group group-form">
-                                                                <input type="text" name="#" class="form-control form-control-custom datepickr"
-                                                                       placeholder="mm/dd/yy" readonly="">
+                                                                <input type="datetime-local" name="rezDateTime" class="form-control form-control-custom datepickr"
+                                                                       placeholder="mm/dd/yy" required>
                                                                 <span class="input-group-append"> <i class="far fa-calendar"></i> </span>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="fs-14 text-custom-black fw-500">Drop Off</label>
-                                                            <input type="text" name="#" class="form-control form-control-custom"
-                                                                   placeholder="city,distirct or specific airpot">
+                                                            <input type="text" name="rezPickOf" class="form-control form-control-custom"
+                                                                   placeholder="city,distirct or specific airpot" required>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="fs-14 text-custom-black fw-500">Drop Off Date/Time</label>
                                                             <div class="input-group group-form">
-                                                                <input type="text" name="#" class="form-control form-control-custom datepickr"
-                                                                       placeholder="mm/dd/yy" readonly="">
+                                                                <input type="datetime-local" name="retDateTime" class="form-control form-control-custom datepickr"
+                                                                       placeholder="mm/dd/yy" required>
                                                                 <span class="input-group-append"> <i class="far fa-calendar"></i> </span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="fs-14 text-custom-black fw-500">Car Type</label>
-                                                            <div class="group-form">
-                                                                <select class="custom-select form-control form-control-custom">
-                                                                    <option>Economy</option>
-                                                                    <option>Compact</option>
-                                                                </select>
                                                             </div>
                                                         </div>
                                                         <button type="submit" class="btn-first btn-submit full-width btn-height">Submit</button>
@@ -413,7 +332,7 @@
                                                     <span class="price"><small>Price per day</small>{{$random[0]->price}} ₺</span>
                                                     <p>{{$random[0]->description}}</p>
                                                     <div class="action">  <a
-                                                            class="btn-first btn-submit" href="{{route('home_carDetail',$random[0]->id)}}">Book</a> </div>
+                                                            class="btn-first btn-submit" href="{{route('home_carDetail',$random[0]->slug)}}">Book</a> </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -450,44 +369,44 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="partners-slider arrow-layout-2 row">
-                        <div class="slide-item col-12">
-                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-1-t.png"
-                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>
-                        </div>
-                        <div class="slide-item col-12">
-                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-2.png"
-                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>
-                        </div>
-                        <div class="slide-item col-12">
-                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-3.png"
-                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>
-                        </div>
-                        <div class="slide-item col-12">
-                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-4.png"
-                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>
-                        </div>
-                        <div class="slide-item col-12">
-                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-1-t.png"
-                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>
-                        </div>
-                        <div class="slide-item col-12">
-                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-2.png"
-                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>
-                        </div>
-                        <div class="slide-item col-12">
-                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-3.png"
-                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>
-                        </div>
-                        <div class="slide-item col-12">
-                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-4.png"
-                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="row">--}}
+{{--                <div class="col-12">--}}
+{{--                    <div class="partners-slider arrow-layout-2 row">--}}
+{{--                        <div class="slide-item col-12">--}}
+{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-1-t.png"--}}
+{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="slide-item col-12">--}}
+{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-2.png"--}}
+{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="slide-item col-12">--}}
+{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-3.png"--}}
+{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="slide-item col-12">--}}
+{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-4.png"--}}
+{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="slide-item col-12">--}}
+{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-1-t.png"--}}
+{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="slide-item col-12">--}}
+{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-2.png"--}}
+{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="slide-item col-12">--}}
+{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="{{url('assets/images/logo-3.png')}}"--}}
+{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="slide-item col-12">--}}
+{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="{{url('assets/images/logo-4.png')}}"--}}
+{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </section>
     <!-- End Partners -->

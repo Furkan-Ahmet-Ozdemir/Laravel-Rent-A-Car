@@ -17,6 +17,8 @@ class CreateReservationsTable extends Migration
             $table->id()->autoIncrement();
             $table->integer('user_id');
             $table->integer('car_id');
+            $table->text('rezPickUp');
+            $table->text('rezPickOf');
             $table->dateTime('rezDateTime');
             $table->dateTime('retDateTime');
             $table->integer('days');

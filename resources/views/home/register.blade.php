@@ -1,254 +1,188 @@
-<div class="slider p-relative"><div class="main-banner arrow-layout-1 "><div class="slide-item"><img src="assets/images/car-1.jpg" class="image-fit" alt="Slider"><div class="transform-center"><div class="container"><div class="row"><div class="col-lg-7"><div class="slider-content"><h1 class="text-custom-white">Upto 25% off on first booking <span class="text-custom-blue">Car</span>through your app!</h1><ul class="custom"><li class="text-custom-white"><i class="fas fa-dollar-sign"></i>Best Price Guaranteed </li><li class="text-custom-white"><i class="fas fa-car"></i>Home Pickups </li><li class="text-custom-white"><i class="fas fa-laptop"></i>Easy Bookings </li><li class="text-custom-white"><i class="fas fa-headphones-alt"></i>24/7 Customer Care </li></ul><a href="cars.html" class="btn-first btn-small">Find Out More</a></div></div></div></div></div></div><div class="slide-item"><img src="assets/images/car-1.jpg" class="image-fit" alt="Slider"><div class="transform-center"><div class="container"><div class="row"><div class="col-lg-7"><div class="slider-content"><h1 class="text-custom-white">Upto 25% off on first booking <span class="text-custom-blue">Car</span>through your app!</h1><ul class="custom"><li class="text-custom-white"><i class="fas fa-dollar-sign"></i>Best Price Guaranteed </li><li class="text-custom-white"><i class="fas fa-car"></i>Home Pickups </li><li class="text-custom-white"><i class="fas fa-laptop"></i>Easy Bookings </li><li class="text-custom-white"><i class="fas fa-headphones-alt"></i>24/7 Customer Care </li></ul><a href="cars.html" class="btn-first btn-small">Find Out More</a></div></div></div></div></div></div><div class="slide-item"><img src="assets/images/car-1.jpg" class="image-fit" alt="Slider"><div class="transform-center"><div class="container"><div class="row"><div class="col-lg-7"><div class="slider-content"><h1 class="text-custom-white">Book your <span class="text-custom-blue">Car</span>through your app!</h1><p class="text-custom-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+{{--<!DOCTYPE html>--}}
+{{--<html lang="en">--}}
+{{--<head>--}}
+{{--    <!-- Required meta tags -->--}}
+{{--    <meta charset="utf-8">--}}
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">--}}
+{{--    <title>Connect Plus</title>--}}
+{{--    <!-- plugins:css -->--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/admin') }}/vendors/mdi/css/materialdesignicons.min.css">--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/admin') }}/vendors/flag-icon-css/css/flag-icon.min.css">--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/admin') }}/vendors/css/vendor.bundle.base.css">--}}
+{{--    <!-- endinject -->--}}
+{{--    <!-- Plugin css for this page -->--}}
+{{--    <!-- End plugin css for this page -->--}}
+{{--    <!-- inject:css -->--}}
+{{--    <!-- endinject -->--}}
+{{--    <!-- Layout styles -->--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/admin') }}/assets/css/style.css">--}}
+{{--    <!-- End layout styles -->--}}
+{{--    <link rel="shortcut icon" href="{{ asset('assets/admin') }}/assets/images/favicon.png" />--}}
+{{--</head>--}}
+{{--<body>--}}
+{{--<div class="container-scroller">--}}
+{{--    <div class="container-fluid page-body-wrapper full-page-wrapper">--}}
+{{--        <div class="content-wrapper d-flex align-items-center auth">--}}
+{{--            <div class="row flex-grow">--}}
+{{--                <div class="col-lg-4 mx-auto">--}}
+{{--                    <div class="auth-form-light text-left p-5">--}}
+{{--                        <div >--}}
+{{--                           <h2 class="align-items-lg-center"> REGISTER</h2>--}}
+{{--                        </div>--}}
+{{--                        <h4>Hello! let's get started</h4>--}}
+{{--                        <h6 class="font-weight-light">Sign in to continue.</h6>--}}
+{{--                        <form class="pt-3" action="{{ route('admin_registercheck') }}" method="POST">--}}
+{{--                            @csrf--}}
+{{--                            <div class="form-group">--}}
+{{--                                <input type="text" name="name" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Name" required>--}}
+{{--                            </div>--}}
+{{--                            <div class="form-group">--}}
+{{--                                <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" required>--}}
+{{--                            </div>--}}
+{{--                            <div class="form-group">--}}
+{{--                                <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" required>--}}
+{{--                            </div>--}}
 
-                                <a href="cars.html" class="btn-first btn-small">Find Out More</a> </div>
-                        </div>
-                    </div>
-                </div>
+{{--                            <div class="form-group">--}}
+{{--                                <input type="password" name="password1" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Confirm Password" required>--}}
+{{--                            </div>--}}
+
+{{--                            <div class="mt-3">--}}
+
+{{--                                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>--}}
+{{--                            </div>--}}
+
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <!-- content-wrapper ends -->--}}
+{{--    </div>--}}
+{{--    <!-- page-body-wrapper ends -->--}}
+{{--</div>--}}
+{{--<!-- container-scroller -->--}}
+{{--<!-- plugins:js -->--}}
+{{--<script src="{{ asset('assets/admin') }}/vendors/js/vendor.bundle.base.js"></script>--}}
+{{--<!-- endinject -->--}}
+{{--<!-- Plugin js for this page -->--}}
+{{--<!-- End plugin js for this page -->--}}
+{{--<!-- inject:js -->--}}
+{{--<script src="{{ asset('assets/admin') }}/js/off-canvas.js"></script>--}}
+{{--<script src="{{ asset('assets/admin') }}/js/hoverable-collapse.js"></script>--}}
+{{--<script src="{{ asset('assets/admin') }}/js/misc.js"></script>--}}
+{{--<!-- endinject -->--}}
+{{--</body>--}}
+{{--</html>--}}
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login V1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="{{url('login/images/icons/favicon.ico')}}" />
+
+    <link rel="stylesheet" type="text/css" href="{{url('login/vendor/bootstrap/css/bootstrap.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{url('login/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{url('login/vendor/animate/animate.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{url('login/vendor/css-hamburgers/hamburgers.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{url('login/vendor/select2/select2.min.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{url('login/css/util.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('login/css/main.css')}}">
+
+    <meta name="robots" content="noindex, follow">
+    <script>(function(w,d){!function(e,t,r,a,s){e[r]=e[r]||{},e[r].executed=[],e.zaraz={deferred:[]};var n=t.getElementsByTagName("title")[0];e[r].c=t.cookie,n&&(e[r].t=t.getElementsByTagName("title")[0].text),e[r].w=e.screen.width,e[r].h=e.screen.height,e[r].j=e.innerHeight,e[r].e=e.innerWidth,e[r].l=e.location.href,e[r].r=t.referrer,e[r].k=e.screen.colorDepth,e[r].n=t.characterSet,e[r].o=(new Date).getTimezoneOffset(),//
+            e[s]=e[s]||[],e.zaraz._preTrack=[],e.zaraz.track=(t,r)=>e.zaraz._preTrack.push([t,r]),e[s].push({"zaraz.start":(new Date).getTime()});var i=t.getElementsByTagName(a)[0],o=t.createElement(a);o.defer=!0,o.src="/cdn-cgi/zaraz/s.js?"+new URLSearchParams(e[r]).toString(),i.parentNode.insertBefore(o,i)}(w,d,"zarazData","script","dataLayer");})(window,document);</script></head>
+<body>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="{{url('login/images/img-01.png')}}" alt="IMG">
             </div>
+            <form class="login100-form validate-form" action="">
+                <span class="login100-form-title">Register</span>
+
+                <div class="wrap-input100 validate-input" >
+                    <input class="input100" type="text" name="name" placeholder="Name">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input100" type="text" name="email" placeholder="Email">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <input class="input100" type="password" name="password" placeholder="Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <input class="input100" type="password" name="password1" placeholder="Re Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button type="submit" class="login100-form-btn">
+                        Register
+                    </button>
+                </div>
+
+                <div class="text-center p-t-136">
+                    <a type="submit" class="txt2" href="{{route('home_login')}}">
+                        Log In
+                        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-<!-- End Slider -->
-<!-- Start Banner tabs -->
-<div class="banner-tabs">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="tabs">
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="cars">
-                            <div class="tab-inner">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="form-group">
-                                                <label class="fs-14 text-custom-white fw-600">Pick Up</label>
-                                                <input type="text" name="#" class="form-control form-control-custom" placeholder="city, distirct or specific airpot">
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="fs-14 text-custom-white fw-600">Pick Up Date/Time</label>
-                                                        <div class="input-group group-form">
-                                                            <input type="text" name="#" class="form-control form-control-custom datepickr" placeholder="mm/dd/yy" readonly>
-                                                            <span class="input-group-append"> <i class="far fa-calendar"></i> </span> </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="submit"></label>
-                                                        <div class="group-form">
-                                                            <select class="custom-select form-control form-control-custom">
-                                                                <option>Anytime</option>
-                                                                <option>Morning</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="form-group">
-                                                <label class="fs-14 text-custom-white fw-600">Drop Off</label>
-                                                <input type="text" name="#" class="form-control form-control-custom" placeholder="city, distirct or specific airpot">
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="fs-14 text-custom-white fw-600">Drop Off Date/Time</label>
-                                                        <div class="input-group group-form">
-                                                            <input type="text" name="#" class="form-control form-control-custom datepickr" placeholder="mm/dd/yy" readonly>
-                                                            <span class="input-group-append"> <i class="far fa-calendar"></i> </span> </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="submit"></label>
-                                                        <div class="group-form">
-                                                            <select class="custom-select form-control form-control-custom">
-                                                                <option>Anytime</option>
-                                                                <option>Morning</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-12">
-                                            <div class="row">
-                                                <div class="col-3">
-                                                    <div class="form-group">
-                                                        <label class="fs-14 text-custom-white fw-600">Adults</label>
-                                                        <div class="group-form">
-                                                            <select class="custom-select form-control form-control-custom">
-                                                                <option>01</option>
-                                                                <option>02</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="form-group">
-                                                        <label class="fs-14 text-custom-white fw-600">Kids</label>
-                                                        <div class="group-form">
-                                                            <select class="custom-select form-control form-control-custom">
-                                                                <option>01</option>
-                                                                <option>02</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="fs-14 text-custom-white fw-600">Promocode</label>
-                                                        <input type="text" name="#" class="form-control form-control-custom" placeholder="type here">
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="fs-14 text-custom-white fw-600">Car Type</label>
-                                                        <div class="group-form">
-                                                            <select class="custom-select form-control form-control-custom">
-                                                                <option>Economy</option>
-                                                                <option>Compact</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="submit"></label>
-                                                        <button class="btn-first btn-submit full-width btn-height">Search</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Banner tabs -->
-<!-- Start About Us -->
-<section class="section-padding about-us">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-7 col-lg-6 pl-2 pr-2 align-self-center text-left">
-                <div class="about-left-side mb-md-80">
-                    <div class="section-header style-left">
-                        <div class="section-heading">
-                            <h3>Subaru <span class="text-custom-blue">Impreza</span></h3>
-                            <div class="section-description">
-                                <div class="car-price"> <strong>$125</strong> <span>/Day</span> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                    <p class="pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p><p class="pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum is simply dummy.</p><a href="about.html" class="btn-first btn-submit">Reserve Now</a></div></div><div class="col-xl-5 col-lg-6"><div class="about-right-side full-height"><div class="about-img full-height"><img src="assets/images/about.jpg" class="img-fluid image-fit" alt="img"></div></div></div></div></div></section><!-- End About Us --><!-- Start Our work --><section class="section-padding our-work-sec bg-light-white"><div class="container"><div class="section-header text-center"><div class="section-heading"><h3 class="text-custom-black">Our <span class="text-custom-blue">Work</span></h3><div class="section-description"><p class="text-light-dark">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="work-sec animate-img"> <a href="#"> <img src="assets/images/tour-block_2.jpg" class="image-fit" alt="img">
-                                <div class="text-wrapper">
-                                    <h4 class="text-custom-white no-margin fw-600">Luxes</h4>
-                                    <p class="text-custom-white no-margin">1100 Locations</p>
-                                </div>
-                            </a> </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="work-sec animate-img"> <a href="#"> <img src="assets/images/tour-block_3.jpg" class="image-fit" alt="img">
-                                <div class="text-wrapper">
-                                    <h4 class="text-custom-white no-margin fw-600">MINI</h4>
-                                    <p class="text-custom-white no-margin">1250 Locations</p>
-                                </div>
-                            </a> </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="work-sec animate-img"> <a href="#"> <img src="assets/images/tour-block_1.jpg" class="image-fit" alt="img">
-                                <div class="text-wrapper">
-                                    <h4 class="text-custom-white no-margin fw-600">Porsche</h4>
-                                    <p class="text-custom-white no-margin">1550 Locations</p>
-                                </div>
-                            </a> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="work-sec animate-img first-box"> <a href="#"> <img src="assets/images/tour-block_4.jpg" class="image-fit" alt="img">
-                        <div class="text-wrapper">
-                            <h4 class="text-custom-white no-margin fw-600">Mercedes Benz</h4>
-                            <p class="text-custom-white no-margin">1150 Offers</p>
-                        </div>
-                    </a> </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Our work -->
-<!-- Start gallery -->
-<section class="section-padding gallery">
-    <div class="container">
-        <div class="section-header text-center">
-            <div class="section-heading">
-                <h3 class="text-custom-black">Our <span class="text-custom-blue">Gallery</span></h3>
-                <div class="section-description">
-                    <p class="text-light-dark">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p></div></div></div><div class="row">
-            <div class="col-12">
-                <div class="tabs filter-gallery">
-                    <ul class="custom-flex nav nav-tabs mb-xl-40">
-                        <li class="nav-item"><a class="nav-link active" href="#" data-filter="*">Show All</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" data-filter=".tab-gallery">Brakes</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" data-filter=".tab-gallery-1">Suspension</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" data-filter=".tab-gallery-2">Wheels</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" data-filter=".car-gallery">Steering</a></li>
-                    </ul></div>
-                <div class="row gallery-grid">
-                    <div class="col-lg-4 col-md-6 filter-box tab-gallery">
-                        <div class="gallery-item mb-xl-30"><a href="assets/images/gallery/g_gal_1.jpg" class="popup"><img src="assets/images/gallery/g_gal_1.jpg" class="image-fit" alt="img"></a></div></div><div class="col-lg-4 col-md-6 filter-box tab-gallery-1"><div class="gallery-item mb-xl-30"><a href="assets/images/gallery/g_gal_2.jpg" class="popup"><img src="assets/images/gallery/g_gal_2.jpg" class="image-fit" alt="img"></a></div></div><div class="col-lg-4 col-md-6 filter-box tab-gallery-2"><div class="gallery-item mb-xl-30"><a href="assets/images/gallery/g_gal_3.jpg" class="popup"><img src="assets/images/gallery/g_gal_3.jpg" class="image-fit" alt="img"></a></div></div><div class="col-lg-4 col-md-6 filter-box car-gallery"><div class="gallery-item mb-xl-30"><a href="assets/images/gallery/g_gal_4.jpg" class="popup"><img src="assets/images/gallery/g_gal_4.jpg" class="image-fit" alt="img"></a></div></div><div class="col-lg-4 col-md-6 filter-box tab-gallery"><div class="gallery-item mb-xl-30"><a href="assets/images/gallery/g_gal_5.jpg" class="popup"><img src="assets/images/gallery/g_gal_5.jpg" class="image-fit" alt="img"></a></div></div><div class="col-lg-4 col-md-6 filter-box tab-gallery-1"><div class="gallery-item mb-xl-30"><a href="assets/images/gallery/g_gal_6.jpg" class="popup"><img src="assets/images/gallery/g_gal_6.jpg" class="image-fit" alt="img"></a></div></div><div class="col-lg-4 col-md-6 filter-box tab-gallery-2"><div class="gallery-item mb-xl-30"><a href="assets/images/gallery/g_gal_7.jpg" class="popup"><img src="assets/images/gallery/g_gal_7.jpg" class="image-fit" alt="img"></a></div></div><div class="col-lg-4 col-md-6 filter-box car-gallery"><div class="gallery-item mb-xl-30"><a href="assets/images/gallery/g_gal_8.jpg" class="popup"><img src="assets/images/gallery/g_gal_8.jpg" class="image-fit" alt="img"></a></div></div><div class="col-lg-4 col-md-6 filter-box tab-gallery"><div class="gallery-item mb-xl-30"><a href="assets/images/gallery/g_gal_9.jpg" class="popup"><img src="assets/images/gallery/g_gal_9.jpg" class="image-fit" alt="img"></a></div></div><div class="col-lg-4 col-md-6 filter-box tab-gallery-1"><div class="gallery-item mb-xl-30"><a href="assets/images/gallery/g_gal_10.jpg" class="popup"><img src="assets/images/gallery/g_gal_10.jpg" class="image-fit" alt="img"></a></div></div><div class="col-lg-4 col-md-6 filter-box tab-gallery-2"><div class="gallery-item mb-xl-30"><a href="assets/images/gallery/g_gal_11.jpg" class="popup"><img src="assets/images/gallery/g_gal_11.jpg" class="image-fit" alt="img"></a></div></div><div class="col-lg-4 col-md-6 filter-box car-gallery"><div class="gallery-item mb-xl-30"><a href="assets/images/gallery/g_gal_12.jpg" class="popup"><img src="assets/images/gallery/g_gal_12.jpg" class="image-fit" alt="img"></a></div></div></div></div></div></div></section><!-- End gallery --><!-- Start Our Services --><section class="section-padding service-symptoms parallax  bg-light-white"><div class="overlay overlay-bg-theme"></div><div class="container"><div class="section-header text-center"><div class="section-heading"><h3 class="text-custom-black">Our <span class="text-custom-blue">Services</span></h3><div class="section-description"><p class="text-light-dark">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="service-sy-grid mb-xl-30">
-                    <div class="img-wrap"> <img src="assets/images/services/services-1.jpg" class="image-fit" alt="img"> </div>
-                    <div class="caption">
-                        <h5 class="no-margin fw-600"><a href="#" class="text-custom-black">TIRE AND WHEEL</a></h5>
-                    </div>
-                    <div class="hover-wrap">
-                        <div class="text-wrap">
-                            <h5 class="fw-600"><a href="#" class="text-custom-black">TIRE, WHEEL SERVICES</a></h5>
-                            <p class="text-light-white mb-xl-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p><a href="#" class="btn-second btn-small">See All</a></div></div></div></div><div class="col-lg-3 col-md-6"><div class="service-sy-grid mb-xl-30"><div class="img-wrap"><img src="assets/images/services/services-7.jpg" class="image-fit" alt="img"></div><div class="caption"><h5 class="no-margin fw-600"><a href="#" class="text-custom-black">BRAKE REPAIR</a></h5></div><div class="hover-wrap"><div class="text-wrap"><h5 class="fw-600"><a href="#" class="text-custom-black">BRAKE REPAIR</a></h5><p class="text-light-white mb-xl-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                            <a href="#" class="btn-second btn-small">See All</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="service-sy-grid mb-xl-30">
-                    <div class="img-wrap"> <img src="assets/images/services/services-8.jpg" class="image-fit" alt="img"> </div>
-                    <div class="caption">
-                        <h5 class="no-margin fw-600"><a href="#" class="text-custom-black">LUBE, OIL AND FILTERS</a></h5>
-                    </div>
-                    <div class="hover-wrap">
-                        <div class="text-wrap">
-                            <h5 class="fw-600"><a href="#" class="text-custom-black">LUBE, OIL AND FILTERS</a></h5>
-                            <p class="text-light-white mb-xl-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p><a href="#" class="btn-second btn-small">See All</a></div></div></div></div><div class="col-lg-3 col-md-6"><div class="service-sy-grid mb-md-30"><div class="img-wrap"><img src="assets/images/services/services-9.jpg" class="image-fit" alt="img"></div><div class="caption"><h5 class="no-margin fw-600"><a href="#" class="text-custom-black">ENGINE DIAGNOSTICS</a></h5></div><div class="hover-wrap"><div class="text-wrap"><h5 class="fw-600"><a href="#" class="text-custom-black">ENGINE DIAGNOSTICS</a></h5><p class="text-light-white mb-xl-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                            <a href="#" class="btn-second btn-small">See All</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Our Service -->
+
+<script src="{{url('login/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+
+<script src="{{url('login/vendor/bootstrap/js/popper.js')}}"></script>
+<script src="{{url('login/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+
+<script src="{{url('login/vendor/select2/select2.min.js')}}"></script>
+
+<script src="{{url('login/vendor/tilt/tilt.jquery.min.js')}}"></script>
+<script>
+    $('.js-tilt').tilt({
+        scale: 1.1
+    })
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+{{--<script>--}}
+{{--    window.dataLayer = window.dataLayer || [];--}}
+{{--    function gtag(){dataLayer.push(arguments);}--}}
+{{--    gtag('js', new Date());--}}
+
+{{--    gtag('config', 'UA-23581568-13');--}}
+{{--</script>--}}
+
+{{--<script src="{{url('js/main.js')}}"></script>--}}
+{{--<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6c6e2df4cda7724f","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>--}}
+
+</body>
+</html>
+

@@ -26,11 +26,11 @@
                 <div class="col-lg-6 col-md-7">
                     <div class="rightside full-height">
                         <ul class="custom-flex full-height">
+{{--                            <li class="book-appointment">--}}
+{{--                                <a href="booking.html">Booking Now </a>--}}
+{{--                            </li>--}}
                             <li class="book-appointment">
-                                <a href="booking.html">Booking Now </a>
-                            </li>
-                            <li class="book-appointment">
-                                <a href="#"> LOG IN </a>
+                                <a href="{{route("home_login")}}"> LOG IN </a>
                             </li>
                         </ul>
                     </div>
@@ -46,7 +46,7 @@
                         <div class="main-navigation">
                             <div class="logo">
                                 <a href="{{route('home.index')}}">
-                                    <img src="assets/images/logo.png" class="img-fluid" alt="logo"></a>
+                                    <img src="{{url('assets/images/logo.png')}}" class="img-fluid" alt="logo"></a>
                         </div>
                         <div class="main-menu">
                             <ul class="custom-flex">

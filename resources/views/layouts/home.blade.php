@@ -32,6 +32,7 @@
     <!-- Custom Stylesheet --><link href="{{url('assets/css/style.css')}}" rel="stylesheet">
     <!-- Custom Responsive --><link href="{{url('assets/css/responsive.css')}}" rel="stylesheet">
     <!-- CSS for IE --><!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]--><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]><script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script><![endif]--><!-- place -->
+    @yield('boostrap_js1')
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 @include('home._header')
@@ -68,3 +69,4 @@
 <script src="assets/js/custom.js"></script><!-- /Place all Scripts Here -->
 </body>
 </html>
+@include('sweetalert::alert')

@@ -21,11 +21,26 @@ use Illuminate\Support\Facades\Route;
 Route::get("/",[HomeController::class,'index'])->name('home.index');
 Route::get("/contact",[HomeController::class,'contact'])->name('home_contact');
 Route::post("/contact/create",[\App\Http\Controllers\MessageController::class,'store'])->name('contact_store');
+
 Route::get("/about",[HomeController::class,'about'])->name('home_about');
 Route::get("/faq",[App\Http\Controllers\HomeController::class,'faq'])->name('home_faq');
 Route::get("/cars",[HomeController::class,'cars'])->name('home_cars');
 Route::get("/cars/{slug}",[HomeController::class,'carType'])->name('home_carType');
 Route::get("/carDetail/{slug}",[HomeController::class,'carDetail'])->name('home_carDetail');
+
+Route::prefix('user')->group(function (){
+    Route::get("/",[App\Http\Controllers\HomeController::class,'index'])->name('home_login')->middleware('auth');
+    Route::get("/login",[App\Http\Controllers\HomeController::class,'login'])->name('home_login');
+    Route::post("/logincheck",[App\Http\Controllers\HomeController::class,'logincheck'])->name('user_logincheck');
+    Route::get("/logout",[App\Http\Controllers\HomeController::class,'logout'])->name('user_logout');
+
+    Route::get("/register",[App\Http\Controllers\HomeController::class,'register'])->name('home_register');
+    Route::post("/registercheck",[App\Http\Controllers\HomeController::class,'registercheck'])->name('user_registercheck');
+    Route::post("/basket",[App\Http\Controllers\ReservationController::class,'create'])->name('user_basket');
+
+});
+
+Route::post("/comment",[App\Http\Controllers\CommentsController::class,'create'])->name('user_comment');
 
 
 
@@ -38,7 +53,11 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     Route::get("faq/edit/{id}",[App\Http\Controllers\Admin\FaqController::class,'edit'])->name('admin_faq_edit');
     Route::get("faq/delete/{id}",[App\Http\Controllers\Admin\FaqController::class,'destroy'])->name('admin_faq_delete');
 
-    Route::get("message",[App\Http\Controllers\Admin\MessageController::class,'message'])               ->name('admin_message');
+    Route::get("message",[App\Http\Controllers\MessageController::class,'show'])               ->name('admin_message');
+    Route::get("message/delete/{id}",[App\Http\Controllers\MessageController::class,'destroy'])       ->name('admin_message_delete');
+    Route::get("message/edit/{id}",[App\Http\Controllers\MessageController::class,'edit'])       ->name('admin_message_edit');
+    Route::post("message/update/{id}",[App\Http\Controllers\MessageController::class,'update'])       ->name('admin_message_update');
+
 
     Route::get("category",[App\Http\Controllers\Admin\CategoryController::class,'index'])               ->name('admin_category');
     Route::get("category/add",[App\Http\Controllers\Admin\CategoryController::class,'add'])             ->name('admin_category_add');

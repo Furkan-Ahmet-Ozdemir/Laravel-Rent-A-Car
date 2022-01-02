@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Redirect;
+use RealRashid\SweetAlert\Facades\Alert;
+
+//use MongoDB\Driver\Session;
 
 class ReservationController extends Controller
 {
@@ -22,9 +27,37 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $data = new Reservation();
+        //$data->user_id = $session->id;
+        $data->car_id = $request->car_id;
+        $data->rezPickUp = $request->input('rezPickUp');
+        $data->rezPickOf = $request->input('rezPickOf');
+
+        $data->rezDateTime = Carbon::parse($request->input('rezDateTime'));
+        $data->retDateTime = Carbon::parse($request->input('retDateTime'));
+        $data->ip = $request->ip();
+        $a = $data->rezDateTime->diffInHours($data->retDateTime);
+        $now = Carbon::now();
+        if( $data->rezDateTime->gt($now)){
+            if($data->retDateTime->gt($data->rezDateTime)){
+                $data->price = $request->input('price');
+                $data->amount = $a * ($data->price/24);
+                $data->days = round($a);
+                $data->save();
+                Alert::success('Başarılı', 'Ürün başarıyla kiralandı');
+                return Redirect::back();
+            }else{
+                Alert::error('Hata', 'Bırakma tarihi kiralama tarihinden büyük olamaz.');
+                return Redirect::back();
+            }
+        }else{
+            Alert::error('Hata', 'Eski tarihli kiralama yapılamaz');
+            return Redirect::back();
+        }
+
+
     }
 
     /**
