@@ -30,11 +30,11 @@
                             <img src="{{ asset('assets/admin') }}/assets/images/logo-dark.svg">
                         </div>
                         <h4>Hello! let's get started</h4>
-                        <h6 class="font-weight-light">Sign in to continue.</h6>
+                        <h6 class="font-weight-light"> Log in to continue.</h6>
                         <form class="pt-3" action="{{ route('admin_logincheck') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                                <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
@@ -43,7 +43,9 @@
                          <!--       <input type="submit" name="kaydet">
                                 <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN IN</a>
                              !-->
-                                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
+                                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOG IN</button>
+                                <a class="btn btn-block btn-danger btn-lg font-weight-medium auth-form-btn" href="{{route('admin_register')}}">SIGN IN</a>
+
                             </div>
                          <!--   <div class="my-2 d-flex justify-content-between align-items-center">
                                 <div class="form-check">

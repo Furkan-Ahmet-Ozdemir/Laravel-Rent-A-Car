@@ -20,12 +20,7 @@
                         <li>182 main street pert habour 8007</li>
                         <li>Mon-sat 8:00-18:00 Sunday Closed</li>
                     </ul>
-                    <ul class="custom-flex socials">
-                        <li><a href="#" class="text-custom-white fs-14"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#" class="text-custom-white fs-14"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#" class="text-custom-white fs-14"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a href="#" class="text-custom-white fs-14"><i class="fab fa-youtube"></i></a></li>
-                    </ul>
+
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">

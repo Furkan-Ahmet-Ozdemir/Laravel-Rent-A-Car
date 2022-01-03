@@ -1,13 +1,13 @@
 @extends('layouts.home')
+@php
+    $setting = \App\Http\Controllers\HomeController::getSettings();
+@endphp
+@section('title',$setting->title)
 
-@section('title','Laravel E-Ticaret Sitesi')
-
-@section('description')
-    Türkiyenin en iyi Araba Kiralama Sitesi
-@endsection
+@section('description'){{$setting->description}}@endsection
 
 @section('content')
     @include('home._content')
 @endsection
 
-@section('keywords','Araba,SUV,')
+@section('keywords',$setting->keywords)

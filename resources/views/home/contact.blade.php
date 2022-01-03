@@ -1,3 +1,5 @@
+
+
 @extends('layouts.home')
 
 @section('title','Laravel E-Ticaret dsfsdf')

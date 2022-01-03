@@ -70,7 +70,17 @@ class ReservationController extends Controller
     {
         //
     }
-
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Reservation  $reservation
+     * @return \Illuminate\Http\Response
+     */
+    public function showAdmin(Reservation $reservation)
+    {
+        $datalist = Reservation::get();
+        return view('admin.user_reservations',['datalist' => $datalist]);
+    }
     /**
      * Display the specified resource.
      *
@@ -79,7 +89,7 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        //
+
     }
 
     /**

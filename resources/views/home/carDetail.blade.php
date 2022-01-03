@@ -52,8 +52,8 @@
                 <div class="col-12">
                     <h1 class="text-custom-white">Car Detail</h1>
                     <ul class="custom-flex justify-content-center">
-                        <li class="fw-500"><a href="index.html" class="text-custom-white">Home</a></li>
-                        <li class="fw-500"><a href="cars.html" class="text-custom-white">Cars</a></li>
+                        <li class="fw-500"><a href="{{route('home.index')}}" class="text-custom-white">Home</a></li>
+                        <li class="fw-500"><a href="{{route('home_cars')}}" class="text-custom-white">Cars</a></li>
                         <li class="active fw-500">Car Detail </li>
                     </ul>
                 </div>

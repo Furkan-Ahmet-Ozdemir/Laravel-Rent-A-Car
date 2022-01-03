@@ -68,7 +68,7 @@
     <!DOCTYPE html>
 <html >
 <head>
-    <title>Login V1</title>
+    <title>Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -87,9 +87,7 @@
     <link rel="stylesheet" type="text/css" href="{{url('login/css/util.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url('login/css/main.css')}}">
 
-    <meta name="robots" content="noindex, follow">
-    <script>(function(w,d){!function(e,t,r,a,s){e[r]=e[r]||{},e[r].executed=[],e.zaraz={deferred:[]};var n=t.getElementsByTagName("title")[0];e[r].c=t.cookie,n&&(e[r].t=t.getElementsByTagName("title")[0].text),e[r].w=e.screen.width,e[r].h=e.screen.height,e[r].j=e.innerHeight,e[r].e=e.innerWidth,e[r].l=e.location.href,e[r].r=t.referrer,e[r].k=e.screen.colorDepth,e[r].n=t.characterSet,e[r].o=(new Date).getTimezoneOffset(),//
-            e[s]=e[s]||[],e.zaraz._preTrack=[],e.zaraz.track=(t,r)=>e.zaraz._preTrack.push([t,r]),e[s].push({"zaraz.start":(new Date).getTime()});var i=t.getElementsByTagName(a)[0],o=t.createElement(a);o.defer=!0,o.src="/cdn-cgi/zaraz/s.js?"+new URLSearchParams(e[r]).toString(),i.parentNode.insertBefore(o,i)}(w,d,"zarazData","script","dataLayer");})(window,document);</script></head>
+</head>
 <body>
 <div class="limiter">
     <div class="container-login100">
@@ -97,29 +95,30 @@
             <div class="login100-pic js-tilt" data-tilt>
                 <img src="{{url('login/images/img-01.png')}}" alt="IMG">
             </div>
-            <form class="login100-form validate-form">
-<span class="login100-form-title">
-Member Login
-</span>
-                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Email">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-<i class="fa fa-envelope" aria-hidden="true"></i>
-</span>
-                </div>
-                <div class="wrap-input100 validate-input" data-validate="Password is required">
-                    <input class="input100" type="password" name="pass" placeholder="Password">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-<i class="fa fa-lock" aria-hidden="true"></i>
-</span>
-                </div>
-                <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
-                        Login
-                    </button>
-                </div>
+            <form class="login100-form validate-form" action="{{route('user_logincheck')}}" method="post">
+                @csrf
+                <span class="login100-form-title">
+                Member Login
+                </span>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="email" placeholder="Email">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" name="password" placeholder="Password">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="container-login100-form-btn">
+                        <button type="submit" class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
 
                 <div class="text-center p-t-136">
                     <a class="txt2" href="{{route('home_register')}}">
@@ -132,30 +131,30 @@ Member Login
     </div>
 </div>
 
-<script src="{{url('login/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+{{--<script src="{{url('login/vendor/jquery/jquery-3.2.1.min.js')}}"></script>--}}
 
-<script src="{{url('login/vendor/bootstrap/js/popper.js')}}"></script>
-<script src="{{url('login/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+{{--<script src="{{url('login/vendor/bootstrap/js/popper.js')}}"></script>--}}
+{{--<script src="{{url('login/vendor/bootstrap/js/bootstrap.min.js')}}"></script>--}}
 
-<script src="{{url('login/vendor/select2/select2.min.js')}}"></script>
+{{--<script src="{{url('login/vendor/select2/select2.min.js')}}"></script>--}}
 
-<script src="{{url('login/vendor/tilt/tilt.jquery.min.js')}}"></script>
-<script>
-    $('.js-tilt').tilt({
-        scale: 1.1
-    })
-</script>
+{{--<script src="{{url('login/vendor/tilt/tilt.jquery.min.js')}}"></script>--}}
+{{--<script>--}}
+{{--    $('.js-tilt').tilt({--}}
+{{--        scale: 1.1--}}
+{{--    })--}}
+{{--</script>--}}
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+{{--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>--}}
+{{--<script>--}}
+{{--    window.dataLayer = window.dataLayer || [];--}}
+{{--    function gtag(){dataLayer.push(arguments);}--}}
+{{--    gtag('js', new Date());--}}
 
-    gtag('config', 'UA-23581568-13');
-</script>
+{{--    gtag('config', 'UA-23581568-13');--}}
+{{--</script>--}}
 
-<script src="{{url('js/main.js')}}"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6c6e2df4cda7724f","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+{{--<script src="{{url('js/main.js')}}"></script>--}}
+{{--<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6c6e2df4cda7724f","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>--}}
 </body>
 </html>

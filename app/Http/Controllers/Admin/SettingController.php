@@ -114,7 +114,9 @@ class SettingController extends Controller
         return redirect()->route('admin_setting');
     }
 
-    /**
+
+
+        /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Setting  $setting

@@ -78,7 +78,7 @@
     <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login V1</title>
+    <title>Register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -97,17 +97,15 @@
     <link rel="stylesheet" type="text/css" href="{{url('login/css/util.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url('login/css/main.css')}}">
 
-    <meta name="robots" content="noindex, follow">
-    <script>(function(w,d){!function(e,t,r,a,s){e[r]=e[r]||{},e[r].executed=[],e.zaraz={deferred:[]};var n=t.getElementsByTagName("title")[0];e[r].c=t.cookie,n&&(e[r].t=t.getElementsByTagName("title")[0].text),e[r].w=e.screen.width,e[r].h=e.screen.height,e[r].j=e.innerHeight,e[r].e=e.innerWidth,e[r].l=e.location.href,e[r].r=t.referrer,e[r].k=e.screen.colorDepth,e[r].n=t.characterSet,e[r].o=(new Date).getTimezoneOffset(),//
-            e[s]=e[s]||[],e.zaraz._preTrack=[],e.zaraz.track=(t,r)=>e.zaraz._preTrack.push([t,r]),e[s].push({"zaraz.start":(new Date).getTime()});var i=t.getElementsByTagName(a)[0],o=t.createElement(a);o.defer=!0,o.src="/cdn-cgi/zaraz/s.js?"+new URLSearchParams(e[r]).toString(),i.parentNode.insertBefore(o,i)}(w,d,"zarazData","script","dataLayer");})(window,document);</script></head>
-<body>
+  <body>
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">
             <div class="login100-pic js-tilt" data-tilt>
                 <img src="{{url('login/images/img-01.png')}}" alt="IMG">
             </div>
-            <form class="login100-form validate-form" action="">
+            <form class="login100-form validate-form" action="{{route('user_registercheck')}}" method="post">
+                @csrf
                 <span class="login100-form-title">Register</span>
 
                 <div class="wrap-input100 validate-input" >
@@ -165,13 +163,13 @@
 <script src="{{url('login/vendor/select2/select2.min.js')}}"></script>
 
 <script src="{{url('login/vendor/tilt/tilt.jquery.min.js')}}"></script>
-<script>
-    $('.js-tilt').tilt({
-        scale: 1.1
-    })
-</script>
+{{--<script>--}}
+{{--    $('.js-tilt').tilt({--}}
+{{--        scale: 1.1--}}
+{{--    })--}}
+{{--</script>--}}
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+{{--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>--}}
 {{--<script>--}}
 {{--    window.dataLayer = window.dataLayer || [];--}}
 {{--    function gtag(){dataLayer.push(arguments);}--}}

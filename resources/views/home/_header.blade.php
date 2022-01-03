@@ -1,3 +1,11 @@
+@php
+$setting = \App\Http\Controllers\HomeController::getSettings();
+@endphp
+
+@php
+    $categories = \App\Http\Controllers\HomeController::getCategories();
+@endphp
+
 <header class="header">
     <div class="topbar bg-theme">
         <div class="container">
@@ -6,17 +14,16 @@
                     <div class="leftside">
                         <ul class="custom-flex">
                             <li>
-                                <a href="#" class="text-custom-white"><i class="fab fa-facebook-f"></i></a>
+                                <a href="{{$setting->facebook}}" class="text-custom-white"><i class="fab fa-facebook-f"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="text-custom-white"><i class="fab fa-twitter"></i></a>
+                                <a href="{{$setting->twitter}}" class="text-custom-white"><i class="fab fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="text-custom-white"><i class="fab fa-instagram"></i></a>
+                                <a href="{{$setting->instagram}}" class="text-custom-white"><i class="fab fa-instagram"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="text-custom-white">
-                                    <i class="fab fa-linkedin"></i>
+                                <a href="{{$setting->youtube}}" class="text-custom-white"><i class="fab fa-youtube"></i>
                                 </a>
                             </li>
                         </ul>
@@ -24,13 +31,22 @@
                 </div>
 
                 <div class="col-lg-6 col-md-7">
-                    <div class="rightside full-height">
+                    <div class="rightside full-height main-menu">
                         <ul class="custom-flex full-height">
-{{--                            <li class="book-appointment">--}}
-{{--                                <a href="booking.html">Booking Now </a>--}}
-{{--                            </li>--}}
+         {{--                   <li class="book-appointment  menu-item-has-children"><a href="#"> Profile </a>
+                                <ul class="submenu custom ">
+                                    <li class="menu-item"><a href="{{route('home_cars')}}"> Profile </a></li>
+
+                                    <li class="menu-item"><a href=""> Reservations </a></li>
+
+                                </ul>
+                            </li>--}}
+
                             <li class="book-appointment">
                                 <a href="{{route("home_login")}}"> LOG IN </a>
+                            </li>
+                            <li class="book-appointment">
+                                <a href="{{route("home_register")}}"> REGISTER  </a>
                             </li>
                         </ul>
                     </div>
@@ -59,7 +75,16 @@
                                         @endfor
                                     </ul>
                                 </li>
+                                <li class="menu-item menu-item-has-children"><a href="#"> User Name </a>
+                                    <ul class="submenu custom ">
+                                        <li class="menu-item"><a href="{{route('user_profile')}}"> Profile </a></li>
 
+                                        <li class="menu-item"><a href=""> Reservations </a></li>                                        <li class="menu-item"><a href=""> Reservations </a></li>
+                                        <li class="menu-item"><a href=""> Log Out </a></li>
+
+
+                                    </ul>
+                                </li>
                                 <li class="menu-item"><a href="{{route('home_about')}}">About</a></li>
                                 <li class="menu-item"><a href="{{route('home_contact')}}">Contact Us</a></li>
                                 <li class="menu-item"><a href="{{route('home_faq')}}">Faq</a></li>

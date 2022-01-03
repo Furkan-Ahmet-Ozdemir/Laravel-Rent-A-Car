@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comments;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CommentsController extends Controller
 {
@@ -42,6 +43,17 @@ class CommentsController extends Controller
     {
         //
     }
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Comments  $comments
+     * @return \Illuminate\Http\Response
+     */
+    public function showAdmin(Comments $comments)
+    {
+        $datalist = Comments::get();
+        return view('admin.user_comments',['datalist' => $datalist]);
+    }
 
     /**
      * Display the specified resource.
@@ -51,7 +63,9 @@ class CommentsController extends Controller
      */
     public function show(Comments $comments)
     {
-        //
+        $categories = DB::table('categories')->where('status','True')->get();
+        $datalist = Comments::get();
+        return view('home.user_comments',['datalist' => $datalist,'categories'=>$categories]);
     }
 
     /**

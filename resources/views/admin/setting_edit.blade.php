@@ -97,10 +97,18 @@
                             <input type="text" class="form-control" name="youtube"  value="{{$data->youtube}}">
                         </div>
 
+
+
+
+
                         <div class="form-group">
                             <label >aboutus</label>
                             <textarea name="aboutus" class="form-control" rows="5">{{$data->aboutus}}</textarea>
                         </div>
+
+
+
+
 
                         <div class="form-group">
                             <label >contact</label>

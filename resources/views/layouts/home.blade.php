@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="#">
     <meta name="description" content="#">
-    <title>Rumble - Car Rental Booking HTML Template | Homepage</title>
+    <title>@yield('title')</title>
+    <meta name="description" content="@yield('description')">
+    <meta name="keywords" content="@yield('keywords')">
+    <meta name="author" content="Ren-Car">
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{url('assets/images/favicon.ico')}}">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{url('assets/images/favicon.ico')}}">
@@ -45,28 +48,28 @@
 <div id="back-top" class="back-top"> <a href="#top"><i class="flaticon-arrows"></i></a> </div>
 <!-- Place all Scripts Here -->
 <!-- jQuery -->
-<script src="assets/js/jquery.min.js"></script>
+<script src="{{url('assets/js/jquery.min.js')}}"></script>
 <!-- Popper -->
-<script src="assets/js/popper.min.js"></script>
+<script src="{{url('assets/js/popper.min.js')}}"></script>
 <!-- Bootstrap -->
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="{{url('assets/js/bootstrap.min.js')}}"></script>
 <!-- Range Slider -->
-<script src="assets/js/ion.rangeSlider.min.js"></script>
+<script src="{{url('assets/js/ion.rangeSlider.min.js')}}"></script>
 <!-- Slick Slider -->
-<script src="assets/js/slick.min.js"></script>
+<script src="{{url('assets/js/slick.min.js')}}"></script>
 <!-- Datepicker -->
-<script src="assets/js/datepicker.js"></script>
-<script src="assets/js/datepicker.en.js"></script>
+<script src="{{url('assets/js/datepicker.js')}}"></script>
+<script src="{{url('assets/js/datepicker.en.js')}}"></script>
 <!-- Isotope Gallery -->
-<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="{{url('assets/js/isotope.pkgd.min.js')}}"></script>
 <!-- Nice Select -->
-<script src="assets/js/jquery.nice-select.js"></script>
+<script src="{{url('assets/js/jquery.nice-select.js')}}"></script>
 <!-- magnific popup -->
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="{{url('assets/js/jquery.magnific-popup.min.js')}}"></script>
 <!-- Maps -->
-<script src="http://www.google.cn/maps/api/js?key=AIzaSyDnd9JwZvXty-1gHZihMoFhJtCXmHfeRQg"></script>
+<script src="{{url('http://www.google.cn/maps/api/js?key=AIzaSyDnd9JwZvXty-1gHZihMoFhJtCXmHfeRQg')}}"></script>
 <!-- Custom Js -->
-<script src="assets/js/custom.js"></script><!-- /Place all Scripts Here -->
+<script src="{{url('assets/js/custom.js')}}"></script><!-- /Place all Scripts Here -->
 </body>
 </html>
 @include('sweetalert::alert')

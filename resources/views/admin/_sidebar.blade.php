@@ -26,18 +26,18 @@
         </li>
 {{--    <li class="nav-item sidebar-user-actions">--}}
 {{--        <div class="sidebar-user-menu">--}}
-{{--            <a href="{{route('admin_reservation')}}" class="nav-link"><i ></i>--}}
+{{--            <a href="{{route('admin_reservations')}}" class="nav-link"><i ></i>--}}
 {{--                <span class="menu-title">Reservation</span>--}}
 {{--            </a>--}}
 {{--        </div>--}}
 {{--    </li>--}}
-{{--    <li class="nav-item sidebar-user-actions">--}}
-{{--        <div class="sidebar-user-menu">--}}
-{{--            <a href="{{route('admin_message')}}" class="nav-link"><i ></i>--}}
-{{--                <span class="menu-title">Messages</span>--}}
-{{--            </a>--}}
-{{--        </div>--}}
-{{--    </li>--}}
+    <li class="nav-item sidebar-user-actions">
+        <div class="sidebar-user-menu">
+            <a href="{{route('admin_comments')}}" class="nav-link"><i ></i>
+                <span class="menu-title">Comments</span>
+            </a>
+        </div>
+    </li>
         <li class="nav-item sidebar-user-actions">
             <div class="sidebar-user-menu">
                 <a href="{{route('admin_faq')}}" class="nav-link"><i ></i>

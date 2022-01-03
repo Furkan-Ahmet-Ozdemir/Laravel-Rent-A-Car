@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +38,13 @@ Route::prefix('user')->group(function (){
     Route::post("/registercheck",[App\Http\Controllers\HomeController::class,'registercheck'])->name('user_registercheck');
     Route::post("/basket",[App\Http\Controllers\ReservationController::class,'create'])->name('user_basket');
 
+    Route::get("/profile",[App\Http\Controllers\UserController::class,'index'])->name('user_profile');
+    Route::get("/profile/reservation",[App\Http\Controllers\UserController::class,'reservation'])->name('user_reservation');
+
+    Route::get("/profile/comments",[App\Http\Controllers\CommentsController::class,'show'])            ->name('user_comments');
+
+
+
 });
 
 Route::post("/comment",[App\Http\Controllers\CommentsController::class,'create'])->name('user_comment');
@@ -46,12 +53,18 @@ Route::post("/comment",[App\Http\Controllers\CommentsController::class,'create']
 
 Route::middleware('auth')->prefix('admin')->group(function (){
 
-    Route::get("faq",[App\Http\Controllers\Admin\FaqController::class,'index'])               ->name('admin_faq');
-    Route::get("faq/store",[App\Http\Controllers\Admin\FaqController::class,'store'])               ->name('admin_faq_store');
-    Route::post("faq/create",[App\Http\Controllers\Admin\FaqController::class,'create'])               ->name('admin_faq_create');
-    Route::post("faq/update/{id}",[App\Http\Controllers\Admin\FaqController::class,'update'])->name('admin_faq_update');
-    Route::get("faq/edit/{id}",[App\Http\Controllers\Admin\FaqController::class,'edit'])->name('admin_faq_edit');
-    Route::get("faq/delete/{id}",[App\Http\Controllers\Admin\FaqController::class,'destroy'])->name('admin_faq_delete');
+    Route::get("reservations",[App\Http\Controllers\ReservationController::class,'showAdmin'])     ->name('admin_reservations');
+    Route::get("reservations/edit/{id}",[App\Http\Controllers\ReservationController::class,'edit'])->name('admin_reservations_edit');
+
+    Route::get("comments",[App\Http\Controllers\CommentsController::class,'showAdmin'])            ->name('admin_comments');
+    Route::get("comments/edit/{id}",[App\Http\Controllers\CommentsController::class,'edit'])       ->name('admin_comments_edit');
+
+    Route::get("faq",[App\Http\Controllers\Admin\FaqController::class,'index'])                    ->name('admin_faq');
+    Route::get("faq/store",[App\Http\Controllers\Admin\FaqController::class,'store'])              ->name('admin_faq_store');
+    Route::post("faq/create",[App\Http\Controllers\Admin\FaqController::class,'create'])           ->name('admin_faq_create');
+    Route::post("faq/update/{id}",[App\Http\Controllers\Admin\FaqController::class,'update'])      ->name('admin_faq_update');
+    Route::get("faq/edit/{id}",[App\Http\Controllers\Admin\FaqController::class,'edit'])           ->name('admin_faq_edit');
+    Route::get("faq/delete/{id}",[App\Http\Controllers\Admin\FaqController::class,'destroy'])      ->name('admin_faq_delete');
 
     Route::get("message",[App\Http\Controllers\MessageController::class,'show'])               ->name('admin_message');
     Route::get("message/delete/{id}",[App\Http\Controllers\MessageController::class,'destroy'])       ->name('admin_message_delete');

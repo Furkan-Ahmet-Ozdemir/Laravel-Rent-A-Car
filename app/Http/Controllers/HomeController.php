@@ -5,51 +5,57 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Faq;
 use App\Models\Reservation;
+use App\Models\Setting;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 
 class HomeController extends Controller
 {
+
+    public static function getSettings(){
+        return $setting = Setting::first();
+    }
+    public static function getCategories(){
+        return $categories = DB::table('categories')->where('status','True')->get();
+    }
     public function index(){
-        $categories = DB::table('categories')->where('status','True')->get();
-        return view('home.index')->with('categories',$categories);
+        return view('home.index');
     }
     public function home(){
-        $categories = DB::table('categories')->where('status','True')->get();
-        return view('home.home')->with('categories',$categories);
+
+        return view('home.home');
     }
     public function contact(){
-        $categories = DB::table('categories')->where('status','True')->get();
-        return view('home.contact')->with('categories',$categories);
+
+        return view('home.contact');
     }
 
     public function about(){
-        $categories = DB::table('categories')->where('status','True')->get();
-        return view('home.about')->with('categories',$categories);
+        $setting = Setting::first();
+        return view('home.about')->with('setting',$setting);
     }
 
     public function faq(){
-        $categories = DB::table('categories')->where('status','True')->get();
         $datalist = Faq::get();
-        return view('home.faq',['categories'=> $categories,'datalist' => $datalist]);
+        return view('home.faq','datalist',$datalist);
     }
 
     public function cars(){
-        $categories = DB::table('categories')->where('status','True')->get();
         $cars = DB::table('cars')->get();
-        return view('home.cars',['categories'=> $categories,'cars'=>$cars]);
+        return view('home.cars',['cars'=>$cars]);
     }
     public function carType($slug){
-        $categories = DB::table('categories')->where('status','True')->get();
         $cars = DB::table('cars')->where('category_id',$slug)->where('status','True')->get();
-        return view('home.cars',['categories'=> $categories,'cars'=>$cars]);
+        return view('home.cars',['cars'=>$cars]);
     }
     public function carDetail($slug){
-        $categories = DB::table('categories')->where('status','True')->get();
-        $settings = DB::table('settings')->get();
         $car = DB::table('cars')->where('slug',$slug)->get();
         $random = DB::table('cars')->where('category_id',$car[0]->category_id)->whereNotIn('slug',[$car[0]->slug])->get();
-        return view('home.carDetail',['categories'=> $categories,'car'=>$car,'settings'=>$settings,'random'=>$random]);
+        return view('home.carDetail',['car'=>$car,'random'=>$random]);
     }
 
     public function login(){
@@ -64,18 +70,18 @@ class HomeController extends Controller
             if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
 
-                return redirect()->intended('admin');
+                return redirect()->intended('user');
             }
             return back()->withErrors([
                 'email' => 'The provided credentials do not match our records.',
             ]);
         }
         else{
-            return view('home.login');
+            return view('home.index');
         }
     }
     public function logout(){
-        return view('admin.login');
+        return view('home.index');
     }
 
 
@@ -90,14 +96,14 @@ class HomeController extends Controller
             if($var['password'] == $var['password1']){
                 $isUser = DB::table('users')->where('email', $var['email'])->value('id');
                 if($isUser){
-                    return view('admin.register');
+                    return view('home.register');
                 }else{
                     $data = new User();
                     $data->name = $request->input('name');
                     $data->email = $request->input('email');
                     $data->password = Hash::make($request->input('password'));
                     $data->save();
-                    return redirect()->route('admin_login');
+                    return redirect()->route('home_login');
                 }
             }
             return back()->withErrors([
@@ -105,7 +111,7 @@ class HomeController extends Controller
             ]);
         }
         else{
-            return view('admin.login');
+            return view('home.login');
         }
     }
 
