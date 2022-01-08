@@ -2,6 +2,10 @@
 
 @section('title','Laravel E-Ticaret dsfsdf')
 
+@php
+    $categories = \App\Http\Controllers\HomeController::getCategories();
+@endphp
+
 @section('content')
     <!-- Start Subheader -->
     <div class="subheader normal-bg section-padding">
@@ -26,8 +30,11 @@
                         <h6 class="no-margin text-custom-black">Showing {{count($cars)}} Results</h6>
                         <div class="sort-by"><span class="text-custom-black fs-14 fw-600">Sort by</span>
                             <div class="group-form"><select class="form-control form-control-custom custom-select">
-                                    <option>A to Z</option>
+                                   A to Z
                                     <option>Z to A</option>
+                                    @for($i = 0; $i < count($categories); $i++)
+                                   <a href="{{route('home_carType',$categories[$i]->id)}}"> <option  >{{$categories[$i]->title}} </option> </a>
+                                    @endfor
                                 </select></div>
                         </div>
                     </div>
@@ -50,8 +57,6 @@
                         </div>
                     @endforeach
                 @endisset
-
-
             </div>
             <div class="row">
                 <div class="col-12">

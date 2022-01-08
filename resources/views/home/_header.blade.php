@@ -41,13 +41,14 @@ $setting = \App\Http\Controllers\HomeController::getSettings();
 
                                 </ul>
                             </li>--}}
-
+                            @guest()
                             <li class="book-appointment">
-                                <a href="{{route("home_login")}}"> LOG IN </a>
+                                <a href="{{route("login")}}"> LOG IN </a>
                             </li>
                             <li class="book-appointment">
-                                <a href="{{route("home_register")}}"> REGISTER  </a>
+                                <a href="{{route("register")}}"> REGISTER  </a>
                             </li>
+                            @endguest
                         </ul>
                     </div>
                 </div>
@@ -75,16 +76,20 @@ $setting = \App\Http\Controllers\HomeController::getSettings();
                                         @endfor
                                     </ul>
                                 </li>
-                                <li class="menu-item menu-item-has-children"><a href="#"> User Name </a>
+                                @auth
+                                <li class="menu-item menu-item-has-children"><a href="#"> {{Auth::user()->name}}  </a>
                                     <ul class="submenu custom ">
+
                                         <li class="menu-item"><a href="{{route('user_profile')}}"> Profile </a></li>
 
-                                        <li class="menu-item"><a href=""> Reservations </a></li>                                        <li class="menu-item"><a href=""> Reservations </a></li>
-                                        <li class="menu-item"><a href=""> Log Out </a></li>
+                                        <li class="menu-item"><a href="{{route('user_reservation')}}"> Reservations </a></li>
+                                        <li class="menu-item"><a href="{{route('user_comments')}}"> Comments </a></li>
+                                        <li class="menu-item"><a href="{{route('logout')}}"> Log Out </a></li>
 
 
                                     </ul>
                                 </li>
+                                @endauth
                                 <li class="menu-item"><a href="{{route('home_about')}}">About</a></li>
                                 <li class="menu-item"><a href="{{route('home_contact')}}">Contact Us</a></li>
                                 <li class="menu-item"><a href="{{route('home_faq')}}">Faq</a></li>

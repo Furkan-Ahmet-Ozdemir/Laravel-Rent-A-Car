@@ -16,6 +16,7 @@ class HomeController extends Controller
     public function index(){
         return view('admin.index');
     }
+
     public function login(){
         return view('admin.login');
     }
@@ -34,7 +35,7 @@ class HomeController extends Controller
             ]);
         }
         else{
-            return view('admin.login');
+            return redirect('login');
         }
     }
 
@@ -43,7 +44,7 @@ class HomeController extends Controller
        $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('admin_login');
+        return redirect()->route('home.index');
     }
 
 
@@ -67,9 +68,8 @@ class HomeController extends Controller
                     $data->email = $request->input('email');
                     $data->password = Hash::make($request->input('password'));
                     $data->save();
-                    return redirect()->route('admin_login');
+                    return redirect()->route('login');
                 }
-
             }
             return back()->withErrors([
                 'email' => 'The provided credentials do not match our records.',

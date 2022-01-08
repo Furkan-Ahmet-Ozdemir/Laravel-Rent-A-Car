@@ -32,6 +32,9 @@
                         <div class="col-12">
                             <div class="blog-details bx-wrapper bg-custom-white padding-20">
                                 <article class="post p-relative">
+                                    <div class="page-header">
+                                        <h3 class="page-title"> Reservations  </h3>
+                                    </div>
                                     <div class="post-wrapper">
                                         <table>
                                             <tr>
@@ -45,12 +48,7 @@
                                             </tr>
 
                                             <tr>
-                                                <th> Arba Adı </th>
-                                                <th> Reser. Time </th>
-                                                <th> Return Time </th>
-                                                <th> Amount </th>
-                                                <th> Status </th>
-                                                <th> Cancel </th>
+
                                             </tr>
 
 

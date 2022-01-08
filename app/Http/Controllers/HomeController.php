@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Car;
 use App\Models\Faq;
 use App\Models\Reservation;
 use App\Models\Setting;
@@ -23,7 +24,12 @@ class HomeController extends Controller
         return $categories = DB::table('categories')->where('status','True')->get();
     }
     public function index(){
-        return view('home.index');
+        $slider = Car::limit(4)->get();
+        $cars = DB::table('cars')->limit(9)->get();
+//        $slider = Car::select('title','price','image','slug','category_id')->limit(4)->get();
+    //        print_r($slider);
+    //        exit();
+        return view('home.index',['cars'=>$cars,'slider'=>$slider]);
     }
     public function home(){
 
@@ -41,7 +47,7 @@ class HomeController extends Controller
 
     public function faq(){
         $datalist = Faq::get();
-        return view('home.faq','datalist',$datalist);
+        return view('home.faq',['datalist'=>$datalist]);
     }
 
     public function cars(){
@@ -53,9 +59,10 @@ class HomeController extends Controller
         return view('home.cars',['cars'=>$cars]);
     }
     public function carDetail($slug){
+        $settings = Setting::first();
         $car = DB::table('cars')->where('slug',$slug)->get();
         $random = DB::table('cars')->where('category_id',$car[0]->category_id)->whereNotIn('slug',[$car[0]->slug])->get();
-        return view('home.carDetail',['car'=>$car,'random'=>$random]);
+        return view('home.carDetail',['car'=>$car,'random'=>$random,'settings'=>$settings]);
     }
 
     public function login(){
@@ -69,8 +76,7 @@ class HomeController extends Controller
             $credentials = $request->only('email','password');
             if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
-
-                return redirect()->intended('user');
+                return redirect()->intended('admin');
             }
             return back()->withErrors([
                 'email' => 'The provided credentials do not match our records.',
@@ -80,9 +86,17 @@ class HomeController extends Controller
             return view('home.index');
         }
     }
-    public function logout(){
-        return view('home.index');
+
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('home.index');
     }
+//    public function logout(){
+//        return view('home.index');
+//    }
 
 
     public function register(){

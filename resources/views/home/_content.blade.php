@@ -1,138 +1,210 @@
-<div class="slider p-relative"><div class="main-banner arrow-layout-1 "><div class="slide-item"><img src="assets/images/car-1.jpg" class="image-fit" alt="Slider"><div class="transform-center"><div class="container"><div class="row"><div class="col-lg-7"><div class="slider-content"><h1 class="text-custom-white">Upto 25% off on first booking <span class="text-custom-blue">Car</span>through your app!</h1><ul class="custom"><li class="text-custom-white"><i class="fas fa-dollar-sign"></i>Best Price Guaranteed </li><li class="text-custom-white"><i class="fas fa-car"></i>Home Pickups </li><li class="text-custom-white"><i class="fas fa-laptop"></i>Easy Bookings </li><li class="text-custom-white"><i class="fas fa-headphones-alt"></i>24/7 Customer Care </li></ul><a href="cars.html" class="btn-first btn-small">Find Out More</a></div></div></div></div></div></div><div class="slide-item"><img src="assets/images/car-1.jpg" class="image-fit" alt="Slider"><div class="transform-center"><div class="container"><div class="row"><div class="col-lg-7"><div class="slider-content"><h1 class="text-custom-white">Upto 25% off on first booking <span class="text-custom-blue">Car</span>through your app!</h1><ul class="custom"><li class="text-custom-white"><i class="fas fa-dollar-sign"></i>Best Price Guaranteed </li><li class="text-custom-white"><i class="fas fa-car"></i>Home Pickups </li><li class="text-custom-white"><i class="fas fa-laptop"></i>Easy Bookings </li><li class="text-custom-white"><i class="fas fa-headphones-alt"></i>24/7 Customer Care </li></ul><a href="cars.html" class="btn-first btn-small">Find Out More</a></div></div></div></div></div></div><div class="slide-item"><img src="assets/images/car-1.jpg" class="image-fit" alt="Slider"><div class="transform-center"><div class="container"><div class="row"><div class="col-lg-7"><div class="slider-content"><h1 class="text-custom-white">Book your <span class="text-custom-blue">Car</span>through your app!</h1><p class="text-custom-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
 
-                                <a href="cars.html" class="btn-first btn-small">Find Out More</a> </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Slider -->
-<!-- Start Banner tabs -->
-<div class="banner-tabs">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="tabs">
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="cars">
-                            <div class="tab-inner">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="form-group">
-                                                <label class="fs-14 text-custom-white fw-600">Pick Up</label>
-                                                <input type="text" name="#" class="form-control form-control-custom" placeholder="city, distirct or specific airpot">
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="fs-14 text-custom-white fw-600">Pick Up Date/Time</label>
-                                                        <div class="input-group group-form">
-                                                            <input type="text" name="#" class="form-control form-control-custom datepickr" placeholder="mm/dd/yy" readonly>
-                                                            <span class="input-group-append"> <i class="far fa-calendar"></i> </span> </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="submit"></label>
-                                                        <div class="group-form">
-                                                            <select class="custom-select form-control form-control-custom">
-                                                                <option>Anytime</option>
-                                                                <option>Morning</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="form-group">
-                                                <label class="fs-14 text-custom-white fw-600">Drop Off</label>
-                                                <input type="text" name="#" class="form-control form-control-custom" placeholder="city, distirct or specific airpot">
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="fs-14 text-custom-white fw-600">Drop Off Date/Time</label>
-                                                        <div class="input-group group-form">
-                                                            <input type="text" name="#" class="form-control form-control-custom datepickr" placeholder="mm/dd/yy" readonly>
-                                                            <span class="input-group-append"> <i class="far fa-calendar"></i> </span> </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="submit"></label>
-                                                        <div class="group-form">
-                                                            <select class="custom-select form-control form-control-custom">
-                                                                <option>Anytime</option>
-                                                                <option>Morning</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-12">
-                                            <div class="row">
-                                                <div class="col-3">
-                                                    <div class="form-group">
-                                                        <label class="fs-14 text-custom-white fw-600">Adults</label>
-                                                        <div class="group-form">
-                                                            <select class="custom-select form-control form-control-custom">
-                                                                <option>01</option>
-                                                                <option>02</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-3">
-                                                    <div class="form-group">
-                                                        <label class="fs-14 text-custom-white fw-600">Kids</label>
-                                                        <div class="group-form">
-                                                            <select class="custom-select form-control form-control-custom">
-                                                                <option>01</option>
-                                                                <option>02</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="fs-14 text-custom-white fw-600">Promocode</label>
-                                                        <input type="text" name="#" class="form-control form-control-custom" placeholder="type here">
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="fs-14 text-custom-white fw-600">Car Type</label>
-                                                        <div class="group-form">
-                                                            <select class="custom-select form-control form-control-custom">
-                                                                <option>Economy</option>
-                                                                <option>Compact</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label class="submit"></label>
-                                                        <button class="btn-first btn-submit full-width btn-height">Search</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
+@php
+    $categories = \App\Http\Controllers\HomeController::getCategories();
+@endphp
+
+<div class="slider p-relative">
+    <div class="main-banner arrow-layout-1 ">
+        @foreach($slider as $rs)
+            <div class="slide-item"><img src="{{Storage::url($rs->image)}}" class="image-fit" alt="Slider">
+            <div class="transform-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="slider-content">
+                                <h1 class="text-custom-white">{{$rs->title}} {{--<span
+                                        class="text-custom-blue">Car</span>through your app!--}}</h1>
+                                <ul class="custom">
+                                    <li class="text-custom-white"><i class="fas fa-dollar-sign"></i>{{$rs->price}} </li>
+                                    <li class="text-custom-white"><i class="fas fa-car"></i>Home Pickups </li>
+                                    <li class="text-custom-white"><i class="fas fa-laptop"></i>Easy Bookings </li>
+                                    <li class="text-custom-white"><i class="fas fa-headphones-alt"></i>24/7 Customer
+                                        Care </li>
+
+                                </ul><a href="{{route('home_carDetail',$rs->slug)}}" class="btn-first btn-small">Find Out More</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        @endforeach
+
     </div>
 </div>
+
+<section class="section-padding bg-light-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="listing-top-heading mb-xl-20">
+                    <h6 class="no-margin text-custom-black">Showing {{count($cars)}} Results</h6>
+                    <div class="sort-by"><span class="text-custom-black fs-14 fw-600">Sort by</span>
+                        <div class="group-form"><select class="form-control form-control-custom custom-select">
+                                <option>A to Z</option>
+                                <option>Z to A</option>
+                            </select></div>
+                    </div>
+                </div>
+            </div>
+            @isset($cars)
+                @foreach($cars as $car)
+                    <div class=" col-lg-4 col-md-6">
+                        <div class="car-grid mb-xl-30">
+                            <div class="car-grid-wrapper car-grid bx-wrapper">
+                                <div class="image-sec animate-img"><a href="#"><img src="{{url('storage/',$car->image)}}" class="full-width"
+                                                                                    alt="img"></a></div>
+                                <div class="car-grid-caption padding-20 bg-custom-white p-relative">
+                                    <h4 class="title fs-16"><a href="#" class="text-custom-black">{{$car->title}}<small class="text-light-dark">Per
+                                                Day</small></a></h4><span class="price"><small>From</small>{{$car->price}} ₺</span>
+                                    <p>{{$car->description}}</p>
+                                    <div class="action"><a class="btn-first btn-submit" href="{{route('home_carDetail',$car->slug)}}">Book</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endisset
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><!-- End Blog -->
+<!-- Start Banner tabs -->
+{{--<div class="banner-tabs">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-12">--}}
+{{--                <div class="tabs">--}}
+{{--                    <div class="tab-content">--}}
+{{--                        <div class="tab-pane active" id="cars">--}}
+{{--                            <div class="tab-inner">--}}
+{{--                                <form>--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col-lg-4 col-md-6">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <label class="fs-14 text-custom-white fw-600">Pick Up</label>--}}
+{{--                                                <input type="text" name="#" class="form-control form-control-custom" placeholder="city, distirct or specific airpot">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="row">--}}
+{{--                                                <div class="col-6">--}}
+{{--                                                    <div class="form-group">--}}
+{{--                                                        <label class="fs-14 text-custom-white fw-600">Pick Up Date/Time</label>--}}
+{{--                                                        <div class="input-group group-form">--}}
+{{--                                                            <input type="text" name="#" class="form-control form-control-custom datepickr" placeholder="mm/dd/yy" readonly>--}}
+{{--                                                            <span class="input-group-append"> <i class="far fa-calendar"></i> </span> </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-6">--}}
+{{--                                                    <div class="form-group">--}}
+{{--                                                        <label class="submit"></label>--}}
+{{--                                                        <div class="group-form">--}}
+{{--                                                            <select class="custom-select form-control form-control-custom">--}}
+{{--                                                                <option>Anytime</option>--}}
+{{--                                                                <option>Morning</option>--}}
+{{--                                                            </select>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-lg-4 col-md-6">--}}
+{{--                                            <div class="form-group">--}}
+{{--                                                <label class="fs-14 text-custom-white fw-600">Drop Off</label>--}}
+{{--                                                <input type="text" name="#" class="form-control form-control-custom" placeholder="city, distirct or specific airpot">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="row">--}}
+{{--                                                <div class="col-6">--}}
+{{--                                                    <div class="form-group">--}}
+{{--                                                        <label class="fs-14 text-custom-white fw-600">Drop Off Date/Time</label>--}}
+{{--                                                        <div class="input-group group-form">--}}
+{{--                                                            <input type="text" name="#" class="form-control form-control-custom datepickr" placeholder="mm/dd/yy" readonly>--}}
+{{--                                                            <span class="input-group-append"> <i class="far fa-calendar"></i> </span> </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-6">--}}
+{{--                                                    <div class="form-group">--}}
+{{--                                                        <label class="submit"></label>--}}
+{{--                                                        <div class="group-form">--}}
+{{--                                                            <select class="custom-select form-control form-control-custom">--}}
+{{--                                                                <option>Anytime</option>--}}
+{{--                                                                <option>Morning</option>--}}
+{{--                                                            </select>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-lg-4 col-md-12">--}}
+{{--                                            <div class="row">--}}
+{{--                                                <div class="col-3">--}}
+{{--                                                    <div class="form-group">--}}
+{{--                                                        <label class="fs-14 text-custom-white fw-600">Adults</label>--}}
+{{--                                                        <div class="group-form">--}}
+{{--                                                            <select class="custom-select form-control form-control-custom">--}}
+{{--                                                                <option>01</option>--}}
+{{--                                                                <option>02</option>--}}
+{{--                                                            </select>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-3">--}}
+{{--                                                    <div class="form-group">--}}
+{{--                                                        <label class="fs-14 text-custom-white fw-600">Kids</label>--}}
+{{--                                                        <div class="group-form">--}}
+{{--                                                            <select class="custom-select form-control form-control-custom">--}}
+{{--                                                                <option>01</option>--}}
+{{--                                                                <option>02</option>--}}
+{{--                                                            </select>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-6">--}}
+{{--                                                    <div class="form-group">--}}
+{{--                                                        <label class="fs-14 text-custom-white fw-600">Promocode</label>--}}
+{{--                                                        <input type="text" name="#" class="form-control form-control-custom" placeholder="type here">--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-6">--}}
+{{--                                                    <div class="form-group">--}}
+{{--                                                        <label class="fs-14 text-custom-white fw-600">Car Type</label>--}}
+{{--                                                        <div class="group-form">--}}
+{{--                                                            <select class="custom-select form-control form-control-custom">--}}
+{{--                                                                <option>Economy</option>--}}
+{{--                                                                <option>Compact</option>--}}
+{{--                                                            </select>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-6">--}}
+{{--                                                    <div class="form-group">--}}
+{{--                                                        <label class="submit"></label>--}}
+{{--                                                        <button class="btn-first btn-submit full-width btn-height">Search</button>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </form>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 <!-- End Banner tabs -->
 <!-- Start About Us -->
 <section class="section-padding about-us">

@@ -34,7 +34,7 @@
                                 <article class="post p-relative">
                                     <div class="post-wrapper">
                                         <div class="comment-respond" id="respond">
-                                            <h4 class="text-custom-black fw-600">Leave Comment</h4>
+
                                             <div class="content-wrapper">
 
                                                 <div class="page-header">

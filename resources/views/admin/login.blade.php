@@ -31,7 +31,7 @@
                         </div>
                         <h4>Hello! let's get started</h4>
                         <h6 class="font-weight-light"> Log in to continue.</h6>
-                        <form class="pt-3" action="{{ route('admin_logincheck') }}" method="POST">
+                        <form class="pt-3" action="{{ route('logincheck') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
@@ -44,7 +44,7 @@
                                 <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN IN</a>
                              !-->
                                 <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOG IN</button>
-                                <a class="btn btn-block btn-danger btn-lg font-weight-medium auth-form-btn" href="{{route('admin_register')}}">SIGN IN</a>
+                                <a class="btn btn-block btn-danger btn-lg font-weight-medium auth-form-btn" href="{{route('register')}}">SIGN IN</a>
 
                             </div>
                          <!--   <div class="my-2 d-flex justify-content-between align-items-center">

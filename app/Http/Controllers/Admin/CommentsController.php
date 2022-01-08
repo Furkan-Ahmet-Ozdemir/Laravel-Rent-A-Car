@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Comments;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class CommentsController extends Controller
 {
@@ -24,18 +23,9 @@ class CommentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $data = new Comments();
-        $data->comment = $request->input('comment');
-        $data->car_id = $request->input('car_id');
-        $data->user_id = Auth::user()->id;
-        $data->rate = $request->input('rate');
-        $data->ip = $request->ip();
-        $data->save();
-        return redirect()-back();
-
-
+        //
     }
 
     /**
@@ -48,17 +38,6 @@ class CommentsController extends Controller
     {
         //
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Comments  $comments
-     * @return \Illuminate\Http\Response
-     */
-    public function showAdmin(Comments $comments)
-    {
-        $datalist = Comments::get();
-        return view('admin.user_comments',['datalist' => $datalist]);
-    }
 
     /**
      * Display the specified resource.
@@ -68,9 +47,7 @@ class CommentsController extends Controller
      */
     public function show(Comments $comments)
     {
-
-        $datalist = Comments::get()->where('user_id',session('user_id'));
-        return view('home.user_comments')->with('datalist',$datalist);
+        //
     }
 
     /**

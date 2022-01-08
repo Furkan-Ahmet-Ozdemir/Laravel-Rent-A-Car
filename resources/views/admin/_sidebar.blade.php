@@ -1,5 +1,5 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar" style="margin-right: fill;margin-left: auto">
-    <ul class="nav" style="margin-right: fill;margin-left: fill;padding-left: 25px"
+    <ul class="nav" style="margin-right: fill;margin-left: fill;padding-left: 25px">
         <li class="nav-item nav-category">Menu</li>
 
         <li class="nav-item sidebar-user-actions">
@@ -55,7 +55,7 @@
 
         <li class="nav-item sidebar-user-actions">
             <div class="sidebar-user-menu">
-                <a href="{{route('admin_logout')}}" class="nav-link"><i class="mdi mdi-logout menu-icon"></i>
+                <a href="{{route('logout')}}" class="nav-link"><i class="mdi mdi-logout menu-icon"></i>
                     <span class="menu-title">Log Out</span></a>
             </div>
         </li>

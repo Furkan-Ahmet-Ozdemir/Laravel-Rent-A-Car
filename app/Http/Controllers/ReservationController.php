@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -30,7 +31,7 @@ class ReservationController extends Controller
     public function create(Request $request)
     {
         $data = new Reservation();
-        //$data->user_id = $session->id;
+        $data->user_id = Auth::user()->id;
         $data->car_id = $request->car_id;
         $data->rezPickUp = $request->input('rezPickUp');
         $data->rezPickOf = $request->input('rezPickOf');

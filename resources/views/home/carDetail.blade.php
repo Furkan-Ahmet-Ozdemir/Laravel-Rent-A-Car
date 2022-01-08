@@ -69,7 +69,7 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="detail-slider-for mb-xl-20 magnific-gallery">
-                                    <div class="slide-item"><a href="assets/images/cars/car_big.png" class="popup"><img
+                                    <div class="slide-item"><a href="" class="popup"><img
                                                 src="{{url('storage/',$car[0]->image)}}" class="image-fit" alt="img"></a></div>
                                 </div>
                                 <hr>
@@ -342,9 +342,9 @@
                                                 your service to help you.</p>
                                             <ul class="custom">
                                                 <li class="text-custom-blue fs-18"> <i class="fas fa-phone-alt"></i> <a href="#"
-                                                                                                                        class="text-light-dark">{{$settings[0]->phone}}</a> </li>
+                                                                                                                        class="text-light-dark">{{$settings->phone}}</a> </li>
                                                 <li class="text-custom-blue fs-18"> <i class="fas fa-envelope"></i> <a href="#"
-                                                                                                                       class="text-light-dark fs-14">{{$settings[0]->email}}</a> </li>
+                                                                                                                       class="text-light-dark fs-14">{{$settings->email}}</a> </li>
                                             </ul>
                                         </div>
                                     </div>
