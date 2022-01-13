@@ -28,7 +28,7 @@ class HomeController extends Controller
             $credentials = $request->only('email','password');
             if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
-                return redirect()->intended('admin');
+                return redirect()->intended('user');
             }
             return back()->withErrors([
                 'email' => 'The provided credentials do not match our records.',
@@ -44,9 +44,13 @@ class HomeController extends Controller
        $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('home.index');
+        return redirect()->route('home');
     }
 
+//    public function __construct()
+//    {
+//        $this->middleware('admin');
+//    }
 
 
     public function register(){

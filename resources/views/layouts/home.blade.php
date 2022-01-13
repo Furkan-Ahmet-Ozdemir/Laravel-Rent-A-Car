@@ -47,6 +47,7 @@
 <!-- End Copyright -->
 <div id="back-top" class="back-top"> <a href="#top"><i class="flaticon-arrows"></i></a> </div>
 <!-- Place all Scripts Here -->
+@yield('javascript')
 <!-- jQuery -->
 <script src="{{url('assets/js/jquery.min.js')}}"></script>
 <!-- Popper -->

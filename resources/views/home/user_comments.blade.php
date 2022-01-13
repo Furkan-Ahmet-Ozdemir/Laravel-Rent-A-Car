@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <h1 class="text-custom-white">Contact Us</h1>
                     <ul class="custom-flex justify-content-center">
-                        <li class="fw-500"><a href="{{route('home.index')}}" class="text-custom-white">Home</a></li>
+                        <li class="fw-500"><a href="{{route('home')}}" class="text-custom-white">Home</a></li>
                         <li class="fw-500"><a href="{{route('user_profile')}}" class="text-custom-white">Profile</a></li>
                         <li class="active fw-500"> Comments </li>
                     </ul>
@@ -45,8 +45,8 @@
                                                     <tr>
                                                         <th>Comment</th>
                                                         <th>Car Id</th>
-                                                        <th>User Id</th>
                                                         <th>Status</th>
+                                                        <th>Delete</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -54,8 +54,10 @@
                                                         <tr>
                                                             <td>{{$rs->comment}}</td>
                                                             <td>{{$rs->car_id}}</td>
-                                                            <td>{{$rs->user_id}}</td>
-                                                            <td> <a href="">{{$rs->status}}</a></td>
+                                                            <td> {{$rs->status}}</td>
+                                                            <td><label class="badge badge-danger"><a href="{{route('admin_comments_delete',['id'=> $rs->id])}}"
+                                                                                                     onclick="return confirm('Delete ! Are you sure ?')">DELETE</a></label></td>
+
                                                         </tr>
                                                     @endforeach
                                                     </tbody>

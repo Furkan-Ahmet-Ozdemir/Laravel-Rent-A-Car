@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <h1 class="text-custom-white">Contact Us</h1>
                     <ul class="custom-flex justify-content-center">
-                        <li class="fw-500"><a href="{{route('home.index')}}" class="text-custom-white">Home</a></li>
+                        <li class="fw-500"><a href="{{route('home')}}" class="text-custom-white">Home</a></li>
                         <li class="fw-500"><a href="{{route('user_profile')}}" class="text-custom-white">Profile</a></li>
                         <li class="active fw-500"> Reservations  </li>
                     </ul>
@@ -36,23 +36,56 @@
                                         <h3 class="page-title"> Reservations  </h3>
                                     </div>
                                     <div class="post-wrapper">
-                                        <table>
+{{--                                        <table>--}}
+{{--                                            <tr>--}}
+{{--                                                <th> Arba Adı </th>--}}
+{{--                                                <th> Reser. Time </th>--}}
+{{--                                                <th> Return Time </th>--}}
+{{--                                                <th> Amount </th>--}}
+{{--                                                <th> Status </th>--}}
+{{--                                                <th> Cancel </th>--}}
+
+{{--                                            </tr>--}}
+
+{{--                                            <tr>--}}
+
+{{--                                            </tr>--}}
+
+
+
+{{--                                        </table>--}}
+                                        <table class="table">
+                                            <thead>
                                             <tr>
-                                                <th> Arba Adı </th>
-                                                <th> Reser. Time </th>
-                                                <th> Return Time </th>
-                                                <th> Amount </th>
-                                                <th> Status </th>
-                                                <th> Cancel </th>
-
+                                                <th>Id</th>
+                                                <th>Car Id</th>
+                                                <th>Pick Up Place</th>
+                                                <th>Pick Off Place</th>
+                                                <th>Rezarvation Date Time</th>
+                                                <th>Return Date Time</th>
+                                                <th>Amount</th>
+                                                <th>Status</th>
+                                                <th>EDIT</th>
+                                                <th>DELETE</th>
                                             </tr>
-
-                                            <tr>
-
-                                            </tr>
-
-
-
+                                            </thead>
+                                            <tbody>
+                                            @foreach(  $datalist as $rs)
+                                                <tr>
+                                                    <td>{{$rs->id}}</td>
+                                                    <td>{{$rs->car_id}}</td>
+                                                    <td>{{$rs->rezPickUp}}</td>
+                                                    <td>{{$rs->rezPickOf}}</td>
+                                                    <td>{{$rs->rezDateTime}}</td>
+                                                    <td>{{$rs->retDateTime}}</td>
+                                                    <td>{{$rs->amount}}</td>
+                                                    <td>{{$rs->note}}</td>
+                                                    <td><label class="badge badge-warning"><a href="{{route('admin_car_edit',['id'=> $rs->id])}}" >EDIT</a></label></td>
+                                                    <td><label class="badge badge-danger"><a href="{{route('admin_car_delete',['id'=> $rs->id])}}"
+                                                                                             onclick="return confirm('Delete ! Are you sure ?')">DELETE</a></label></td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
                                         </table>
 
                                     </div>

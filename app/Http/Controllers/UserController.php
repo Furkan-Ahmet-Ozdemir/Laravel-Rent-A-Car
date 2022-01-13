@@ -26,8 +26,8 @@ class UserController extends Controller
      */
     public function reservation()
     {
-        $categories = DB::table('categories')->where('status','True')->get();
-        return view('home.user_reservation')->with('categories',$categories);
+//        $categories = DB::table('categories')->where('status','True')->get();
+//        return view('home.user_reservation')->with('categories',$categories);
     }
 
     /**
@@ -62,6 +62,17 @@ class UserController extends Controller
         //
     }
 
+    /**
+     * Show Users for Admin
+     *
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function showAdmin(User $user)
+    {
+        $datalist = User::get();
+        return view('admin.users',['datalist' => $datalist]);
+    }
     /**
      * Show the form for editing the specified resource.
      *

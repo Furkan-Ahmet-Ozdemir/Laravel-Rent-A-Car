@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <h1 class="text-custom-white">Contact Us</h1>
                     <ul class="custom-flex justify-content-center">
-                        <li class="fw-500"><a href="{{route('home.index')}}" class="text-custom-white">Home</a></li>
+                        <li class="fw-500"><a href="{{route('home')}}" class="text-custom-white">Home</a></li>
                         <li class="active fw-500"> Profile </li>
                     </ul>
                 </div>

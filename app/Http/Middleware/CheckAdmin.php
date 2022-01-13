@@ -18,9 +18,8 @@ class CheckAdmin
     public function handle(Request $request, Closure $next)
     {
         $userRoles = Auth::user()->roles->pluck('name');
-        dd($userRoles);
         if (!$userRoles->contains('admin')){
-            return redirect('admin_home');
+            return redirect(route('admin_home'))->with('error','Giriş İzniniz Yoktur!');
         }
         return $next($request);
     }

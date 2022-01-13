@@ -14,11 +14,11 @@ use App\Http\Controllers\Auth;
 |
 */
 
-//Route::get('/',function (){
-//    return view('home.index');
-//})->name('home');
+Route::get('/',function (){
+    return view('home.index');
+});
 
-Route::get("/",[HomeController::class,'index'])->name('home.index');
+Route::get("/",[HomeController::class,'index'])->name('home');
 Route::get("/contact",[HomeController::class,'contact'])->name('home_contact');
 Route::post("/contact/create",[\App\Http\Controllers\MessageController::class,'store'])->name('contact_store');
 
@@ -39,9 +39,9 @@ Route::middleware('auth')->prefix('user')->group(function (){
     Route::post("/basket",[App\Http\Controllers\ReservationController::class,'create'])->name('user_basket');
 
     Route::get("/profiles",[App\Http\Controllers\UserController::class,'index'])->name('user_profile');
-    Route::get("/profile/reservation",[App\Http\Controllers\UserController::class,'reservation'])->name('user_reservation');
+    Route::get("/profile/reservation",[App\Http\Controllers\ReservationController::class,'show'])->name('user_reservation');
 
-    Route::get("/profile/comments",[App\Http\Controllers\CommentsController::class,'show'])            ->name('user_comments');
+    Route::get("/profile/comments",[App\Http\Controllers\CommentsController::class,'show'])->name('user_comments');
     Route::post("/comment",[App\Http\Controllers\CommentsController::class,'create'])->name('user_comment');
 
 });
@@ -49,15 +49,21 @@ Route::middleware('auth')->prefix('user')->group(function (){
 
 Route::middleware('auth')->prefix('admin')->group(function (){
 
-//
+
 //    Route::middleware('admin')->group(function (){
         Route::get("/",[App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin_home');
 
+        Route::get("users",[App\Http\Controllers\UserController::class,'showAdmin'])     ->name('admin_users');
+
         Route::get("reservations",[App\Http\Controllers\ReservationController::class,'showAdmin'])     ->name('admin_reservations');
         Route::get("reservations/edit/{id}",[App\Http\Controllers\ReservationController::class,'edit'])->name('admin_reservations_edit');
+        Route::post("reservations/update/{id}",[App\Http\Controllers\ReservationController::class,'update'])->name('admin_reservations_update');
+        Route::get("reservations/delete/{id}",[App\Http\Controllers\ReservationController::class,'destroy'])->name('admin_reservations_delete');
 
-        Route::get("comments",[App\Http\Controllers\CommentsController::class,'showAdmin'])            ->name('admin_comments');
-        Route::get("comments/edit/{id}",[App\Http\Controllers\CommentsController::class,'edit'])       ->name('admin_comments_edit');
+        Route::get("comments",[App\Http\Controllers\Admin\CommentsController::class,'index'])            ->name('admin_comments');
+        Route::get("comments/edit/{id}",[App\Http\Controllers\Admin\CommentsController::class,'edit'])       ->name('admin_comments_edit');
+        Route::post("comments/update/{id}",[App\Http\Controllers\Admin\CommentsController::class,'update'])       ->name('admin_comments_update');
+        Route::get("comments/delete/{id}",[App\Http\Controllers\Admin\CommentsController::class,'destroy'])       ->name('admin_comments_delete');
 
         Route::get("faq",[App\Http\Controllers\Admin\FaqController::class,'index'])                    ->name('admin_faq');
         Route::get("faq/store",[App\Http\Controllers\Admin\FaqController::class,'store'])              ->name('admin_faq_store');
@@ -96,6 +102,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
             Route::get("delete/{id}/{car_id}",[App\Http\Controllers\Admin\ImageController::class,'destroy'])->name('admin_image_delete');
             Route::get("show",[App\Http\Controllers\Admin\ImageController::class,'show'])->name('admin_image_show');
         });
+
         Route::get("setting",[App\Http\Controllers\Admin\SettingController::class,'index'])->name('admin_setting');
         Route::post("setting/update",[App\Http\Controllers\Admin\SettingController::class,'update'])->name('admin_setting_update');
 //    });
@@ -105,6 +112,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 Route::get("/loginn",        [App\Http\Controllers\Admin\HomeController::class,'login'])->name('login');
 Route::post("/logincheck",   [App\Http\Controllers\Admin\HomeController::class,'logincheck'])->name('logincheck');
 Route::get("/logout",        [App\Http\Controllers\Admin\HomeController::class,'logout'])->name('logout');
+
 Route::get("/register",      [App\Http\Controllers\Admin\HomeController::class,'register'])->name('register');
 Route::post("/registercheck",[App\Http\Controllers\Admin\HomeController::class,'registercheck'])->name('registercheck');
 

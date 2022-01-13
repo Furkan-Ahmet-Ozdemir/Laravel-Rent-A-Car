@@ -48,17 +48,7 @@ class CommentsController extends Controller
     {
         //
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Comments  $comments
-     * @return \Illuminate\Http\Response
-     */
-    public function showAdmin(Comments $comments)
-    {
-        $datalist = Comments::get();
-        return view('admin.user_comments',['datalist' => $datalist]);
-    }
+
 
     /**
      * Display the specified resource.
@@ -69,8 +59,22 @@ class CommentsController extends Controller
     public function show(Comments $comments)
     {
 
-        $datalist = Comments::get()->where('user_id',session('user_id'));
+        $datalist = \App\Models\Comments::where('user_id','=',Auth::user()->id)->get();
         return view('home.user_comments')->with('datalist',$datalist);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Comments  $comments
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Comments $comments,$id)
+    {
+        //
+        $data = \App\Models\Comments::find($id);
+        $data->delete();
+        return redirect()->back()->with('success','Review Deleted');
     }
 
     /**
@@ -96,14 +100,5 @@ class CommentsController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Comments  $comments
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Comments $comments)
-    {
-        //
-    }
+
 }

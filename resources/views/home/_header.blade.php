@@ -62,12 +62,12 @@ $setting = \App\Http\Controllers\HomeController::getSettings();
                     <nav>
                         <div class="main-navigation">
                             <div class="logo">
-                                <a href="{{route('home.index')}}">
+                                <a href="{{route('home')}}">
                                     <img src="{{url('assets/images/logo.png')}}" class="img-fluid" alt="logo"></a>
                         </div>
                         <div class="main-menu">
                             <ul class="custom-flex">
-                                <li class="menu-item active"><a href="{{route('home.index')}}">Home</a></li>
+                                <li class="menu-item active"><a href="{{route('home')}}">Home</a></li>
                                 <li class="menu-item menu-item-has-children"><a href="{{route('home_cars')}}">Categories</a>
                                     <ul class="submenu custom">
                                         <li class="menu-item"><a href="{{route('home_cars')}}">All</a></li>

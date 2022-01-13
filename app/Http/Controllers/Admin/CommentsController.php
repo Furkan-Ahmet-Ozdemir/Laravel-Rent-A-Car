@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Comments;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class CommentsController extends Controller
 {
@@ -15,7 +17,8 @@ class CommentsController extends Controller
      */
     public function index()
     {
-        //
+        $datalist = Comments::all();
+        return view('admin.user_comments',['datalist' => $datalist]);
     }
 
     /**
@@ -38,7 +41,6 @@ class CommentsController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -47,7 +49,7 @@ class CommentsController extends Controller
      */
     public function show(Comments $comments)
     {
-        //
+
     }
 
     /**
@@ -56,9 +58,10 @@ class CommentsController extends Controller
      * @param  \App\Models\Comments  $comments
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comments $comments)
+    public function edit(Comments $comments,$id)
     {
-        //
+        $data = DB::table('comments')->find($id);
+        return view('admin.user_comments_edit',['data'=>$data]);
     }
 
     /**
@@ -68,9 +71,14 @@ class CommentsController extends Controller
      * @param  \App\Models\Comments  $comments
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comments $comments)
+    public function update(Request $request, Comments $comments,$id)
     {
-        //
+        $data = Comments::find($id);
+        $data->comment   = $request->input('comment');
+        $data->rate       = $request->input('rate');
+        $data->status    = $request->input('status');
+        $data->save();
+        return Redirect::back();
     }
 
     /**
@@ -79,8 +87,10 @@ class CommentsController extends Controller
      * @param  \App\Models\Comments  $comments
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comments $comments)
+    public function destroy(Comments $comments,$id)
     {
-        //
+        $data = Comments::find($id);
+        $data->delete();
+        return Redirect::back();
     }
 }

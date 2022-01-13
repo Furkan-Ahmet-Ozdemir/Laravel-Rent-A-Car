@@ -62,15 +62,4 @@ class User extends Authenticatable
     public function comments(){
         return $this->hasMany(Comments::class);
     }
-
-    public function reservation(){
-        return $this->hasMany(Reservation::class);
-    }
-
-    public function roles(){
-        return $this->belongsToMany(Roles::class);
-    }
-
-
-
 }

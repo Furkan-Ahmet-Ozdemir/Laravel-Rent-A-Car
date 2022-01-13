@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Livewire\Comments;
 use App\Models\Car;
 use App\Models\Faq;
 use App\Models\Reservation;
@@ -62,7 +63,13 @@ class HomeController extends Controller
         $settings = Setting::first();
         $car = DB::table('cars')->where('slug',$slug)->get();
         $random = DB::table('cars')->where('category_id',$car[0]->category_id)->whereNotIn('slug',[$car[0]->slug])->get();
-        return view('home.carDetail',['car'=>$car,'random'=>$random,'settings'=>$settings]);
+//        $sdf = DB::table('cars')->where('slug',$slug)->get('id');
+//        $comments = DB::table('comments')->where('car_id',$sdf)->get();
+        $comments = DB::table('users')
+            ->join('comments', 'users.id', '=', 'comments.user_id')
+            ->select('users.*', 'comments.*')
+            ->get();
+        return view('home.carDetail',['car'=>$car,'random'=>$random,'settings'=>$settings,'comments'=>$comments]);
     }
 
     public function login(){

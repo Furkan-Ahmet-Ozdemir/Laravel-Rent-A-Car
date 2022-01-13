@@ -55,6 +55,20 @@
 
         <li class="nav-item sidebar-user-actions">
             <div class="sidebar-user-menu">
+                <a href="{{route('admin_reservations')}}" class="nav-link"><i ></i>
+                    <span class="menu-title">Reservations</span>
+                </a>
+            </div>
+        </li>     <li class="nav-item sidebar-user-actions">
+            <div class="sidebar-user-menu">
+                <a href="{{route('admin_users')}}" class="nav-link"><i ></i>
+                    <span class="menu-title">Users</span>
+                </a>
+            </div>
+        </li>
+
+        <li class="nav-item sidebar-user-actions">
+            <div class="sidebar-user-menu">
                 <a href="{{route('logout')}}" class="nav-link"><i class="mdi mdi-logout menu-icon"></i>
                     <span class="menu-title">Log Out</span></a>
             </div>

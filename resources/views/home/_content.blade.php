@@ -39,12 +39,12 @@
             <div class="col-12">
                 <div class="listing-top-heading mb-xl-20">
                     <h6 class="no-margin text-custom-black">Showing {{count($cars)}} Results</h6>
-                    <div class="sort-by"><span class="text-custom-black fs-14 fw-600">Sort by</span>
-                        <div class="group-form"><select class="form-control form-control-custom custom-select">
-                                <option>A to Z</option>
-                                <option>Z to A</option>
-                            </select></div>
-                    </div>
+{{--                    <div class="sort-by"><span class="text-custom-black fs-14 fw-600">Sort by</span>--}}
+{{--                        <div class="group-form"><select class="form-control form-control-custom custom-select">--}}
+{{--                                <option>A to Z</option>--}}
+{{--                                <option>Z to A</option>--}}
+{{--                            </select></div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
             @isset($cars)
@@ -66,19 +66,19 @@
                 @endforeach
             @endisset
         </div>
-        <div class="row">
-            <div class="col-12">
-                <nav>
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+{{--        <div class="row">--}}
+{{--            <div class="col-12">--}}
+{{--                <nav>--}}
+{{--                    <ul class="pagination justify-content-center">--}}
+{{--                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>--}}
+{{--                        <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+{{--                        <li class="page-item active"><a class="page-link" href="#">2</a></li>--}}
+{{--                        <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
+{{--                        <li class="page-item"><a class="page-link" href="#">Next</a></li>--}}
+{{--                    </ul>--}}
+{{--                </nav>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 </section><!-- End Blog -->
 <!-- Start Banner tabs -->

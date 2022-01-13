@@ -52,7 +52,7 @@
                 <div class="col-12">
                     <h1 class="text-custom-white">Car Detail</h1>
                     <ul class="custom-flex justify-content-center">
-                        <li class="fw-500"><a href="{{route('home.index')}}" class="text-custom-white">Home</a></li>
+                        <li class="fw-500"><a href="{{route('home')}}" class="text-custom-white">Home</a></li>
                         <li class="fw-500"><a href="{{route('home_cars')}}" class="text-custom-white">Cars</a></li>
                         <li class="active fw-500">Car Detail </li>
                     </ul>
@@ -225,53 +225,65 @@
                                                 <div id="comment-box">
                                                     <h4 class="text-custom-black fw-600">Reviews </h4>
                                                     <ul class="comments custom">
+                                                        @foreach($comments as $rs)
                                                         <li class="comment">
                                                             <article>
-                                                                <div class="comment-avatar"><img src="{{url('assets/images/blog/comment_1.jpg')}}"
-                                                                                                 class="rounded-circle" alt="comment"></div>
+{{--                                                                <div class="comment-avatar"><img src="{{url('assets/images/blog/comment_1.jpg')}}"--}}
+{{--                                                                                                 class="rounded-circle" alt="comment"></div>--}}
                                                                 <div class="comment-content">
                                                                     <div class="comment-meta">
                                                                         <div class="comment-meta-header">
-                                                                            <h5 class="text-custom-black fw-600 author mb-3">Rosalina Pong</h5>
+                                                                            <h5 class="text-custom-black fw-600 author mb-3">
+                                                                                {{$rs->name}}</h5>
                                                                             <div class="post-date"><a href="blog-details.html"
                                                                                                       class="date bg-custom-blue text-custom-white">25 Dec 2019</a></div>
                                                                         </div></div>
                                                                     <div class="comment">
-                                                                        <p class="text-light-dark">Lorem ipsum dolor sit amet,consectetur adipisicing
-                                                                            elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                                            minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                                                            commodo consequat.</p>
+                                                                        <p class="text-light-dark">{{$rs->comment}}</p>
+                                                                    </div>
+                                                                    <div class="rating" >
+                                                                        <input type="radio"  name="rate" @if($rs->rate>=5) -o empty value="5" id="5" @endif><label for="5">☆</label>
+                                                                        <input type="radio"  name="rate" @if($rs->rate>4) value="4" id="4" @endif><label for="4">☆</label>
+                                                                        <input type="radio"  name="rate" @if($rs->rate>3) value="3" id="3" @endif><label for="3">☆</label>
+                                                                        <input type="radio"  name="rate" @if($rs->rate>2) value="2" id="2" @endif><label for="2">☆</label>
+                                                                        <input type="radio"  name="rate" @if($rs->rate>1) value="1" id="1" @endif><label for="1">☆</label>
+                                                                        {{--                                                                            <label style="color: #0b0b0b;margin-right: 75px;font-size:xx-large" > Rating </label>--}}
                                                                     </div>
                                                                 </div>
                                                             </article>
                                                         </li>
+                                                        @endforeach
                                                         <li class="comment">
                                                         </li>
                                                     </ul>
                                                     <div class="comment-respond" id="respond">
                                                         <h4 class="text-custom-black fw-600">Leave Comment</h4>
-                                                        <form action="{{route("user_comment")}}" method="post">
-                                                            @csrf
-                                                            <div class="row">
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <label class="text-custom-black fw-500 fs-14">Comment</label>
-                                                                        <textarea rows="4" name="comment" class="form-control form-control-custom"
-                                                                                  placeholder="Comment"></textarea>
-                                                                        <div class="rating" >
-                                                                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-                                                                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
-                                                                            <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-                                                                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-                                                                            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+{{--                                                        @livewire('comment',['id'=>$data->id])--}}
+{{--                                                        <form action="{{route("user_comment")}}" method="post">--}}
+{{--                                                            @csrf--}}
+{{--                                                            <div class="row">--}}
+{{--                                                                <div class="col-12">--}}
+{{--                                                                    <div class="form-group">--}}
+{{--                                                                        <label class="text-custom-black fw-500 fs-14">Comment</label>--}}
+{{--                                                                        <textarea rows="4" name="comment" class="form-control form-control-custom"--}}
+{{--                                                                                  placeholder="Comment"></textarea>--}}
+{{--                                                                        <div class="rating" >--}}
+{{--                                                                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>--}}
+{{--                                                                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>--}}
+{{--                                                                            <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>--}}
+{{--                                                                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>--}}
+{{--                                                                            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>--}}
 {{--                                                                            <label style="color: #0b0b0b;margin-right: 75px;font-size:xx-large" > Rating </label>--}}
-                                                                        </div>
+{{--                                                                        </div>--}}
 
-                                                                    </div>
-                                                                    <button type="submit" class="btn-first btn-submit">Leave Comment</button>
-                                                                </div>
-                                                            </div>
-                                                        </form>
+{{--                                                                    </div>--}}
+{{--                                                                    <button type="submit" class="btn-first btn-submit">Leave Comment</button>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                        </form>--}}
+
+
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -301,7 +313,7 @@
                                                             <div class="input-group group-form">
                                                                 <input type="datetime-local" name="rezDateTime" class="form-control form-control-custom datepickr"
                                                                        placeholder="mm/dd/yy" required>
-                                                                <span class="input-group-append"> <i class="far fa-calendar"></i> </span>
+{{--                                                                <span class="input-group-append"> <i class="far fa-calendar"></i> </span>--}}
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
@@ -314,7 +326,7 @@
                                                             <div class="input-group group-form">
                                                                 <input type="datetime-local" name="retDateTime" class="form-control form-control-custom datepickr"
                                                                        placeholder="mm/dd/yy" required>
-                                                                <span class="input-group-append"> <i class="far fa-calendar"></i> </span>
+{{--                                                                <span class="input-group-append"> <i class="far fa-calendar"></i> </span>--}}
                                                             </div>
                                                         </div>
                                                         <button type="submit" class="btn-first btn-submit full-width btn-height">Submit</button>
