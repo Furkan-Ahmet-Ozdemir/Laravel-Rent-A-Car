@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
 
 class HomeController extends Controller
 {
@@ -17,35 +19,78 @@ class HomeController extends Controller
         return view('admin.index');
     }
 
-    public function login(){
+    public function login()
+    {
+//        $setting = Setting::first();
         return view('admin.login');
     }
 
     public function logincheck(Request $request)
     {
-        if ($request->isMethod('post'))
+
+        if( $request->isMethod('post'))
         {
-            $credentials = $request->only('email','password');
-            if (Auth::attempt($credentials)) {
-                $request->session()->regenerate();
-                return redirect()->intended('user');
+            $credentials = $request->only('email','password','id');
+            if (Auth::attempt($credentials)){
+//                burda dallandırman lazım route a
+//                yada şey yapabilirsin login e de aynı middleware i eklersin ama bu kez azcık middleware i düzenlemen lazım
+//
+//              kg
+//                tamam teşekkürler deneyeceğim
+                $a = $request->email;
+                $contains = Str::contains($a, 'admin');
+                if ($contains==True){
+                    return redirect()->intended('admin'); /*route('admin_home');*/
+                }
+                else
+                    return redirect()->intended('home');
             }
             return back()->withErrors([
                 'email' => 'The provided credentials do not match our records.',
             ]);
         }
-        else{
-            return redirect('login');
+        else
+        {
+            return view('admin.login');
         }
     }
-
     public function logout(Request $request){
-       Auth::logout();
-       $request->session()->invalidate();
-        $request->session()->regenerateToken();
 
-        return redirect()->route('home');
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('home');
     }
+
+//    public function login(){
+//        return view('admin.login');
+//    }
+//
+//    public function logincheck(Request $request)
+//    {
+//        if ($request->isMethod('post'))
+//        {
+//            $credentials = $request->only('email','password');
+//            if (Auth::attempt($credentials)) {
+//                $request->session()->regenerate();
+//                return redirect()->intended('home');
+//            }
+//            return back()->withErrors([
+//                'email' => 'The provided credentials do not match our records.',
+//            ]);
+//        }
+//        else{
+//            return redirect('login');
+//        }
+//    }
+//
+//    public function logout(Request $request){
+//       Auth::logout();
+//       $request->session()->invalidate();
+//        $request->session()->regenerateToken();
+//
+//        return redirect()->route('home');
+//    }
 
 //    public function __construct()
 //    {

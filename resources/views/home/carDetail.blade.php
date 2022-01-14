@@ -235,8 +235,8 @@
                                                                         <div class="comment-meta-header">
                                                                             <h5 class="text-custom-black fw-600 author mb-3">
                                                                                 {{$rs->name}}</h5>
-                                                                            <div class="post-date"><a href="blog-details.html"
-                                                                                                      class="date bg-custom-blue text-custom-white">25 Dec 2019</a></div>
+                                                                            <div class="post-date"><a
+                                                                                                      class="date bg-custom-blue text-custom-white">{{$rs->created_at}}</a></div>
                                                                         </div></div>
                                                                     <div class="comment">
                                                                         <p class="text-light-dark">{{$rs->comment}}</p>

@@ -17,8 +17,8 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        $userRoles = Auth::user()->roles->pluck('name');
-        if (!$userRoles->contains('admin')){
+        $userRoles = Auth::user()->roles->pluck('name');//1 dk gelicem hemen
+        if (!$userRoles->contains('admin')){          //Tamam
             return redirect(route('admin_home'))->with('error','Giriş İzniniz Yoktur!');
         }
         return $next($request);

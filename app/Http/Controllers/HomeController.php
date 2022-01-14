@@ -67,6 +67,7 @@ class HomeController extends Controller
 //        $comments = DB::table('comments')->where('car_id',$sdf)->get();
         $comments = DB::table('users')
             ->join('comments', 'users.id', '=', 'comments.user_id')
+            ->join('cars', 'comments.car_id', '=', 'cars.id')
             ->select('users.*', 'comments.*')
             ->get();
         return view('home.carDetail',['car'=>$car,'random'=>$random,'settings'=>$settings,'comments'=>$comments]);
@@ -101,10 +102,6 @@ class HomeController extends Controller
 
         return redirect()->route('home.index');
     }
-//    public function logout(){
-//        return view('home.index');
-//    }
-
 
     public function register(){
         return view('home.register');

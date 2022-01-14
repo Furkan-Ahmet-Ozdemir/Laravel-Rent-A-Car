@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-custom-white">Contact Us</h1>
+                    <h1 class="text-custom-white">Profile</h1>
                     <ul class="custom-flex justify-content-center">
                         <li class="fw-500"><a href="{{route('home')}}" class="text-custom-white">Home</a></li>
                         <li class="active fw-500"> Profile </li>
@@ -27,7 +27,14 @@
                     </div>
                 </aside>
                 <div class="col-lg-9">
-                    @include('profile.show')
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="blog-details bx-wrapper bg-custom-white padding-20">
+
+                            @include('profile.show')
+                            </div>
+                        </div>
+                    </div>
 {{--                    <div class="row">--}}
 {{--                        <div class="col-12">--}}
 {{--                            <div class="blog-details bx-wrapper bg-custom-white padding-20">--}}

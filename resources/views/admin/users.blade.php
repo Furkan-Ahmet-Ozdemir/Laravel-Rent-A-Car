@@ -14,6 +14,7 @@
                 <th>User Id</th>
                 <th>Name</th>
                 <th>Role</th>
+                <th>Phone</th>
                 <th>Foto</th>
             </tr>
             </thead>

@@ -7,10 +7,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-custom-white">Contact Us</h1>
+                    <h1 class="text-custom-white">Reservations</h1>
                     <ul class="custom-flex justify-content-center">
                         <li class="fw-500"><a href="{{route('home')}}" class="text-custom-white">Home</a></li>
-                        <li class="fw-500"><a href="{{route('user_profile')}}" class="text-custom-white">Profile</a></li>
+                        <li class="fw-500"><a  class="text-custom-white"></a></li>
                         <li class="active fw-500"> Reservations  </li>
                     </ul>
                 </div>
@@ -36,24 +36,6 @@
                                         <h3 class="page-title"> Reservations  </h3>
                                     </div>
                                     <div class="post-wrapper">
-{{--                                        <table>--}}
-{{--                                            <tr>--}}
-{{--                                                <th> Arba Adı </th>--}}
-{{--                                                <th> Reser. Time </th>--}}
-{{--                                                <th> Return Time </th>--}}
-{{--                                                <th> Amount </th>--}}
-{{--                                                <th> Status </th>--}}
-{{--                                                <th> Cancel </th>--}}
-
-{{--                                            </tr>--}}
-
-{{--                                            <tr>--}}
-
-{{--                                            </tr>--}}
-
-
-
-{{--                                        </table>--}}
                                         <table class="table">
                                             <thead>
                                             <tr>

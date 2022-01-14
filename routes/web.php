@@ -18,6 +18,7 @@ Route::get('/',function (){
     return view('home.index');
 });
 
+Route::get("/home",[HomeController::class,'index'])->name('home');
 Route::get("/",[HomeController::class,'index'])->name('home');
 Route::get("/contact",[HomeController::class,'contact'])->name('home_contact');
 Route::post("/contact/create",[\App\Http\Controllers\MessageController::class,'store'])->name('contact_store');
@@ -49,7 +50,7 @@ Route::middleware('auth')->prefix('user')->group(function (){
 
 Route::middleware('auth')->prefix('admin')->group(function (){
 
-
+//middleware i route a tanımladığın yeri gösteri
 //    Route::middleware('admin')->group(function (){
         Route::get("/",[App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin_home');
 

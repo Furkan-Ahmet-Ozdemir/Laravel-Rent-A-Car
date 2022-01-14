@@ -74,14 +74,15 @@ class FaqController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Faq  $faq
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Faq $faq,$id)
     {
         $data = DB::table('faqs')->find($id);
-        $data->question   = $request->input('question');
-        $data->answer       = $request->input('answer');
-        $data->status    = $request->input('status');
+        $data->question  = $request->input('question');
+        $data->answer  = $request->input('answer');
+        $data->status  = $request->input('status');
+//        dd($data);
         $data->save();
         return redirect()->route('admin_faq');
     }
