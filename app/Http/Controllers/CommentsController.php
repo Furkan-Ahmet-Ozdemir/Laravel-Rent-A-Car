@@ -32,9 +32,11 @@ class CommentsController extends Controller
         $data->user_id = Auth::user()->id;
         $data->rate = $request->input('rate');
         $data->ip = $request->ip();
+        $data->status = "False";
+        $data->updated_at = now();
+        //dd($data);
         $data->save();
-        return redirect()-back();
-
+        return redirect()->back();
 
     }
 
@@ -62,6 +64,7 @@ class CommentsController extends Controller
         $datalist = \App\Models\Comments::where('user_id','=',Auth::user()->id)->get();
         return view('home.user_comments')->with('datalist',$datalist);
     }
+
 
     /**
      * Remove the specified resource from storage.

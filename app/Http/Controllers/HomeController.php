@@ -62,15 +62,15 @@ class HomeController extends Controller
     public function carDetail($slug){
         $settings = Setting::first();
         $car = DB::table('cars')->where('slug',$slug)->get();
+        $car123 = DB::table('cars')->where('slug',$slug)->get();
+
         $random = DB::table('cars')->where('category_id',$car[0]->category_id)->whereNotIn('slug',[$car[0]->slug])->get();
-//        $sdf = DB::table('cars')->where('slug',$slug)->get('id');
-//        $comments = DB::table('comments')->where('car_id',$sdf)->get();
-        $comments = DB::table('users')
-            ->join('comments', 'users.id', '=', 'comments.user_id')
-            ->join('cars', 'comments.car_id', '=', 'cars.id')
-            ->select('users.*', 'comments.*')
-            ->get();
-        return view('home.carDetail',['car'=>$car,'random'=>$random,'settings'=>$settings,'comments'=>$comments]);
+
+        $comments = DB::table('comments')->where('car_id',$car123[0]->id)->get();
+        $users = DB::table('users')->where('id',$car123[0]->user_id)->get();
+
+
+        return view('home.carDetail',['car'=>$car,'random'=>$random,'settings'=>$settings,'comments'=>$comments,'users'=>$users]);
     }
 
     public function login(){

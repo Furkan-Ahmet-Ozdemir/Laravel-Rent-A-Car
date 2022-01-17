@@ -17,7 +17,7 @@ class CommentsController extends Controller
      */
     public function index()
     {
-        $datalist = Comments::all();
+        $datalist = Comments::get();
         return view('admin.user_comments',['datalist' => $datalist]);
     }
 
@@ -28,7 +28,7 @@ class CommentsController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -77,6 +77,7 @@ class CommentsController extends Controller
         $data->comment   = $request->input('comment');
         $data->rate       = $request->input('rate');
         $data->status    = $request->input('status');
+        $data->car_id    = $request->input('car_id');
         $data->save();
         return Redirect::back();
     }

@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-    </div><!-- End Subheader -->
+    </div>
     <!-- Start Listing detail -->
     <section class="section-padding bg-light-white listing-details">
         <div class="container">
@@ -225,65 +225,61 @@
                                                 <div id="comment-box">
                                                     <h4 class="text-custom-black fw-600">Reviews </h4>
                                                     <ul class="comments custom">
-                                                        @foreach($comments as $rs)
+                                                        @foreach($comments as $rs[0])
                                                         <li class="comment">
                                                             <article>
-{{--                                                                <div class="comment-avatar"><img src="{{url('assets/images/blog/comment_1.jpg')}}"--}}
-{{--                                                                                                 class="rounded-circle" alt="comment"></div>--}}
+                                                                <div class="comment-avatar"><img src="{{url('assets/images/blog/user.png')}}"
+                                                                                                 class="rounded-circle" alt="comment"></div>
                                                                 <div class="comment-content">
                                                                     <div class="comment-meta">
                                                                         <div class="comment-meta-header">
                                                                             <h5 class="text-custom-black fw-600 author mb-3">
-                                                                                {{$rs->name}}</h5>
+                                                                                {{$rs[0]->user_id}}</h5>
                                                                             <div class="post-date"><a
-                                                                                                      class="date bg-custom-blue text-custom-white">{{$rs->created_at}}</a></div>
+                                                                                                      class="date bg-custom-blue text-custom-white">{{$rs[0]->created_at}}</a></div>
                                                                         </div></div>
                                                                     <div class="comment">
-                                                                        <p class="text-light-dark">{{$rs->comment}}</p>
+                                                                        <p class="text-light-dark">{{$rs[0]->comment}}</p>
                                                                     </div>
-                                                                    <div class="rating" >
-                                                                        <input type="radio"  name="rate" @if($rs->rate>=5) -o empty value="5" id="5" @endif><label for="5">☆</label>
-                                                                        <input type="radio"  name="rate" @if($rs->rate>4) value="4" id="4" @endif><label for="4">☆</label>
-                                                                        <input type="radio"  name="rate" @if($rs->rate>3) value="3" id="3" @endif><label for="3">☆</label>
-                                                                        <input type="radio"  name="rate" @if($rs->rate>2) value="2" id="2" @endif><label for="2">☆</label>
-                                                                        <input type="radio"  name="rate" @if($rs->rate>1) value="1" id="1" @endif><label for="1">☆</label>
-                                                                        {{--                                                                            <label style="color: #0b0b0b;margin-right: 75px;font-size:xx-large" > Rating </label>--}}
-                                                                    </div>
+{{--                                                                    <div class="rating" >--}}
+{{--                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<5)  -o empty value="5" id="5"  @endif><label for="5">☆</label>--}}
+{{--                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<4) -o empty value="4" id="4" @endif><label for="4">☆</label>--}}
+{{--                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<3) -o empty value="3" id="3" @endif><label for="3">☆</label>--}}
+{{--                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<2) -o empty value="2" id="2" @endif><label for="2">☆</label>--}}
+{{--                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<1) -o empty value="1" id="1" @endif><label for="1">☆</label>--}}
+{{--                                                                        <label style="color: #0b0b0b;margin-right: 75px;font-size:xx-large" > Rating </label>--}}
+{{--                                                                    </div>--}}
                                                                 </div>
                                                             </article>
                                                         </li>
                                                         @endforeach
-                                                        <li class="comment">
-                                                        </li>
+{{--                                                        <li class="comment">--}}
+{{--                                                        </li>--}}
                                                     </ul>
                                                     <div class="comment-respond" id="respond">
                                                         <h4 class="text-custom-black fw-600">Leave Comment</h4>
 {{--                                                        @livewire('comment',['id'=>$data->id])--}}
-{{--                                                        <form action="{{route("user_comment")}}" method="post">--}}
-{{--                                                            @csrf--}}
-{{--                                                            <div class="row">--}}
-{{--                                                                <div class="col-12">--}}
-{{--                                                                    <div class="form-group">--}}
-{{--                                                                        <label class="text-custom-black fw-500 fs-14">Comment</label>--}}
-{{--                                                                        <textarea rows="4" name="comment" class="form-control form-control-custom"--}}
-{{--                                                                                  placeholder="Comment"></textarea>--}}
+                                                        <form action="{{route("user_comment")}}" method="post">
+                                                            @csrf
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label class="text-custom-black fw-500 fs-14">Comment</label>
+                                                                        <textarea rows="4" name="comment" class="form-control form-control-custom" placeholder="Comment"></textarea>
 {{--                                                                        <div class="rating" >--}}
 {{--                                                                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>--}}
 {{--                                                                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>--}}
 {{--                                                                            <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>--}}
 {{--                                                                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>--}}
-{{--                                                                            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>--}}
+                                                                            <input type="number" name="rate" value="1.0" id="1"  hidden>{{--<label for="1">☆</label>--}}
 {{--                                                                            <label style="color: #0b0b0b;margin-right: 75px;font-size:xx-large" > Rating </label>--}}
 {{--                                                                        </div>--}}
-
-{{--                                                                    </div>--}}
-{{--                                                                    <button type="submit" class="btn-first btn-submit">Leave Comment</button>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
-{{--                                                        </form>--}}
-
-
-
+                                                                        <input type="text" name="car_id" value="{{$car[0]->id}}" hidden>
+                                                                    </div>
+                                                                    <button type="submit" class="btn-first btn-submit">Send</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -381,44 +377,6 @@
                     </div>
                 </div>
             </div>
-{{--            <div class="row">--}}
-{{--                <div class="col-12">--}}
-{{--                    <div class="partners-slider arrow-layout-2 row">--}}
-{{--                        <div class="slide-item col-12">--}}
-{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-1-t.png"--}}
-{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="slide-item col-12">--}}
-{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-2.png"--}}
-{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="slide-item col-12">--}}
-{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-3.png"--}}
-{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="slide-item col-12">--}}
-{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-4.png"--}}
-{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="slide-item col-12">--}}
-{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-1-t.png"--}}
-{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="slide-item col-12">--}}
-{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="assets/images/logo-2.png"--}}
-{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="slide-item col-12">--}}
-{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="{{url('assets/images/logo-3.png')}}"--}}
-{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="slide-item col-12">--}}
-{{--                            <div class="partner-box bx-wrapper animate-img"> <a href="#"> <img src="{{url('assets/images/logo-4.png')}}"--}}
-{{--                                                                                               class="img-fluid image-fit" alt="img"> </a> </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
         </div>
     </section>
     <!-- End Partners -->
