@@ -27,7 +27,7 @@
                             <select class="form-control select2" name="category_id" style="width: 100%">
 {{--                                <option value="0" selected="selected"> Main Category </option>--}}
                                 @foreach(  $datalist as $rs)
-                                    <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
+                                    <option value="{{$rs->id}}">{{/*\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,*/$rs->title/*)*/}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -46,6 +46,31 @@
                             <label >Description</label>
                             <input type="text" class="form-control"name="description"  placeholder="Description">
                         </div>
+
+
+
+                        <div class="form-group">
+                            <label >Transmission Type</label>
+                            <input type="text" class="form-control"name="transmission_type"  placeholder="Transmission Type">
+                        </div>
+
+                        <div class="form-group">
+                            <label >Fuel Type</label>
+                            <input type="text" class="form-control"name="fuel_type"  placeholder="Fuel Type">
+                        </div>
+
+                        <div class="form-group">
+                            <label >Baggage</label>
+                            <input type="text" class="form-control"name="baggage"  placeholder="Baggage">
+                        </div>
+
+
+
+
+
+
+
+
 
                         <div class="form-group">
                             <label >Image</label>

@@ -27,20 +27,14 @@ class HomeController extends Controller
 
     public function logincheck(Request $request)
     {
-
         if( $request->isMethod('post'))
         {
-            $credentials = $request->only('email','password','id');
+            $credentials = $request->only('email','password','id','role');
             if (Auth::attempt($credentials)){
-//                burda dallandırman lazım route a
-//                yada şey yapabilirsin login e de aynı middleware i eklersin ama bu kez azcık middleware i düzenlemen lazım
-//
-//              kg
-//                tamam teşekkürler deneyeceğim
-                $a = $request->email;
-                $contains = Str::contains($a, 'admin');
-                if ($contains==True){
-                    return redirect()->intended('admin'); /*route('admin_home');*/
+//                $a = $request->role;
+//                $contains = Str::contains($a, 'admin');
+                if ($request->role == 'admin'){
+                    return route('admin_home');
                 }
                 else
                     return redirect()->intended('home');

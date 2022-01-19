@@ -62,17 +62,7 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Show Users for Admin
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function showAdmin(User $user)
-    {
-        $datalist = User::get();
-        return view('admin.users',['datalist' => $datalist]);
-    }
+
     /**
      * Show the form for editing the specified resource.
      *

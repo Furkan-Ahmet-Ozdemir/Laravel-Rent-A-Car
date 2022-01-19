@@ -41,7 +41,7 @@
                         <div class="form-group">
                             <label >Status</label>
                             <select class="form-control select2" name="status" style="width:100%">
-                                <option selected="selected"> {{$data->description}} </option>
+                                <option selected="selected"> {{$data->status}} </option>
                                 <option> False </option>
                                 <option> True </option>
                             </select>

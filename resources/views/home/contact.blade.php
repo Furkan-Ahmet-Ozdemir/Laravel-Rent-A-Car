@@ -67,8 +67,8 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="contact-map full-height">
-                        <iframe class="full-height"
-                                src="https://maps.google.com/maps?q=university%20of%20san%20francisco&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
+
+                        <iframe class="full-height" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12006.430784240894!2d32.65452734160074!3d41.20852571419402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1642619371528!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>

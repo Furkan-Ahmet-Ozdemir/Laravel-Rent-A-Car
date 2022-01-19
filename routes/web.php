@@ -54,7 +54,21 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 //    Route::middleware('admin')->group(function (){
         Route::get("/",[App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin_home');
 
-        Route::get("users",[App\Http\Controllers\UserController::class,'showAdmin'])     ->name('admin_users');
+//        Route::get("users",[App\Http\Controllers\Admin\UserController::class,'index'])     ->name('admin_users');
+
+        Route::prefix('users')->group(function () {
+            Route::get('/', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin_users');
+            Route::post('create', [\App\Http\Controllers\Admin\UserController::class, 'create'])->name('admin_user_add');
+            Route::post('store', [\App\Http\Controllers\Admin\UserController::class, 'store'])->name('admin_user_store');
+            Route::get('edit/{id}', [\App\Http\Controllers\Admin\UserController::class, 'edit'])->name('admin_user_edit');
+            Route::post('update/{id}', [\App\Http\Controllers\Admin\UserController::class, 'update'])->name('admin_user_update');
+            Route::get('delete/{id}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_user_delete');
+            Route::get('show/{id}', [\App\Http\Controllers\Admin\UserController::class, 'show'])->name('admin_user_show');
+            Route::get('userrole/{id}', [\App\Http\Controllers\Admin\UserController::class, 'user_roles'])->name('admin_user_roles');
+            Route::post('userrolestore/{id}', [\App\Http\Controllers\Admin\UserController::class, 'user_role_store'])->name('admin_user_role_add');
+            Route::get('userroledelete/{userid}/{roleid}', [\App\Http\Controllers\Admin\UserController::class, 'user_role_delete'])->name('admin_user_role_delete');
+
+        });
 
         Route::get("reservations",[App\Http\Controllers\ReservationController::class,'showAdmin'])     ->name('admin_reservations');
         Route::get("reservations/edit/{id}",[App\Http\Controllers\ReservationController::class,'edit'])->name('admin_reservations_edit');

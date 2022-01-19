@@ -115,6 +115,8 @@ class CategoryController extends Controller
         $data->keywords    = $request->input('keywords');
         $data->description = $request->input('description');
         $data->status      = $request->input('status');
+        $data->updated_at = now();
+
         $data->save();
         return redirect()->route('admin_category');
 

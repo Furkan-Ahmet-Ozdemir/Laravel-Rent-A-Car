@@ -47,7 +47,6 @@
                                                 <th>Return Date Time</th>
                                                 <th>Amount</th>
                                                 <th>Status</th>
-                                                <th>EDIT</th>
                                                 <th>DELETE</th>
                                             </tr>
                                             </thead>
@@ -62,7 +61,6 @@
                                                     <td>{{$rs->retDateTime}}</td>
                                                     <td>{{$rs->amount}}</td>
                                                     <td>{{$rs->note}}</td>
-                                                    <td><label class="badge badge-warning"><a href="{{route('admin_car_edit',['id'=> $rs->id])}}" >EDIT</a></label></td>
                                                     <td><label class="badge badge-danger"><a href="{{route('admin_car_delete',['id'=> $rs->id])}}"
                                                                                              onclick="return confirm('Delete ! Are you sure ?')">DELETE</a></label></td>
                                                 </tr>

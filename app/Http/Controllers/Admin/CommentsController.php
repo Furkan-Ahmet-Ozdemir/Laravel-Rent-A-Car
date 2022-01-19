@@ -78,6 +78,8 @@ class CommentsController extends Controller
         $data->rate       = $request->input('rate');
         $data->status    = $request->input('status');
         $data->car_id    = $request->input('car_id');
+        $data->updated_at = now();
+
         $data->save();
         return Redirect::back();
     }

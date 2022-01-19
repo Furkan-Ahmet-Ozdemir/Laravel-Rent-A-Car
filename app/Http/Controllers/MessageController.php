@@ -95,7 +95,9 @@ class MessageController extends Controller
         $data->message  = $request->input('message');
         $data->status   = $request->input('status');
         $data->ip       = $request->ip();
-        $data->update();
+
+
+        $data->save();
         return redirect()->route('admin_message');
     }
 
@@ -111,4 +113,5 @@ class MessageController extends Controller
         $data->delete();
         return redirect()->route('admin_message');
     }
+
 }

@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('address',150)->nullable();
             $table->string('phone',20)->nullable();
+            $table->string('role',10)->default('user');
 
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();

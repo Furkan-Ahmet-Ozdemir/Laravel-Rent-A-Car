@@ -82,7 +82,9 @@ class FaqController extends Controller
         $data->question  = $request->input('question');
         $data->answer  = $request->input('answer');
         $data->status  = $request->input('status');
-//        dd($data);
+        $data->updated_at = $data->created_at;
+
+       dd($data);
         $data->save();
         return redirect()->route('admin_faq');
     }

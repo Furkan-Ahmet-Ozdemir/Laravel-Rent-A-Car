@@ -75,6 +75,7 @@
                                 <hr>
                                 <div class="listing-meta-sec mb-md-80">
                                     <div class="tabs">
+                                        <h3>{{$car[0]->title}}</h3>
                                         <ul class="custom-flex nav nav-tabs mb-xl-20">
                                             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#overview">Overview</a>
                                             </li>
@@ -91,12 +92,9 @@
                                                                             Type</label>{{$car[0]->car_type}}</li>
                                                                     <li class="text-light-dark"><label class="no-margin text-custom-blue">Car
                                                                             Name</label>{{$car[0]->title}}</li>
-                                                                    <li class="text-light-dark"><label
-                                                                            class="no-margin text-custom-blue">Passenger</label>{{$car[0]->passenger}}</li>
-                                                                    <li class="text-light-dark"><label class="no-margin text-custom-blue">Baggage</label>{{$car[0]->baggage}}
+                                                                    <li class="text-light-dark"><label class="no-margin text-custom-blue">Car Available ?
+                                                                        </label>{{$car[0]->status == True ? 'Available' : 'Non-Available'}}
                                                                     </li>
-                                                                    <li class="text-light-dark"><label class="no-margin text-custom-blue">Car
-                                                                            Features</label>{{$car[0]->status == True ? 'Available' : 'Non-Available'}}</li>
                                                                     <li class="text-light-dark"><label class="no-margin text-custom-blue">Price
                                                                             Per day</label>{{$car[0]->price}} ₺</li>
                                                                 </ul>
@@ -112,86 +110,86 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="tab-pane fade" id="amenities">
-                                                <h4 class="text-custom-black">Amenities</h4>
-                                                <p class="text-light-dark">Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut
-                                                    orci. Donec eget accumsan est. Duis laoreet sagittis elit et vehicula. Cras viverra posuere
-                                                    condimentum.</p>
-                                                <ul class="custom amenities row no-gutters mb-xl-20">
-                                                    <li class="col-sm-6">
-                                                        <div class="icon-box text-light-dark"><i class="fab fa-youtube"></i>4 Passengers </div>
-                                                    </li>
-                                                    <li class="col-sm-6">
-                                                        <div class="icon-box text-light-dark"><i class="fab fa-youtube"></i>2 Bags </div>
-                                                    </li>
-                                                    <li class="col-sm-6">
-                                                        <div class="icon-box text-light-dark"><i class="fab fa-youtube"></i>Air Conditioning </div>
-                                                    </li>
-                                                    <li class="col-sm-6">
-                                                        <div class="icon-box text-light-dark"><i class="fab fa-youtube"></i>Satellite Navigation
-                                                        </div>
-                                                    </li>
-                                                    <li class="col-sm-6">
-                                                        <div class="icon-box text-light-dark"><i class="fab fa-youtube"></i>Disel Vehicle </div>
-                                                    </li>
-                                                    <li class="col-sm-6">
-                                                        <div class="icon-box text-light-dark"><i class="fab fa-youtube"></i>Automatic Transmission
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                                <h4 class="text-custom-black">Travel Info</h4>
-                                                <p class="text-light-dark">Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut
-                                                    orci. Donec eget accumsan est. Duis laoreet sagittis elit et vehicula. Cras viverra posuere
-                                                    condimentum.</p>
-                                                <div class="travel-info bg-light-white">
-                                                    <div class="row no-gutters">
-                                                        <div class="col-sm-6">
-                                                            <div class="head padding-20">
-                                                                <h5 class="text-custom-black fs-14 fw-500 no-margin">Pick-up location details</h5><span
-                                                                    class="text-light-dark fs-12">Phone:(+247) 123 456 7890</span>
+                                                <div class="tab-pane fade" id="amenities">
+                                                    <h4 class="text-custom-black">Amenities</h4>
+                                                    <p class="text-light-dark">Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut
+                                                        orci. Donec eget accumsan est. Duis laoreet sagittis elit et vehicula. Cras viverra posuere
+                                                        condimentum.</p>
+                                                    <ul class="custom amenities row no-gutters mb-xl-20">
+                                                        <li class="col-sm-6">
+                                                            <div class="icon-box text-light-dark"><i class="fab fa-youtube"></i>{{$car[0]->passenger}} Passengers </div>
+                                                        </li>
+                                                        <li class="col-sm-6">
+                                                            <div class="icon-box text-light-dark"><i class="fab fa-youtube"></i>{{$car[0]->baggage}} Bags </div>
+                                                        </li>
+                                                        <li class="col-sm-6">
+                                                            <div class="icon-box text-light-dark"><i class="fab fa-youtube"></i>Air Conditioning </div>
+                                                        </li>
+                                                        <li class="col-sm-6">
+                                                            <div class="icon-box text-light-dark"><i class="fab fa-youtube"></i>Satellite Navigation
                                                             </div>
-                                                            <div class="travel-info-body padding-20">
-                                                                <div class="date-wrapper mb-xl-20">
-                                                                    <div class="icon text-custom-blue fs-20"><i class="far fa-clock"></i></div>
-                                                                    <div class="text">
-                                                                        <p class="text-custom-black no-margin">Pickup Time</p><span
-                                                                            class="text-light-dark fs-12">THU,NOV 14,2019 | 11:00 AM</span>
+                                                        </li>
+                                                        <li class="col-sm-6">
+                                                            <div class="icon-box text-light-dark"><i class="fab fa-youtube"></i>{{$car[0]->fuel_type}} Vehicle </div>
+                                                        </li>
+                                                        <li class="col-sm-6">
+                                                            <div class="icon-box text-light-dark"><i class="fab fa-youtube"></i>{{$car[0]->transmission_type}} Transmission
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <h4 class="text-custom-black">Travel Info</h4>
+                                                    <p class="text-light-dark">Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut
+                                                        orci. Donec eget accumsan est. Duis laoreet sagittis elit et vehicula. Cras viverra posuere
+                                                        condimentum.</p>
+                                                    <div class="travel-info bg-light-white">
+                                                        <div class="row no-gutters">
+                                                            <div class="col-sm-6">
+                                                                <div class="head padding-20">
+                                                                    <h5 class="text-custom-black fs-14 fw-500 no-margin">Pick-up location details</h5><span
+                                                                        class="text-light-dark fs-12">Phone:(+247) 123 456 7890</span>
+                                                                </div>
+                                                                <div class="travel-info-body padding-20">
+                                                                    <div class="date-wrapper mb-xl-20">
+                                                                        <div class="icon text-custom-blue fs-20"><i class="far fa-clock"></i></div>
+                                                                        <div class="text">
+                                                                            <p class="text-custom-black no-margin">Pickup Time</p><span
+                                                                                class="text-light-dark fs-12">THU,NOV 14,2019 | 11:00 AM</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="date-wrapper">
+                                                                        <div class="icon text-custom-blue fs-20"><i class="fas fa-map-marker-alt"></i></div>
+                                                                        <div class="text">
+                                                                            <p class="text-custom-black no-margin">Location</p><span
+                                                                                class="text-light-dark fs-12">London City,Airport</span>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="date-wrapper">
-                                                                    <div class="icon text-custom-blue fs-20"><i class="fas fa-map-marker-alt"></i></div>
-                                                                    <div class="text">
-                                                                        <p class="text-custom-black no-margin">Location</p><span
-                                                                            class="text-light-dark fs-12">London City,Airport</span>
-                                                                    </div>
-                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <div class="head padding-20">
-                                                                <h5 class="text-custom-black fs-14 fw-500 no-margin">Drop-off location details</h5><span
-                                                                    class="text-light-dark fs-12">Phone:(+247) 123 456 7890</span>
-                                                            </div>
-                                                            <div class="travel-info-body padding-20">
-                                                                <div class="date-wrapper mb-xl-20">
-                                                                    <div class="icon text-custom-blue fs-20"><i class="far fa-clock"></i></div>
-                                                                    <div class="text">
-                                                                        <p class="text-custom-black no-margin">Drop Off Time</p><span
-                                                                            class="text-light-dark fs-12">FRI,NOV 15,2019 | 11:00 AM</span>
-                                                                    </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="head padding-20">
+                                                                    <h5 class="text-custom-black fs-14 fw-500 no-margin">Drop-off location details</h5><span
+                                                                        class="text-light-dark fs-12">Phone:(+247) 123 456 7890</span>
                                                                 </div>
-                                                                <div class="date-wrapper">
-                                                                    <div class="icon text-custom-blue fs-20"><i class="fas fa-map-marker-alt"></i></div>
-                                                                    <div class="text">
-                                                                        <p class="text-custom-black no-margin">Location</p><span
-                                                                            class="text-light-dark fs-12">Paris Orly,Airport</span>
+                                                                <div class="travel-info-body padding-20">
+                                                                    <div class="date-wrapper mb-xl-20">
+                                                                        <div class="icon text-custom-blue fs-20"><i class="far fa-clock"></i></div>
+                                                                        <div class="text">
+                                                                            <p class="text-custom-black no-margin">Drop Off Time</p><span
+                                                                                class="text-light-dark fs-12">FRI,NOV 15,2019 | 11:00 AM</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="date-wrapper">
+                                                                        <div class="icon text-custom-blue fs-20"><i class="fas fa-map-marker-alt"></i></div>
+                                                                        <div class="text">
+                                                                            <p class="text-custom-black no-margin">Location</p><span
+                                                                                class="text-light-dark fs-12">Paris Orly,Airport</span>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -241,39 +239,39 @@
                                                                     <div class="comment">
                                                                         <p class="text-light-dark">{{$rs[0]->comment}}</p>
                                                                     </div>
-{{--                                                                    <div class="rating" >--}}
-{{--                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<5)  -o empty value="5" id="5"  @endif><label for="5">☆</label>--}}
-{{--                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<4) -o empty value="4" id="4" @endif><label for="4">☆</label>--}}
-{{--                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<3) -o empty value="3" id="3" @endif><label for="3">☆</label>--}}
-{{--                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<2) -o empty value="2" id="2" @endif><label for="2">☆</label>--}}
-{{--                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<1) -o empty value="1" id="1" @endif><label for="1">☆</label>--}}
-{{--                                                                        <label style="color: #0b0b0b;margin-right: 75px;font-size:xx-large" > Rating </label>--}}
-{{--                                                                    </div>--}}
+                                                                    <div class="rating" hidden >
+                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<5)  -o empty value="5" id="5"  @endif><label for="5">☆</label>
+                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<4) -o empty value="4" id="4" @endif><label for="4">☆</label>
+                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<3) -o empty value="3" id="3" @endif><label for="3">☆</label>
+                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<2) -o empty value="2" id="2" @endif><label for="2">☆</label>
+                                                                        <input type="radio"  name="rate" @if($rs[0]->rate<1) -o empty value="1" id="1" @endif><label for="1">☆</label>
+                                                                        <label style="color: #0b0b0b;margin-right: 75px;font-size:xx-large" > Rating </label>
+                                                                    </div>
                                                                 </div>
                                                             </article>
                                                         </li>
                                                         @endforeach
-{{--                                                        <li class="comment">--}}
-{{--                                                        </li>--}}
+                                                        <li class="comment">
+                                                        </li>
                                                     </ul>
                                                     <div class="comment-respond" id="respond">
                                                         <h4 class="text-custom-black fw-600">Leave Comment</h4>
-{{--                                                        @livewire('comment',['id'=>$data->id])--}}
+
                                                         <form action="{{route("user_comment")}}" method="post">
                                                             @csrf
                                                             <div class="row">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <label class="text-custom-black fw-500 fs-14">Comment</label>
-                                                                        <textarea rows="4" name="comment" class="form-control form-control-custom" placeholder="Comment"></textarea>
-{{--                                                                        <div class="rating" >--}}
-{{--                                                                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>--}}
-{{--                                                                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>--}}
-{{--                                                                            <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>--}}
-{{--                                                                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>--}}
-                                                                            <input type="number" name="rate" value="1.0" id="1"  hidden>{{--<label for="1">☆</label>--}}
-{{--                                                                            <label style="color: #0b0b0b;margin-right: 75px;font-size:xx-large" > Rating </label>--}}
-{{--                                                                        </div>--}}
+                                                                        <label class="text-custom-black fw-500 fs-14"></label>
+                                                                        <textarea rows="4" name="comment" class="form-control form-control-custom" placeholder="Comment" required></textarea>
+                                                                        <div class="rating" hidden >
+                                                                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                                                                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                                                                            <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                                                                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                                                                            <input type="number" name="rate" value="1.0" id="1"  hidden><label for="1">☆</label>
+                                                                            <label style="color: #0b0b0b;margin-right: 75px;font-size:xx-large" > Rating </label>
+                                                                        </div>
                                                                         <input type="text" name="car_id" value="{{$car[0]->id}}" hidden>
                                                                     </div>
                                                                     <button type="submit" class="btn-first btn-submit">Send</button>

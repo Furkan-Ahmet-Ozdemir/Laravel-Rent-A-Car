@@ -110,6 +110,8 @@ class SettingController extends Controller
         $data->contact = $request->input('contact');
         $data->references = $request->input('references');
         $data->status      = $request->input('status');
+        $data->updated_at = now();
+
         $data->save();
         return redirect()->route('admin_setting');
     }

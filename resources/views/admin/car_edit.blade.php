@@ -28,7 +28,7 @@
 
                                 @foreach(  $datalist as $rs)
                                     <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif >
-                                        {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}
+                                        {{$rs->title}}
                                     </option>
                                 @endforeach
                             </select>
@@ -47,8 +47,30 @@
                         <div class="form-group">
                             <label >Description</label>
                             <input type="text" class="form-control"name="description" value="{{$data->description}}" >
-
                         </div>
+
+
+
+
+                        <div class="form-group">
+                            <label >Transmission Type</label>
+                            <input type="text" class="form-control"name="transmission_type"  value="{{$data->transmission_type}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label >Fuel Type</label>
+                            <input type="text" class="form-control"name="fuel_type"  value="{{$data->fuel_type}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label >Baggage</label>
+                            <input type="text" class="form-control"name="baggage"  value="{{$data->baggage}}">
+                        </div>
+
+
+
+
+
 
                         <div class="form-group">
                             <label >Detail</label>

@@ -111,7 +111,10 @@ class CarController extends Controller
         $data->keywords    = $request->input('keywords');
         $data->description = $request->input('description');
         $data->status      = $request->input('status');
-        $data->image = Storage::putFile('images',$request->file('image')); /*File upload*/
+        if ($request->file('image')!=null){
+            $data->image = Storage::putFile('images',$request->file('image')); /*File upload*/
+        }
+//        $data->image = Storage::putFile('images',$request->file('image')); /*File upload*/
         $data->detail = $request->input('detail');
         $data->price = $request->input('price');
         $data->baggage = $request->input('baggage');
@@ -121,6 +124,7 @@ class CarController extends Controller
         $data->model_name = $request->input('model_name');
         $data->transmission_type = $request->input('transmission_type');
         $data->fuel_type = $request->input('fuel_type');
+        $data->updated_at = $request->input('updated_at');
         $data->user_id = Auth::id();
         $data->save();
         return redirect()->route('admin_cars');
