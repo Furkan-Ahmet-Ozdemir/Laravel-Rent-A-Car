@@ -20,9 +20,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Role</label>
-                            <input id="name" type="text" value="{{$data->role}}" name="role" class="form-control">
+                            <label >Role</label>
+                            <select class="form-control select2" name="role" style="width:100%">
+                                <option selected="selected"> {{$data->role}} </option>
+                                <option> admin </option>
+                                <option> user </option>
+                            </select>
                         </div>
+
 
                         <div class="form-group">
                             <label>Email</label>

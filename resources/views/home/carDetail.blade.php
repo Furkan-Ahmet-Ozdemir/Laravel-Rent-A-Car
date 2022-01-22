@@ -223,6 +223,7 @@
                                                 <div id="comment-box">
                                                     <h4 class="text-custom-black fw-600">Reviews </h4>
                                                     <ul class="comments custom">
+                                                        @foreach($users as $us[0])
                                                         @foreach($comments as $rs[0])
                                                         <li class="comment">
                                                             <article>
@@ -232,7 +233,7 @@
                                                                     <div class="comment-meta">
                                                                         <div class="comment-meta-header">
                                                                             <h5 class="text-custom-black fw-600 author mb-3">
-                                                                                {{$rs[0]->user_id}}</h5>
+                                                                                {{$us[0]->name}}</h5>
                                                                             <div class="post-date"><a
                                                                                                       class="date bg-custom-blue text-custom-white">{{$rs[0]->created_at}}</a></div>
                                                                         </div></div>
@@ -250,6 +251,7 @@
                                                                 </div>
                                                             </article>
                                                         </li>
+                                                        @endforeach
                                                         @endforeach
                                                         <li class="comment">
                                                         </li>

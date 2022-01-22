@@ -22,7 +22,6 @@ Route::get("/home",[HomeController::class,'index'])->name('home');
 Route::get("/",[HomeController::class,'index'])->name('home');
 Route::get("/contact",[HomeController::class,'contact'])->name('home_contact');
 Route::post("/contact/create",[\App\Http\Controllers\MessageController::class,'store'])->name('contact_store');
-
 Route::get("/about",[HomeController::class,'about'])->name('home_about');
 Route::get("/faq",[App\Http\Controllers\HomeController::class,'faq'])->name('home_faq');
 Route::get("/cars",[HomeController::class,'cars'])->name('home_cars');
@@ -30,32 +29,16 @@ Route::get("/cars/{slug}",[HomeController::class,'carType'])->name('home_carType
 Route::get("/carDetail/{slug}",[HomeController::class,'carDetail'])->name('home_carDetail');
 
 Route::middleware('auth')->prefix('user')->group(function (){
-//    Route::get("/",[App\Http\Controllers\HomeController::class,'index'])->name('home_login')->middleware('auth');
-//    Route::get("/login",[App\Http\Controllers\HomeController::class,'login'])->name('home_login');
-//    Route::post("/logincheck",[App\Http\Controllers\HomeController::class,'logincheck'])->name('user_logincheck');
-//    Route::get("/logout",[App\Http\Controllers\HomeController::class,'logout'])->name('user_logout');
-//
-//    Route::get("/register",[App\Http\Controllers\HomeController::class,'register'])->name('home_register');
-//    Route::post("/registercheck",[App\Http\Controllers\HomeController::class,'registercheck'])->name('user_registercheck');
     Route::post("/basket",[App\Http\Controllers\ReservationController::class,'create'])->name('user_basket');
-
     Route::get("/profiles",[App\Http\Controllers\UserController::class,'index'])->name('user_profile');
     Route::get("/profile/reservation",[App\Http\Controllers\ReservationController::class,'show'])->name('user_reservation');
-
     Route::get("/profile/comments",[App\Http\Controllers\CommentsController::class,'show'])->name('user_comments');
     Route::post("/comment",[App\Http\Controllers\CommentsController::class,'create'])->name('user_comment');
 
 });
 
-
 Route::middleware('auth')->prefix('admin')->group(function (){
-
-//middleware i route a tanımladığın yeri gösteri
-//    Route::middleware('admin')->group(function (){
         Route::get("/",[App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin_home');
-
-//        Route::get("users",[App\Http\Controllers\Admin\UserController::class,'index'])     ->name('admin_users');
-
         Route::prefix('users')->group(function () {
             Route::get('/', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin_users');
             Route::post('create', [\App\Http\Controllers\Admin\UserController::class, 'create'])->name('admin_user_add');
@@ -120,17 +103,14 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
         Route::get("setting",[App\Http\Controllers\Admin\SettingController::class,'index'])->name('admin_setting');
         Route::post("setting/update",[App\Http\Controllers\Admin\SettingController::class,'update'])->name('admin_setting_update');
-//    });
-});
 
+});
 
 Route::get("/loginn",        [App\Http\Controllers\Admin\HomeController::class,'login'])->name('login');
 Route::post("/logincheck",   [App\Http\Controllers\Admin\HomeController::class,'logincheck'])->name('logincheck');
 Route::get("/logout",        [App\Http\Controllers\Admin\HomeController::class,'logout'])->name('logout');
-
 Route::get("/register",      [App\Http\Controllers\Admin\HomeController::class,'register'])->name('register');
 Route::post("/registercheck",[App\Http\Controllers\Admin\HomeController::class,'registercheck'])->name('registercheck');
-
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

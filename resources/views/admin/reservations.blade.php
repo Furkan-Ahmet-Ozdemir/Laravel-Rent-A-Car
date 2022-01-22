@@ -14,8 +14,8 @@
 {{--                <th>Id</th>--}}
                 <th>User Id</th>
                 <th>Car Id</th>
-                <th>Pick Up Time</th>
-                <th>Pick Off Time</th>
+                <th>Pick Up Place</th>
+                <th>Pick Off Place </th>
                 <th>Rezarvation Date Time</th>
                 <th>Return Date Time</th>
                 <th>Amount</th>

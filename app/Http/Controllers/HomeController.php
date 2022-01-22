@@ -47,7 +47,7 @@ class HomeController extends Controller
     }
 
     public function faq(){
-        $datalist = Faq::get();
+        $datalist = Faq::where('status','True')->get();
         return view('home.faq',['datalist'=>$datalist]);
     }
 
@@ -66,7 +66,7 @@ class HomeController extends Controller
 
         $random = DB::table('cars')->where('category_id',$car[0]->category_id)->whereNotIn('slug',[$car[0]->slug])->get();
 
-        $comments = DB::table('comments')->where('car_id',$car123[0]->id)->get();
+        $comments = DB::table('comments')->where('car_id',$car123[0]->id)->where('status','=','True')->get();
         $users = DB::table('users')->where('id',$car123[0]->user_id)->get();
 
 
